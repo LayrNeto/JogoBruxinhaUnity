@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a8d7b87e1367e2419e056ba9ead4165, type: 3}
+  m_Name: Calendula
+  m_EditorClassIdentifier: Assembly-CSharp::PlantDataSO
+  id: calendula
+  displayName: Calendula
+  inventoryIcon: {fileID: 21300000, guid: bfb88a5ebf2634b49adc900ceb0064d3, type: 3}
+  worldSprites:
+  - {fileID: 21300000, guid: 6d14d143617471f4fb82b541514558e8, type: 3}
+  - {fileID: 21300000, guid: c133673c14155a9469226e8022ab6050, type: 3}
+  collectedSprites:
+  - {fileID: 21300000, guid: 5ce4d290fed725a42bd2c74161a8355e, type: 3}
+  - {fileID: 21300000, guid: b92d6db4c0a2e5a43abd692b1ff08fc8, type: 3}
+  shelfSprite: {fileID: 21300000, guid: 06f601f080eed3b45a26e01c52866b4b, type: 3}
+  dragSprite: {fileID: 21300000, guid: 436b7226022e15941ad5729867265755, type: 3}
+  emptyShelfSprite: {fileID: 0}
+  daysToGrow: 1
+  collectSound:
+  - {fileID: 11400000, guid: 8c39c36072b4096419570a1a92686f2a, type: 2}
+  - {fileID: 11400000, guid: e14f8a80446d0674f8123cd6fce4f8de, type: 2}

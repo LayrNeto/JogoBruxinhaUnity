@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 833e1ec1cd93f3c4e844c8b1add9cfc2, type: 3}
+  m_Name: NormalPotion
+  m_EditorClassIdentifier: Assembly-CSharp::PotionDataSO
+  id: normal_potion
+  displayName: "Po\xE7\xE3o Normal"
+  inventoryIcon: {fileID: 21300000, guid: bc356ffa0df13c74088e3a0362f2fedd, type: 3}
+  tableSprite: {fileID: 21300000, guid: 28c6613d3e5f75d41953c0be3493b237, type: 3}

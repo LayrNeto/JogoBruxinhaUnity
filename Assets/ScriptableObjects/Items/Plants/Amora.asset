@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a8d7b87e1367e2419e056ba9ead4165, type: 3}
+  m_Name: Amora
+  m_EditorClassIdentifier: Assembly-CSharp::PlantDataSO
+  id: amora
+  displayName: Amora
+  inventoryIcon: {fileID: 21300000, guid: 7d0dee8d80602c141a88129e2cdd8faf, type: 3}
+  worldSprites:
+  - {fileID: 21300000, guid: a6b4c086388ac464896f503d82f95dfb, type: 3}
+  collectedSprites:
+  - {fileID: 21300000, guid: 9f7687d8cc1654c4ca09ff45d618900d, type: 3}
+  shelfSprite: {fileID: 21300000, guid: 7d8166a3d1bd51e47a7826307d47b8cd, type: 3}
+  dragSprite: {fileID: 21300000, guid: 09f7ffb2d36e86a4ea7466916f577ecf, type: 3}
+  emptyShelfSprite: {fileID: 21300000, guid: 0f0ce90779c59c547aaae5b093ff4ee9, type: 3}
+  daysToGrow: 1
+  collectSound:
+  - {fileID: 11400000, guid: 8c39c36072b4096419570a1a92686f2a, type: 2}
+  - {fileID: 11400000, guid: e14f8a80446d0674f8123cd6fce4f8de, type: 2}

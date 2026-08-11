@@ -1,0 +1,37 @@
+Fase	Personagem	Texto	Condição
+INTRO	NPC	………….	
+INTRO	PLAYER	Bom dia, senhor, como posso ajudar?	
+INTRO	NPC	Bom…………..	
+INTRO	NPC	………… dia.	
+INTRO	NPC	Comi………. fruta………….. infestada………	
+INTRO	NPC	Agora………. tudo……… está……….	
+INTRO	NPC	……..muito ……. rápido.	
+INTRO	PLAYER	Oh não! Será que você ingeriu um daqueles vermes letárgicos?	
+INTRO	PLAYER	Ouvi dizer que eles injetam uma substância que desacelera o hospedeiro. Deve ser por isso que você está lento desse jeito.	
+INTRO	NPC	Eu……. não…………. estou……….	
+INTRO	NPC	…………..…… lento.	
+INTRO	NPC	Você……….. que……. fala……….. rápido………	
+INTRO	PLAYER	Não, o senhor que… Ah, deixa pra lá.	
+INTRO	PLAYER	(Ele com certeza está parasitado por um desses vermes.)	
+INTRO	PLAYER	Está sentindo mais alguma coisa?	
+INTRO	NPC	Tudo……….… está…….. girando…….	
+INTRO	NPC	Sinto……. que vou……. passar mal…….	
+INTRO	NPC	Muito……… enjoado……..	
+INTRO	NPC	(Ele boceja.)	
+INTRO	PLAYER	(Além de tudo, ele parece cansado. Talvez eu tenha algo que possa lhe dar mais energia.)	
+INTRO	PLAYER	Certo, farei uma poção para ajudar o senhor.	
+INTRO	NPC	O que…….? Fala……. mais……….. devagar……..	
+INTRO	PLAYER	Aguarde…… aqui…….. por favor!	
+WAITING_1	NPC	Tudo……. pronto……?	
+SUCCESS	NPC	Nossa! Finalmente tudo está na velocidade normal!	
+SUCCESS	NPC	Já estava ficando maluco com o mundo todo acelerado daquele jeito.	
+SUCCESS	NPC	Incrível como uma poção pode alterar a realidade assim.	
+SUCCESS	PLAYER	Pois é…	
+SUCCESS	PLAYER	Só evite comer as frutas daquele mesmo pé por um tempo.	
+SUCCESS	NPC	Não sei como viverei sem comer minhas goiabas, mas acho que terei que fazer esse esforço.	
+SUCCESS	NPC	Bom, muito obrigado! Com certeza irei recomendar os seus serviços para o pessoal do vilarejo!	
+SUCCESS	PLAYER	Ah… Obrigada!	
+FAIL	NPC	Fun……. cionou……?	
+FAIL	PLAYER	Oh não… Devo ter errado algum ingrediente…	
+FAIL	NPC	Vou…….. procurar…… ajuda……..	
+FAIL	NPC	….. em outro……. lugar………..	

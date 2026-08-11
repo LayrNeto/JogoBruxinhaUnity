@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a8d7b87e1367e2419e056ba9ead4165, type: 3}
+  m_Name: Babosa
+  m_EditorClassIdentifier: Assembly-CSharp::PlantDataSO
+  id: babosa
+  displayName: Babosa
+  inventoryIcon: {fileID: 21300000, guid: 148a7ae2a95f81b49b96d4d361f1a8a8, type: 3}
+  worldSprites:
+  - {fileID: 21300000, guid: fa70df73c383c7142ac9325200c773fc, type: 3}
+  collectedSprites:
+  - {fileID: 21300000, guid: 6b7439a4aa403644b8cd7bddf448be42, type: 3}
+  shelfSprite: {fileID: 21300000, guid: d85f982a11802274fa38d3d0605f012a, type: 3}
+  dragSprite: {fileID: 21300000, guid: 91c3dba521097bc4485fcf19cb9f16a6, type: 3}
+  emptyShelfSprite: {fileID: 21300000, guid: d39f396ab18624641ba92594d1ff9aa4, type: 3}
+  daysToGrow: 1
+  collectSound:
+  - {fileID: 11400000, guid: 8c39c36072b4096419570a1a92686f2a, type: 2}
+  - {fileID: 11400000, guid: e14f8a80446d0674f8123cd6fce4f8de, type: 2}

@@ -1,0 +1,53 @@
+Fase	Personagem	Texto	Condição
+INTRO	NPC	É aqui mesmo que vive a bruxa de que tanto falam nesse vilarejo?	
+INTRO	NPC	Já tem quase uma semana que tô procurando por ajuda. Os curandeiros que visitei foram uma decepção!	
+INTRO	PLAYER	F-fique tranquila! Veio pro lugar certo! O que houve?	
+INTRO	NPC	Eu tava no pântano que fica a alguns dias de viagem daqui, sabe? Fui atrás de duas crianças desaparecidas.	
+INTRO	NPC	Nessa empreitada encontrei um dragão enorme…	
+INTRO	NPC	E não podia deixar uma criatura daquelas correndo solta por aí!	
+INTRO	NPC	Consegui espantar ele, mas não antes de ser atingida por um cuspe de ácido, como você pode ver.	
+INTRO	PLAYER	(O rosto dela está repleto de queimaduras.)	
+INTRO	NPC	E olha, já tentei de tudo! Parece que nada é o suficiente pra fechar essa ferida…	
+INTRO	PLAYER	Dragões são criaturas mágicas… Acho que tratamentos convencionais não vão te ajudar com uma queimadura dessas.	
+INTRO	NPC	E como se não bastasse, só tá ficando pior. Cheio de bolhas e pus…	
+INTRO	PLAYER	Hmm… A ferida deve ter infeccionado.	
+INTRO	PLAYER	Mas não se preocupe, vou levar isso em conta na hora de preparar a poção para você.	
+INTRO	NPC	Então é você que faz poções? Não é a bruxa?	
+INTRO	PLAYER	…	
+INTRO	NPC	…	
+INTRO	NPC	Ah! Você é a bruxa!	
+INTRO	PLAYER	Eu sou a… Substituta!	
+INTRO	NPC	Uma bruxa tão jovem! Nunca imaginaria! Também pensava que ia ser mais assustadora, pelas histórias que ouvi.	
+INTRO	NPC	Meu escudeiro disse que só de olhar torto pra uma bruxa ela já te joga uma praga, acredita?	
+INTRO	NPC	Você não faria uma coisa dessas né? Hahaha!	
+INTRO	NPC	…	
+INTRO	NPC	Ou faria?	
+INTRO	PLAYER	Claro que não!!	
+INTRO	NPC	Um problema a menos… Haha…	
+INTRO	PLAYER	(Bom, pelo menos ela parece estar de bom humor)	
+INTRO	PLAYER	Antes de preparar a poção, preciso saber se está sentindo mais alguma coisa. Pelo visto não está com tanta dor, não é?	
+INTRO	NPC	Ah, eu tô me sentindo horrível na verdade. Nunca estive pior! Tô prestes a desmaiar de dor.	
+INTRO	PLAYER	Porque você não disse isso antes!? Vou fazer uma poção agora mesmo!!	
+INTRO	NPC	Sem pressa! Eu já aguentei por dias até te encontrar, umas horinhas a mais não faz mal!	
+INTRO	NPC	ALDARA: Eu acho…	
+WAITING_1	NPC	Então… A poção já tá pronta?	
+WAITING_2	NPC	Não sei se vou aguentar por muito mais tempo…	
+SUCCESS	PLAYER	Essa poção deve ser o suficiente para te curar.	
+SUCCESS	NPC	Você tá bem, bruxa? Seu rosto tá pálido.	MAGIA
+SUCCESS	PLAYER	*tosse* não se preocupe, estou ótima. Agora beba a poção, você já tá sofreu por tempo o suficiente.	MAGIA
+SUCCESS	NPC	Incrível… A ferida desapareceu completamente! Você faz milagres senhorita bruxa substituta!	
+SUCCESS	NPC	Inclusive, vou te pedir mais um favor.	
+SUCCESS	NPC	Olha… A verdade é que me feri cuidando de um filhote de dragão.	
+SUCCESS	NPC	O coitado tava tão doente e fraquinho… Foi abandonado pela mãe! Não podia deixar ele sozinho.	
+SUCCESS	NPC	Vou trazer ele aqui assim que possível!	
+SUCCESS	PLAYER	Um dragão!?	
+SUCCESS	NPC	Por que não? Uma bruxa talentosa como você não vai ter nenhuma dificuldade pra curar ele, não é?	
+SUCCESS	PLAYER	E-eu não faço ideia…	
+SUCCESS	NPC	Você não tem um gato aí? É quase a mesma coisa que um dragão, haha! Te vejo em breve!	
+FAIL	PLAYER	Essa poção deve ser o suficiente para te curar.	
+FAIL	NPC	Finalmente algum alívio… Mas ainda não me sinto muito bem… Quanto tempo até a poção fazer efeito?	
+FAIL	PLAYER	(Parece que a poção não foi efetiva, devo ter errado a receita.)	
+FAIL	PLAYER	Alguma coisa não deu certo…	
+FAIL	NPC	Obrigada pela tentativa senhorita substituta, mas quando que a outra bruxa vai voltar? Acho que preciso de algo mais forte.	
+FAIL	PLAYER	Eu… Não sei.	
+FAIL	NPC	*suspiro* vou procurar ajuda em outro lugar.	

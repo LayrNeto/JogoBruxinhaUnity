@@ -1,0 +1,206 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f60ee7a54703c5498e14ccffe278a97, type: 3}
+  m_Name: Aldara
+  m_EditorClassIdentifier: Assembly-CSharp::PatientDataSO
+  movementSpeed: 1
+  animatorController: {fileID: 9100000, guid: a96ea54363dd8c345a7c52b4f8582c78, type: 2}
+  clientName: Aldara
+  povCursedSprite: {fileID: 21300000, guid: 1991bb6a089c31a409d4a9f90feb158d, type: 3}
+  povHealedSprite: {fileID: 21300000, guid: 5b654330d12bf2b43b142a3b0f6e07a4, type: 3}
+  dialogueBoxSprite: {fileID: 21300000, guid: f45b16de6964da24fae72b4e1aada2ef, type: 3}
+  requiredPlants:
+  - {fileID: 11400000, guid: 39298dfe97f7a2e459cfbacf25531be6, type: 2}
+  - {fileID: 11400000, guid: 341445148ca031f4e8e7fe81e7fa2890, type: 2}
+  - {fileID: 11400000, guid: e143f2938045b3a4da2b762a5815adcc, type: 2}
+  introDialogue:
+  - speaker: 0
+    text: "\xC9 aqui mesmo que vive a bruxa de que tanto falam nesse vilarejo?"
+    requiresMagic: 0
+  - speaker: 0
+    text: "J\xE1 tem quase uma semana que t\xF4 procurando por ajuda. Os curandeiros
+      que visitei foram uma decep\xE7\xE3o!"
+    requiresMagic: 0
+  - speaker: 1
+    text: F-fique tranquila! Veio pro lugar certo! O que houve?
+    requiresMagic: 0
+  - speaker: 0
+    text: "Eu tava no p\xE2ntano que fica a alguns dias de viagem daqui, sabe? Fui
+      atr\xE1s de duas crian\xE7as desaparecidas."
+    requiresMagic: 0
+  - speaker: 0
+    text: "Nessa empreitada encontrei um drag\xE3o enorme\u2026"
+    requiresMagic: 0
+  - speaker: 0
+    text: "E n\xE3o podia deixar uma criatura daquelas correndo solta por a\xED!"
+    requiresMagic: 0
+  - speaker: 0
+    text: "Consegui espantar ele, mas n\xE3o antes de ser atingida por um cuspe de
+      \xE1cido, como voc\xEA pode ver."
+    requiresMagic: 0
+  - speaker: 1
+    text: "(O rosto dela est\xE1 repleto de queimaduras.)"
+    requiresMagic: 0
+  - speaker: 0
+    text: "E olha, j\xE1 tentei de tudo! Parece que nada \xE9 o suficiente pra fechar
+      essa ferida\u2026"
+    requiresMagic: 0
+  - speaker: 1
+    text: "Drag\xF5es s\xE3o criaturas m\xE1gicas\u2026 Acho que tratamentos convencionais
+      n\xE3o v\xE3o te ajudar com uma queimadura dessas."
+    requiresMagic: 0
+  - speaker: 0
+    text: "E como se n\xE3o bastasse, s\xF3 t\xE1 ficando pior. Cheio de bolhas e
+      pus\u2026"
+    requiresMagic: 0
+  - speaker: 1
+    text: "Hmm\u2026 A ferida deve ter infeccionado."
+    requiresMagic: 0
+  - speaker: 1
+    text: "Mas n\xE3o se preocupe, vou levar isso em conta na hora de preparar a
+      po\xE7\xE3o para voc\xEA."
+    requiresMagic: 0
+  - speaker: 0
+    text: "Ent\xE3o \xE9 voc\xEA que faz po\xE7\xF5es? N\xE3o \xE9 a bruxa?"
+    requiresMagic: 0
+  - speaker: 1
+    text: "\u2026"
+    requiresMagic: 0
+  - speaker: 0
+    text: "\u2026"
+    requiresMagic: 0
+  - speaker: 0
+    text: "Ah! Voc\xEA \xE9 a bruxa!"
+    requiresMagic: 0
+  - speaker: 1
+    text: "Eu sou a\u2026 Substituta!"
+    requiresMagic: 0
+  - speaker: 0
+    text: "Uma bruxa t\xE3o jovem! Nunca imaginaria! Tamb\xE9m pensava que ia ser
+      mais assustadora, pelas hist\xF3rias que ouvi."
+    requiresMagic: 0
+  - speaker: 0
+    text: "Meu escudeiro disse que s\xF3 de olhar torto pra uma bruxa ela j\xE1 te
+      joga uma praga, acredita?"
+    requiresMagic: 0
+  - speaker: 0
+    text: "Voc\xEA n\xE3o faria uma coisa dessas n\xE9? Hahaha!"
+    requiresMagic: 0
+  - speaker: 0
+    text: "\u2026"
+    requiresMagic: 0
+  - speaker: 0
+    text: Ou faria?
+    requiresMagic: 0
+  - speaker: 1
+    text: "Claro que n\xE3o!!"
+    requiresMagic: 0
+  - speaker: 0
+    text: "Um problema a menos\u2026 Haha\u2026"
+    requiresMagic: 0
+  - speaker: 1
+    text: (Bom, pelo menos ela parece estar de bom humor)
+    requiresMagic: 0
+  - speaker: 1
+    text: "Antes de preparar a po\xE7\xE3o, preciso saber se est\xE1 sentindo mais
+      alguma coisa. Pelo visto n\xE3o est\xE1 com tanta dor, n\xE3o \xE9?"
+    requiresMagic: 0
+  - speaker: 0
+    text: "Ah, eu t\xF4 me sentindo horr\xEDvel na verdade. Nunca estive pior! T\xF4
+      prestes a desmaiar de dor."
+    requiresMagic: 0
+  - speaker: 1
+    text: "Porque voc\xEA n\xE3o disse isso antes!? Vou fazer uma po\xE7\xE3o agora
+      mesmo!!"
+    requiresMagic: 0
+  - speaker: 0
+    text: "Sem pressa! Eu j\xE1 aguentei por dias at\xE9 te encontrar, umas horinhas
+      a mais n\xE3o faz mal!"
+    requiresMagic: 0
+  - speaker: 0
+    text: "ALDARA: Eu acho\u2026"
+    requiresMagic: 0
+  waitingDialogues:
+  - lines:
+    - speaker: 0
+      text: "Ent\xE3o\u2026 A po\xE7\xE3o j\xE1 t\xE1 pronta?"
+      requiresMagic: 0
+  - lines:
+    - speaker: 0
+      text: "N\xE3o sei se vou aguentar por muito mais tempo\u2026"
+      requiresMagic: 0
+  successDialogue:
+  - speaker: 1
+    text: "Essa po\xE7\xE3o deve ser o suficiente para te curar."
+    requiresMagic: 0
+  - speaker: 0
+    text: "Voc\xEA t\xE1 bem, bruxa? Seu rosto t\xE1 p\xE1lido."
+    requiresMagic: 1
+  - speaker: 1
+    text: "*tosse* n\xE3o se preocupe, estou \xF3tima. Agora beba a po\xE7\xE3o,
+      voc\xEA j\xE1 t\xE1 sofreu por tempo o suficiente."
+    requiresMagic: 1
+  - speaker: 0
+    text: "Incr\xEDvel\u2026 A ferida desapareceu completamente! Voc\xEA faz milagres
+      senhorita bruxa substituta!"
+    requiresMagic: 0
+  - speaker: 0
+    text: Inclusive, vou te pedir mais um favor.
+    requiresMagic: 0
+  - speaker: 0
+    text: "Olha\u2026 A verdade \xE9 que me feri cuidando de um filhote de drag\xE3o."
+    requiresMagic: 0
+  - speaker: 0
+    text: "O coitado tava t\xE3o doente e fraquinho\u2026 Foi abandonado pela m\xE3e!
+      N\xE3o podia deixar ele sozinho."
+    requiresMagic: 0
+  - speaker: 0
+    text: "Vou trazer ele aqui assim que poss\xEDvel!"
+    requiresMagic: 0
+  - speaker: 1
+    text: "Um drag\xE3o!?"
+    requiresMagic: 0
+  - speaker: 0
+    text: "Por que n\xE3o? Uma bruxa talentosa como voc\xEA n\xE3o vai ter nenhuma
+      dificuldade pra curar ele, n\xE3o \xE9?"
+    requiresMagic: 0
+  - speaker: 1
+    text: "E-eu n\xE3o fa\xE7o ideia\u2026"
+    requiresMagic: 0
+  - speaker: 0
+    text: "Voc\xEA n\xE3o tem um gato a\xED? \xC9 quase a mesma coisa que um drag\xE3o,
+      haha! Te vejo em breve!"
+    requiresMagic: 0
+  failDialogue:
+  - speaker: 1
+    text: "Essa po\xE7\xE3o deve ser o suficiente para te curar."
+    requiresMagic: 0
+  - speaker: 0
+    text: "Finalmente algum al\xEDvio\u2026 Mas ainda n\xE3o me sinto muito bem\u2026
+      Quanto tempo at\xE9 a po\xE7\xE3o fazer efeito?"
+    requiresMagic: 0
+  - speaker: 1
+    text: "(Parece que a po\xE7\xE3o n\xE3o foi efetiva, devo ter errado a receita.)"
+    requiresMagic: 0
+  - speaker: 1
+    text: "Alguma coisa n\xE3o deu certo\u2026"
+    requiresMagic: 0
+  - speaker: 0
+    text: Obrigada pela tentativa senhorita substituta, mas quando que a outra bruxa
+      vai voltar? Acho que preciso de algo mais forte.
+    requiresMagic: 0
+  - speaker: 1
+    text: "Eu\u2026 N\xE3o sei."
+    requiresMagic: 0
+  - speaker: 0
+    text: '*suspiro* vou procurar ajuda em outro lugar.'
+    requiresMagic: 0

@@ -1,0 +1,27 @@
+Contexto	Personagem	Texto	Condição
+BALCAO_STEP_0	NPC	Bom dia, Cora. Prepare-se para a lição de magia de hoje.	
+BALCAO_STEP_0	PLAYER	Bom dia, irmã! Já estou pronta!	
+BALCAO_STEP_0	NPC	Ótimo. A lição de hoje é importante. Irei te ensinar a fazer poções com propriedades curativas.	
+BALCAO_STEP_0	PLAYER	Como as que você usa nos seus pacientes?	
+BALCAO_STEP_0	NPC	Exato. Você vem avançando bastante em seus estudos e já está chegando a hora de começar a me ajudar a tratar os aldeões do vilarejo.	
+BALCAO_STEP_0	NPC	Imagine que eu fui atacada por uma criatura mágica e agora estou com feridas abertas, sentindo dor e enjoo. Lembre-se dessas informações.	
+BALCAO_STEP_0	NPC	Para fazer uma poção, é necessário ter ingredientes. Vá para a estufa e colha todas as plantas que estiverem disponíveis. Em seguida, me encontre no caldeirão.	
+BALCAO_STEP_1	NPC	Vá coletar os ingredientes, volte aqui depois.	
+CALDEIRAO_INICIO_STEP_2	NPC	Pegou tudo? Excelente.	
+CALDEIRAO_INICIO_STEP_2	NPC	Todos os seres vivos carregam em si uma quantidade de energia vital. Essa energia é capaz de curar ferimentos, doenças e até certas maldições.	
+CALDEIRAO_INICIO_STEP_2	NPC	Ao criar uma poção de cura, canalizamos a energia vital das plantas. Usamos sempre 3 ingredientes para atingir a quantidade de energia necessária.	
+CALDEIRAO_INICIO_STEP_2	NPC	Cada planta tem uma propriedade curativa diferente. É importante conhecê-las para criar a poção certa para ajudar o paciente. Você pode consultar sobre isso sempre que quiser, no livro próximo ao caldeirão.	
+CALDEIRAO_INICIO_STEP_2	NPC	Lembra-se dos sintomas que eu citei antes? Crie uma poção que seja capaz de curá-los.	
+CALDEIRAO_FIM_STEP_2	NPC	Essa poção parece satisfatória. Vá para o balcão novamente para entregar a poção.	
+BALCAO_STEP_3	NPC	Excelente, Cora.	
+BALCAO_STEP_3	NPC	Agora, irei te ensinar um outro método de criar poções. Me encontre no caldeirão novamente.	
+CALDEIRAO_INICIO_STEP_4	NPC	Como eu falei, a energia vital dos seres vivos é o que usamos para curar. A energia que existe nas plantas funciona bem, mas é limitada.	
+CALDEIRAO_INICIO_STEP_4	NPC	Existe um feitiço que te permite canalizar sua própria energia vital para a poção. A energia humana é potente e versátil.	
+CALDEIRAO_INICIO_STEP_4	NPC	Usar sua energia vital garantirá que a poção cure o paciente, independente da eficácia dos ingredientes. Porém, utilizá-la significa gastar um pouco do que te mantém viva.	
+CALDEIRAO_INICIO_STEP_4	NPC	Ao dormir, parte da sua energia vital é restaurada.	
+CALDEIRAO_INICIO_STEP_4	NPC	Com tempo e prática, você aprenderá a aproveitar melhor sua energia vital. Por hora, você só será capaz de usar uma vez ao dia sem se prejudicar.	
+CALDEIRAO_INICIO_STEP_4	NPC	Bom, vamos começar. Primeiro, junte 3 ingredientes no caldeirão. Como vamos utilizar o feitiço, sua escolha de ingredientes não importa.	
+CALDEIRAO_PRE_POCAO_STEP_4	NPC	Ótimo. Agora, antes de completar a poção, abra o livro de anotações. Além das informações sobre os ingredientes, o livro também contém as instruções para fazer o feitiço. O símbolo está na última página.	
+CALDEIRAO_FIM_STEP_4	PLAYER	Ops… Acho que pronunciei uma palavra errado… Será que estraguei o feitiço?	
+POS_CUTSCENE_STEP_5	PLAYER	Oh não… O que foi que eu fiz?	
+POS_CUTSCENE_STEP_5	PLAYER	Tenho que dar um jeito nisso. Preciso encontrar uma solução! E ainda preciso cumprir o papel de curandeira da minha irmã e ajudar os aldeões!	

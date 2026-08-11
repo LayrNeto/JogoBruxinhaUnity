@@ -1,0 +1,181 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3023f6ebb0ea6bd4ca7e60f0e1b76bfc, type: 3}
+  m_Name: TutorialData
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialDataSO
+  tutorialStep: 0
+  agataPovSprite: {fileID: 21300000, guid: cd4f35779456a2643b0d600b4aebc5e6, type: 3}
+  agataDialogueBox: {fileID: 21300000, guid: 27c3496d4f6916b478536331a944b383, type: 3}
+  requiredIngredients:
+  - {fileID: 11400000, guid: 3b002a218d69dfa42969e5f850cf972f, type: 2}
+  - {fileID: 11400000, guid: 39298dfe97f7a2e459cfbacf25531be6, type: 2}
+  - {fileID: 11400000, guid: 341445148ca031f4e8e7fe81e7fa2890, type: 2}
+  - {fileID: 11400000, guid: c8104816b34717d489f65bf2dd3ca45a, type: 2}
+  - {fileID: 11400000, guid: e143f2938045b3a4da2b762a5815adcc, type: 2}
+  - {fileID: 11400000, guid: 5d8ecbddf24eb034cb399c22513dd774, type: 2}
+  correctRecipe:
+  - {fileID: 11400000, guid: c8104816b34717d489f65bf2dd3ca45a, type: 2}
+  - {fileID: 11400000, guid: e143f2938045b3a4da2b762a5815adcc, type: 2}
+  - {fileID: 11400000, guid: 5d8ecbddf24eb034cb399c22513dd774, type: 2}
+  allDialogues:
+  - interactionID: 1
+    sequence:
+      lines:
+      - speaker: 0
+        text: "Bom dia, Cora. Prepare-se para a li\xE7\xE3o de magia de hoje."
+        requiresMagic: 0
+      - speaker: 1
+        text: "Bom dia, irm\xE3! J\xE1 estou pronta!"
+        requiresMagic: 0
+      - speaker: 0
+        text: "\xD3timo. A li\xE7\xE3o de hoje \xE9 importante. Irei te ensinar a
+          fazer po\xE7\xF5es com propriedades curativas."
+        requiresMagic: 0
+      - speaker: 1
+        text: "Como as que voc\xEA usa nos seus pacientes?"
+        requiresMagic: 0
+      - speaker: 0
+        text: "Exato. Voc\xEA vem avan\xE7ando bastante em seus estudos e j\xE1 est\xE1
+          chegando a hora de come\xE7ar a me ajudar a tratar os alde\xF5es do vilarejo."
+        requiresMagic: 0
+      - speaker: 0
+        text: "Imagine que eu fui atacada por uma criatura m\xE1gica e agora estou
+          com feridas abertas, sentindo dor e enjoo. Lembre-se dessas informa\xE7\xF5es."
+        requiresMagic: 0
+      - speaker: 0
+        text: "Para fazer uma po\xE7\xE3o, \xE9 necess\xE1rio ter ingredientes. V\xE1
+          para a estufa e colha todas as plantas que estiverem dispon\xEDveis. Em
+          seguida, me encontre no caldeir\xE3o."
+        requiresMagic: 0
+  - interactionID: 2
+    sequence:
+      lines:
+      - speaker: 0
+        text: "V\xE1 coletar os ingredientes, volte aqui depois."
+        requiresMagic: 0
+  - interactionID: 3
+    sequence:
+      lines:
+      - speaker: 0
+        text: Pegou tudo? Excelente.
+        requiresMagic: 0
+      - speaker: 0
+        text: "Todos os seres vivos carregam em si uma quantidade de energia vital.
+          Essa energia \xE9 capaz de curar ferimentos, doen\xE7as e at\xE9 certas
+          maldi\xE7\xF5es."
+        requiresMagic: 0
+      - speaker: 0
+        text: "Ao criar uma po\xE7\xE3o de cura, canalizamos a energia vital das
+          plantas. Usamos sempre 3 ingredientes para atingir a quantidade de energia
+          necess\xE1ria."
+        requiresMagic: 0
+      - speaker: 0
+        text: "Cada planta tem uma propriedade curativa diferente. \xC9 importante
+          conhec\xEA-las para criar a po\xE7\xE3o certa para ajudar o paciente. Voc\xEA
+          pode consultar sobre isso sempre que quiser, no livro pr\xF3ximo ao caldeir\xE3o."
+        requiresMagic: 0
+      - speaker: 0
+        text: "Lembra-se dos sintomas que eu citei antes? Crie uma po\xE7\xE3o que
+          seja capaz de cur\xE1-los."
+        requiresMagic: 0
+  - interactionID: 4
+    sequence:
+      lines:
+      - speaker: 0
+        text: "Essa po\xE7\xE3o parece satisfat\xF3ria. V\xE1 para o balc\xE3o novamente
+          para entregar a po\xE7\xE3o."
+        requiresMagic: 0
+  - interactionID: 5
+    sequence:
+      lines:
+      - speaker: 0
+        text: Excelente, Cora.
+        requiresMagic: 0
+      - speaker: 0
+        text: "Agora, irei te ensinar um outro m\xE9todo de criar po\xE7\xF5es. Me
+          encontre no caldeir\xE3o novamente."
+        requiresMagic: 0
+  - interactionID: 6
+    sequence:
+      lines:
+      - speaker: 0
+        text: "Como eu falei, a energia vital dos seres vivos \xE9 o que usamos para
+          curar. A energia que existe nas plantas funciona bem, mas \xE9 limitada."
+        requiresMagic: 0
+      - speaker: 0
+        text: "Existe um feiti\xE7o que te permite canalizar sua pr\xF3pria energia
+          vital para a po\xE7\xE3o. A energia humana \xE9 potente e vers\xE1til."
+        requiresMagic: 0
+      - speaker: 0
+        text: "Usar sua energia vital garantir\xE1 que a po\xE7\xE3o cure o paciente,
+          independente da efic\xE1cia dos ingredientes. Por\xE9m, utiliz\xE1-la significa
+          gastar um pouco do que te mant\xE9m viva."
+        requiresMagic: 0
+      - speaker: 0
+        text: "Ao dormir, parte da sua energia vital \xE9 restaurada."
+        requiresMagic: 0
+      - speaker: 0
+        text: "Com tempo e pr\xE1tica, voc\xEA aprender\xE1 a aproveitar melhor sua
+          energia vital. Por hora, voc\xEA s\xF3 ser\xE1 capaz de usar uma vez ao
+          dia sem se prejudicar."
+        requiresMagic: 0
+      - speaker: 0
+        text: "Bom, vamos come\xE7ar. Primeiro, junte 3 ingredientes no caldeir\xE3o.
+          Como vamos utilizar o feiti\xE7o, sua escolha de ingredientes n\xE3o importa."
+        requiresMagic: 0
+  - interactionID: 7
+    sequence:
+      lines:
+      - speaker: 0
+        text: "\xD3timo. Agora, antes de completar a po\xE7\xE3o, abra o livro de
+          anota\xE7\xF5es. "
+        requiresMagic: 0
+      - speaker: 0
+        text: "Al\xE9m das informa\xE7\xF5es sobre os ingredientes, o livro tamb\xE9m
+          cont\xE9m as instru\xE7\xF5es para fazer o feiti\xE7o."
+        requiresMagic: 0
+      - speaker: 0
+        text: "O s\xEDmbolo est\xE1 na \xFAltima p\xE1gina."
+        requiresMagic: 0
+  - interactionID: 8
+    sequence:
+      lines:
+      - speaker: 1
+        text: "Ops\u2026 Acho que pronunciei uma palavra errado\u2026 Ser\xE1 que
+          estraguei o feiti\xE7o?"
+        requiresMagic: 0
+  - interactionID: 9
+    sequence:
+      lines:
+      - speaker: 1
+        text: "Oh n\xE3o\u2026 O que foi que eu fiz?"
+        requiresMagic: 0
+      - speaker: 1
+        text: "Tenho que dar um jeito nisso. Preciso encontrar uma solu\xE7\xE3o!
+          E ainda preciso cumprir o papel de curandeira da minha irm\xE3 e ajudar
+          os alde\xF5es!"
+        requiresMagic: 0
+  - interactionID: 10
+    sequence:
+      lines:
+      - speaker: 0
+        text: "Olhe o livro para n\xE3o fazer besteira."
+        requiresMagic: 0
+      - speaker: 0
+        text: "Meus sintomas s\xE3o feridas abertas, dor e enjoo."
+        requiresMagic: 0
+  - interactionID: 11
+    sequence:
+      lines:
+      - speaker: 0
+        text: "Abra o livro para finalizar a po\xE7\xE3o!"
+        requiresMagic: 0
