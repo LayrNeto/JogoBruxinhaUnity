@@ -9,6 +9,9 @@ public class TriggerArea : MonoBehaviour
     public bool oneShot = true;
     private bool hasTriggered = false;
 
+    [Header("Audio")]
+    public SoundDataSO triggerAudio;
+
     [Header("Events")]
     public UnityEvent onTriggerEnterEvent;
     
@@ -18,6 +21,8 @@ public class TriggerArea : MonoBehaviour
 
         if (other.CompareTag(targetTag))
         {
+            if (triggerAudio) AudioManager.Instance.PlaySFX(triggerAudio);
+            
             onTriggerEnterEvent?.Invoke();
 
             if (oneShot)

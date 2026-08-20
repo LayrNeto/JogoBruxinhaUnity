@@ -69,6 +69,8 @@ public class SessionDataSO : ScriptableObject, ISerializationCallbackReceiver
 
     public void AdvanceDay()
     {
+        AudioManager.Instance.StopMusic(1f);
+
         currentDay++;
         
         savedNPCState = NPCBrain.NPCState.HIDDEN;

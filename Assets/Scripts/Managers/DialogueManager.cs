@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     public Sprite playerDialogueBox;
     private Sprite currentNPCBox;
 
+    [SerializeField]
     private List<DialogueLine> currentDialogueList;
     private int currentLineIndex = 0;
     private Action dynamicOnFinishCallback;
@@ -30,17 +31,22 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        GameStateManager.Instance.inputControls.UI.SkipDialogue.performed += ctx => ShowNextLine();
+        GameStateManager.Instance.inputControls.UI.SkipDialogue.performed += OnSkipDialoguePerformed;
     }
 
     private void OnDestroy()
     {
-        if (GameStateManager.Instance != null)
+        if (GameStateManager.Instance != null && GameStateManager.Instance.inputControls != null)
         {
-            GameStateManager.Instance.inputControls.UI.SkipDialogue.performed -= ctx => ShowNextLine();
+            GameStateManager.Instance.inputControls.UI.SkipDialogue.performed -= OnSkipDialoguePerformed;
         }
     }
 
+    private void OnSkipDialoguePerformed(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
+    {
+        ShowNextLine();
+    }
+    
     public void PlayDialogue(Sprite boxSprite, List<DialogueLine> dialogue, Action onFinish = null)
     {
         currentDialogueList = dialogue;

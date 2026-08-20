@@ -2655,6 +2655,7 @@ GameObject:
   - component: {fileID: 399458598}
   - component: {fileID: 399458602}
   - component: {fileID: 399458601}
+  - component: {fileID: 399458603}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -2816,6 +2817,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 200
   m_TargetDisplay: 0
+--- !u!114 &399458603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399458596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6371803dc3b12a54a800400c14dc611f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonFX
+  hoverSound: {fileID: 11400000, guid: 42452e15c12b9b0459a78d90fce474b2, type: 2}
+  clickSound: {fileID: 11400000, guid: 55ed2e95b56b93a429f2ff0c8ff85ab3, type: 2}
 --- !u!1 &426831298
 GameObject:
   m_ObjectHideFlags: 0
@@ -3668,6 +3683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TriggerArea
   targetTag: Player
   oneShot: 1
+  triggerAudio: {fileID: 0}
   onTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
@@ -4007,6 +4023,7 @@ GameObject:
   - component: {fileID: 766710481}
   - component: {fileID: 766710485}
   - component: {fileID: 766710484}
+  - component: {fileID: 766710486}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -4168,6 +4185,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 200
   m_TargetDisplay: 0
+--- !u!114 &766710486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766710479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6371803dc3b12a54a800400c14dc611f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonFX
+  hoverSound: {fileID: 11400000, guid: 42452e15c12b9b0459a78d90fce474b2, type: 2}
+  clickSound: {fileID: 11400000, guid: 55ed2e95b56b93a429f2ff0c8ff85ab3, type: 2}
 --- !u!1 &808360529
 GameObject:
   m_ObjectHideFlags: 0
@@ -4777,7 +4808,7 @@ MonoBehaviour:
   tracker: {fileID: 11400000, guid: ba0562ea474e4a14fa723344d30c520f, type: 2}
   sessionData: {fileID: 11400000, guid: 83c8e740045d9894ca3e8c252765fbb7, type: 2}
   dir: {x: 0, y: -1}
-  companionOffset: {x: -0.74, y: 0, z: 0}
+  companionOffset: {x: -1.28, y: 0, z: 0}
   companionDir: {x: 1, y: 0}
 --- !u!1 &1014992172
 GameObject:
@@ -5187,10 +5218,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookManager
   contentImage: {fileID: 242007120}
+  tableSupport: {fileID: 1139750681}
   nextButton: {fileID: 1252745155}
   previousButton: {fileID: 1348130559}
   ritualSymbol: {fileID: 1330703656}
   turningPageSound: {fileID: 11400000, guid: e15a5e0c9943b704ab1bb7f97feb3b95, type: 2}
+  openBookSound: {fileID: 11400000, guid: 6cd9eab2e476d1749ad2aa640dacb341, type: 2}
   pages:
   - {fileID: 21300000, guid: 6d6fa5cfff140a841910b8714bd67bdc, type: 3}
   - {fileID: 21300000, guid: 1a5a51eec4156a34d9e3375aca14f191, type: 3}
@@ -8132,7 +8165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HouseManager
   npcBrain: {fileID: 736479074}
   npcTriggerArea: {fileID: 735713200}
-  doorbellArea: {fileID: 0}
+  doorbellArea: {fileID: 1763746759}
   sessionData: {fileID: 11400000, guid: 83c8e740045d9894ca3e8c252765fbb7, type: 2}
 --- !u!1 &1286842861
 GameObject:
@@ -9503,21 +9536,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TriggerArea
   targetTag: Player
   oneShot: 1
+  triggerAudio: {fileID: 11400000, guid: 7d45a93366f486446804927ce9371877, type: 2}
   onTriggerEnterEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1643213334}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySFX
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 7d45a93366f486446804927ce9371877, type: 2}
-          m_ObjectArgumentAssemblyTypeName: SoundDataSO, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!61 &1763746760
 BoxCollider2D:
   m_ObjectHideFlags: 0

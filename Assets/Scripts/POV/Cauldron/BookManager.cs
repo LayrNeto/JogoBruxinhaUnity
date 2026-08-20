@@ -5,12 +5,14 @@ public class BookManager : MonoBehaviour
 {
     [Header("References")]
     public Image contentImage;
+    public GameObject tableSupport;
     public GameObject nextButton;
     public GameObject previousButton;
     public GameObject ritualSymbol;
 
     [Header("Audio")]
     public SoundDataSO turningPageSound;
+    public SoundDataSO openBookSound;
 
     [Header("Pages")]
     public Sprite[] pages;
@@ -47,5 +49,11 @@ public class BookManager : MonoBehaviour
         previousButton.SetActive(currentPage > 0);
         ritualSymbol.SetActive(currentPage == (pages.Length -1));
         AudioManager.Instance.PlaySFX(turningPageSound);
+    }
+
+    private void OpenBook()
+    {
+        AudioManager.Instance.PlaySFX(openBookSound);
+        tableSupport.SetActive(true);
     }
 }

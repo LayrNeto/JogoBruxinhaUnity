@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: SesionData
   m_EditorClassIdentifier: Assembly-CSharp::SessionDataSO
   tutorialData: {fileID: 0}
-  isNight: 1
+  isNight: 0
   currentDay: 0
   patientsPerDay:
   - {fileID: 11400000, guid: f0270a14d8b6df14aa0917648a32be3b, type: 2}
   - {fileID: 11400000, guid: 2a0840cf11dc34748a6810cedf3654f9, type: 2}
-  currentScene: HouseScene
-  playerPos: {x: 3.75, y: -0.0625, z: 0}
-  companionPos: {x: 0.3371304, y: -1.6190046, z: 0}
+  currentScene: 
+  playerPos: {x: 0, y: 0, z: 0}
+  companionPos: {x: 0, y: 0, z: 0}
   potionAwaitingDelivery: 0
   currentPatient: {fileID: 11400000, guid: f0270a14d8b6df14aa0917648a32be3b, type: 2}
-  savedNPCState: 3
-  hasNPCSpawnedToday: 1
-  interactionCount: 4
+  savedNPCState: 0
+  hasNPCSpawnedToday: 0
+  interactionCount: 0
   plantKeys: []
   plantValues: 

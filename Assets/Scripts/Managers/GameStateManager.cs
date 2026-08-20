@@ -27,6 +27,12 @@ public class GameStateManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnDestroy()
+    {
+        inputControls?.Dispose();
+    }
+
     void Start()
     {
         GameState state = (SceneManager.GetActiveScene().name == "MainMenu") ? GameState.MENU : GameState.TOP_DOWN;
