@@ -7,6 +7,10 @@ public class CompanionAnimator : MonoBehaviour
     public CompanionBrain brain;
     public CompanionMovement movement;
 
+    private static readonly int IsWalkingHash = Animator.StringToHash("IsWalking");
+    private static readonly int IsSleepingHash = Animator.StringToHash("IsSleeping");
+    private static readonly int MoveXHash = Animator.StringToHash("MoveX");
+
     private Animator an;
     private float lastMoveX = 1f; 
 
@@ -17,11 +21,13 @@ public class CompanionAnimator : MonoBehaviour
 
     void Update()
     {
-        bool isWalking = brain.currentState == CompanionBrain.CompanionState.Following;
-        bool isSleeping = brain.currentState == CompanionBrain.CompanionState.Sleeping;
+        if (brain == null) return;
 
-        an.SetBool("IsWalking", isWalking);
-        an.SetBool("IsSleeping", isSleeping);
+        bool isWalking = brain.CurrentState == brain.FollowingState;
+        bool isSleeping = brain.CurrentState == brain.SleepingState;
+
+        an.SetBool(IsWalkingHash, isWalking);
+        an.SetBool(IsSleepingHash, isSleeping);
 
         if (isWalking)
         {
@@ -30,26 +36,26 @@ public class CompanionAnimator : MonoBehaviour
             if (Mathf.Abs(dir.x) > 0.01f)
             {
                 float moveX = Mathf.Sign(dir.x); 
-                an.SetFloat("MoveX", moveX);
+                an.SetFloat(MoveXHash, moveX);
                 lastMoveX = moveX; 
             }
         }
         else
         {
-            an.SetFloat("MoveX", lastMoveX); 
+            an.SetFloat(MoveXHash, lastMoveX); 
         }
     }
 
     public void ForceDirection(float dirX)
     {
         lastMoveX = Mathf.Sign(dirX);
-        an.SetFloat("MoveX", lastMoveX);
+        an.SetFloat(MoveXHash, lastMoveX);
     }
 
     public void SleepForTheNight()
     {
-        an.SetBool("IsWalking", false);
-        an.SetBool("IsSleeping", true);
+        an.SetBool(IsWalkingHash, false);
+        an.SetBool(IsSleepingHash, true);
         ForceDirection(-1f); 
     }
 }

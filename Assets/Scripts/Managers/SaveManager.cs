@@ -4,7 +4,7 @@ using UnityEngine;
 using Newtonsoft.Json;
 using UnityEngine.SceneManagement;
 
-public class SaveManager : MonoBehaviour
+public sealed class SaveManager : MonoBehaviour
 {
     [Header("Scriptable Objects")]
     public SessionDataSO sessionData;
@@ -93,7 +93,7 @@ public class SaveManager : MonoBehaviour
         sessionData.currentDay = data.currentDay;
         sessionData.isNight = data.isNight;
         sessionData.potionAwaitingDelivery = data.potionAwaitingDelivery;
-        sessionData.savedNPCState = (NPCBrain.NPCState)data.savedNPCState;
+        sessionData.savedNPCState = (NPCBrain.NPCStateEnum)data.savedNPCState;
         sessionData.hasNPCSpawnedToday = data.hasNPCSpawnedToday;
         sessionData.interactionCount = data.interactionCount;
         sessionData.plantDaysRemaining = new Dictionary<string, int>(data.plantDaysRemaining);

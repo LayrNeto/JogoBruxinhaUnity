@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public sealed class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
 

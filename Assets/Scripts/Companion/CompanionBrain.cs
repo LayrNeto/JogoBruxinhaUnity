@@ -1,11 +1,10 @@
+using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Interactable))]
+[RequireComponent(typeof(CompanionMovement))]
 public class CompanionBrain : MonoBehaviour
 {
-    public enum CompanionState { Idle, Following, Sleeping }
-    public CompanionState currentState = CompanionState.Idle;
-    
-
     [Header("References")]
     public EntityTrackerSO entityTracker;
     public SessionDataSO sessionData;
@@ -22,11 +21,25 @@ public class CompanionBrain : MonoBehaviour
 
     [Header("Target Tranforms")]
     public Transform bedTranform;
+
+    public IState IdleState { get; private set; }
+    public IState FollowingState { get; private set; }
+    public IState SleepingState { get; private set; }
+    public IState CurrentState { get; private set; }
     
-    private CompanionMovement movementScript;
-    private float idleTimer = 0f;             
-    private bool isMovementBlocked;
+    public CompanionMovement MovementScript { get; private set; }
     private Interactable interactable;
+    private bool isMovementBlocked;
+
+    private void Awake()
+    {
+        MovementScript = GetComponent<CompanionMovement>();
+        interactable = GetComponent<Interactable>();
+
+        IdleState = new CompanionIdleState(this);
+        FollowingState = new CompanionFollowingState(this);
+        SleepingState = new CompanionSleepingState(this);
+    }
 
     private void OnEnable()
     {
@@ -35,78 +48,35 @@ public class CompanionBrain : MonoBehaviour
 
     private void OnDisable()
     {
-        if (entityTracker.companion == this) entityTracker.companion = null;
+        if (entityTracker.companion == this) 
+            entityTracker.companion = null;
     }
 
     void Start()
     {
-        movementScript = GetComponent<CompanionMovement>();
-        interactable = GetComponent<Interactable>();
+        if (sessionData && sessionData.isNight)
+        {
+            GoSleepForTheNight();
+            return;
+        }
 
-        if (sessionData && sessionData.isNight) GoSleepForTheNight();
+        ChangeState(IdleState);
     }
 
     void Update()
     {
         if (isMovementBlocked || targetPlayer == null) return;
 
-        float distanceToPlayer = Vector2.Distance(transform.position, targetPlayer.position);
-
-        switch (currentState)
-        {
-            case CompanionState.Idle:
-                StateIdle(distanceToPlayer);
-                break;
-
-            case CompanionState.Following:
-                StateFollowing(distanceToPlayer);
-                break;
-
-            case CompanionState.Sleeping:
-                StateSleeping(distanceToPlayer);
-                break;
-        }
+        CurrentState?.Update();
     }
 
-    private void StateIdle(float distance)
+    public void ChangeState(IState newState)
     {
-        movementScript.StopFollowing();
+        if (newState == null || CurrentState == newState) return;
 
-        if (distance > distanceToStartFollowing)
-        {
-            currentState = CompanionState.Following;
-            idleTimer = 0f;
-        }
-        else
-        {
-            idleTimer += Time.deltaTime;
-            if (idleTimer >= timeToFallAsleep && distance <= distanceToStopSleeping)
-            {
-                currentState = CompanionState.Sleeping;
-            }
-        }
-    }
-
-    private void StateFollowing(float distance)
-    {
-        movementScript.StartFollowing();
-
-        if (distance <= distanceToStop)
-        {
-            currentState = CompanionState.Idle;
-            idleTimer = 0f;
-        }
-    }
-
-    private void StateSleeping(float distance)
-    {
-        movementScript.StopFollowing();
-
-        if (distance > distanceToStopSleeping)
-        {
-            currentState = CompanionState.Idle;
-            idleTimer = 0f;
-        }
+        CurrentState?.Exit();
+        CurrentState = newState;
+        CurrentState.Enter();
     }
 
     public void ChangeIdleDirection(Vector2 newDir)
@@ -123,9 +93,9 @@ public class CompanionBrain : MonoBehaviour
 
     public void GoSleepForTheNight()
     {
-        currentState = CompanionState.Sleeping;
+        CurrentState = SleepingState;
         
-        if (movementScript != null) movementScript.DisableMovement();
+        if (MovementScript != null) MovementScript.DisableMovement();
         if (childAnimator != null) childAnimator.SleepForTheNight();
 
         transform.position = bedTranform.position;

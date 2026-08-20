@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class DialogueManager : MonoBehaviour
+public sealed class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance { get; private set; }
 

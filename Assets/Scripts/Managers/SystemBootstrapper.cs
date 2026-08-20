@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SystemBootstrapper : MonoBehaviour
+public  class SystemBootstrapper : MonoBehaviour
 {
     [Header("Managers")]
     public SaveManager saveManager;

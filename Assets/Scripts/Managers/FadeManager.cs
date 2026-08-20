@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class FadeManager : MonoBehaviour
+public sealed class FadeManager : MonoBehaviour
 {
     public static FadeManager Instance { get; private set; }
 

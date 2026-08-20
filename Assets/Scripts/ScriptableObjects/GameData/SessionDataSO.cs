@@ -24,7 +24,7 @@ public class SessionDataSO : ScriptableObject, ISerializationCallbackReceiver
 
     [Header("NPC Daily State")]
     public PatientDataSO currentPatient;
-    public NPCBrain.NPCState savedNPCState = NPCBrain.NPCState.HIDDEN;
+    public NPCBrain.NPCStateEnum savedNPCState = NPCBrain.NPCStateEnum.HIDDEN;
     public bool hasNPCSpawnedToday = false;
     public int interactionCount = 0;
 
@@ -45,7 +45,7 @@ public class SessionDataSO : ScriptableObject, ISerializationCallbackReceiver
         playerPos = Vector3.zero;
         companionPos = Vector3.zero;
 
-        savedNPCState = NPCBrain.NPCState.HIDDEN;
+        savedNPCState = NPCBrain.NPCStateEnum.HIDDEN;
         potionAwaitingDelivery = false;
         hasNPCSpawnedToday = false;
         isNight = false;
@@ -73,7 +73,7 @@ public class SessionDataSO : ScriptableObject, ISerializationCallbackReceiver
 
         currentDay++;
         
-        savedNPCState = NPCBrain.NPCState.HIDDEN;
+        savedNPCState = NPCBrain.NPCStateEnum.HIDDEN;
         potionAwaitingDelivery = false;
         hasNPCSpawnedToday = false;
         isNight = false;

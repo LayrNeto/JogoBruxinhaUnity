@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameStateManager : MonoBehaviour
+public sealed class GameStateManager : MonoBehaviour
 {
     public static GameStateManager Instance { get; private set; }
     

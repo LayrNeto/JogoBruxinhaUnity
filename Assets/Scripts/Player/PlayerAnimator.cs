@@ -4,6 +4,14 @@ using UnityEngine;
 public class PlayerAnimator : MonoBehaviour
 {
     public PlayerController player;
+
+    private static readonly int RunMultiplierHash = Animator.StringToHash("RunMultiplier");
+    private static readonly int MoveXHash = Animator.StringToHash("MoveX");
+    private static readonly int MoveYHash = Animator.StringToHash("MoveY");
+    private static readonly int LastMoveXHash = Animator.StringToHash("LastMoveX");
+    private static readonly int LastMoveYHash = Animator.StringToHash("LastMoveY");
+    private static readonly int SpeedHash = Animator.StringToHash("Speed");
+
     private Animator an;
 
     void Start()
@@ -26,11 +34,11 @@ public class PlayerAnimator : MonoBehaviour
 
         float multiplier = player.IsRunning ? 1.8f : 1f;
 
-        an.SetFloat("RunMultiplier", multiplier);
-        an.SetFloat("MoveX", animInput.x);
-        an.SetFloat("MoveY", animInput.y);        
-        an.SetFloat("LastMoveX", animLastDir.x);
-        an.SetFloat("LastMoveY", animLastDir.y);
-        an.SetFloat("Speed", player.MovementInput.sqrMagnitude); 
+        an.SetFloat(RunMultiplierHash, multiplier);
+        an.SetFloat(MoveXHash, animInput.x);
+        an.SetFloat(MoveYHash, animInput.y);        
+        an.SetFloat(LastMoveXHash, animLastDir.x);
+        an.SetFloat(LastMoveYHash, animLastDir.y);
+        an.SetFloat(SpeedHash, player.MovementInput.sqrMagnitude); 
     }
 }

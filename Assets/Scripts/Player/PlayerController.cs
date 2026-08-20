@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         if (GameStateManager.Instance != null) GameStateManager.Instance.inputControls.Player.Dash.performed -= AttemptDash;
     }
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
