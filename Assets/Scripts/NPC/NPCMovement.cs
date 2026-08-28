@@ -41,19 +41,17 @@ public class NPCMovement : MonoBehaviour
 
     private IEnumerator MoveRoutine(Vector2 targetPos, Action onArrived)
     {
-        float distance = Vector2.Distance(rb.position, targetPos);
+        const float stopThresholdSqr = 0.05f * 0.05f;
 
-        while (distance > 0.05f)
+        while ((targetPos - rb.position).sqrMagnitude > stopThresholdSqr)
         {
             Vector2 newPos = Vector2.MoveTowards(rb.position, targetPos, currentSpeed * Time.fixedDeltaTime);
             rb.MovePosition(newPos);
 
             yield return new WaitForFixedUpdate();
-            
-            distance = Vector2.Distance(rb.position, targetPos);
         }
-        rb.MovePosition(targetPos);
 
+        rb.MovePosition(targetPos);
         onArrived?.Invoke();
     }
     

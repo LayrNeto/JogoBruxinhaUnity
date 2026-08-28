@@ -17,20 +17,25 @@ public sealed class CompanionIdleState : IState
     }
 
     public void Update()
+{
+    Vector2 diff = (Vector2)brain.targetPlayer.position - (Vector2)brain.transform.position;
+    float sqrDistance = diff.sqrMagnitude;
+
+    float sqrDistanceToFollow = brain.distanceToStartFollowing * brain.distanceToStartFollowing;
+    if (sqrDistance > sqrDistanceToFollow)
     {
-        float distance = Vector2.Distance(brain.transform.position, brain.targetPlayer.transform.position);
-
-        if (distance > brain.distanceToStartFollowing)
-        {
-            brain.ChangeState(brain.FollowingState);
-            return;
-        }
-
-        idleTimer += Time.deltaTime;
-        
-        if (idleTimer >= brain.timeToFallAsleep && distance <= brain.distanceToStopSleeping)
-            brain.ChangeState(brain.SleepingState);
+        brain.ChangeState(brain.FollowingState);
+        return;
     }
+
+    idleTimer += Time.deltaTime;
+
+    float sqrDistanceToSleep = brain.distanceToStopSleeping * brain.distanceToStopSleeping;
+    if (idleTimer >= brain.timeToFallAsleep && sqrDistance <= sqrDistanceToSleep)
+    {
+        brain.ChangeState(brain.SleepingState);
+    }
+}
 
     public void Exit() {}
 

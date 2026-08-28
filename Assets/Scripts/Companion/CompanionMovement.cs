@@ -35,8 +35,9 @@ public class CompanionMovement : MonoBehaviour
         Vector2 myPos = (Vector2)transform.position + new Vector2(0, centerHeight);
         Vector2 targetPos = (Vector2)target.position;
 
-        float distance = Vector2.Distance(myPos, targetPos);
-        Vector2 dir = (targetPos - myPos).normalized;
+        Vector2 diff = targetPos - myPos;
+        float distance = diff.magnitude;
+        Vector2 dir = (distance > 0.0001f) ? diff / distance : Vector2.zero;
 
         RaycastHit2D hit = Physics2D.CircleCast(myPos, radius, dir, distance, obstaclesLayer);
 

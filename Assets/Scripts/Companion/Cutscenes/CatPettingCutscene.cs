@@ -31,6 +31,11 @@ public class CatPettingCutscene : MonoBehaviour
     public float walkSpeed = 2f;
     public float timeout = 0.8f;
 
+    private static readonly int PettingRightHash = Animator.StringToHash("PettingRight");
+    private static readonly int PettingLeftHash = Animator.StringToHash("PettingLeft");
+    private static readonly int LoopRightHash = Animator.StringToHash("LoopRight");
+    private static readonly int LoopLeftHash = Animator.StringToHash("LoopLeft");
+
     private Coroutine audioLoopCoroutine;
 
     void Update()
@@ -59,45 +64,49 @@ public class CatPettingCutscene : MonoBehaviour
         Transform targetPoint = playerOnRight ? pointRight : pointLeft;
 
         float timer = 0f;
-        float distance = Vector2.Distance(playerRb.position, targetPoint.position);
+        const float stopThresholdSqr = 0.05f * 0.05f;
 
-        while (distance > 0.05f)
+        Vector2 targetPos = targetPoint.position;
+        Vector2 diff = targetPos - playerRb.position;
+
+        while (diff.sqrMagnitude > stopThresholdSqr)
         {
             if (timer >= timeout)
             {
                 GameStateManager.Instance.PopState();
-                yield break; 
+                yield break;
             }
 
-            Vector2 walkDir = (targetPoint.position - playerRb.transform.position).normalized;
+            Vector2 walkDir = diff.normalized;
             playerController.StartAutoWalk(walkDir);
 
-            Vector2 newPos = Vector2.MoveTowards(playerRb.position, targetPoint.position, walkSpeed * Time.fixedDeltaTime);
+            Vector2 newPos = Vector2.MoveTowards(playerRb.position, targetPos, walkSpeed * Time.fixedDeltaTime);
             playerRb.MovePosition(newPos);
 
             timer += Time.fixedDeltaTime;
-            distance = Vector2.Distance(playerRb.position, targetPoint.position);
-            
-            yield return new WaitForFixedUpdate(); 
+            yield return new WaitForFixedUpdate();
+
+            diff = targetPos - playerRb.position;
         }
+
         yield return null;
 
         playerSR.enabled = false;
         catSR.enabled = false;
         puppetVisuals.SetActive(true);
-        catInteractable.canInteract = false; 
+        catInteractable.canInteract = false;
 
         puppetVisuals.transform.localPosition = playerOnRight ? offsetRight : offsetLeft;
 
         if (playerOnRight)
         {
             playerController.StopAutoWalk(new Vector2(-1, 0));
-            puppetAnimator.Play("PettingRight");
+            puppetAnimator.Play(PettingRightHash);
         }
         else
         {
             playerController.StopAutoWalk(new Vector2(1, 0));
-            puppetAnimator.Play("PettingLeft");
+            puppetAnimator.Play(PettingLeftHash);
         }
 
         if (audioLoopCoroutine != null) StopCoroutine(audioLoopCoroutine);
@@ -107,7 +116,7 @@ public class CatPettingCutscene : MonoBehaviour
 
         if (puppetVisuals.activeInHierarchy)
         {
-            puppetAnimator.Play(playerOnRight ? "LoopRight" : "LoopLeft");
+            puppetAnimator.Play(playerOnRight ? LoopRightHash : LoopLeftHash);
         }
     }
 

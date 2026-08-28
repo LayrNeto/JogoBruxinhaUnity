@@ -23,8 +23,8 @@ MonoBehaviour:
   companionPos: {x: 0, y: 0, z: 0}
   potionAwaitingDelivery: 0
   currentPatient: {fileID: 11400000, guid: f0270a14d8b6df14aa0917648a32be3b, type: 2}
-  savedNPCState: 0
-  hasNPCSpawnedToday: 0
-  interactionCount: 0
+  savedNPCState: 2
+  hasNPCSpawnedToday: 1
+  interactionCount: 1
   plantKeys: []
   plantValues: 

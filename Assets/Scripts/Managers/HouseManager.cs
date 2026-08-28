@@ -31,6 +31,7 @@ public class HouseManager : MonoBehaviour
     {
         Debug.Log("Dormindo... Iniciando fade out.");
         string currentScene = SceneManager.GetActiveScene().name;
+        AudioManager.Instance.StopMusic(1f);
         
         FadeManager.Instance.StartTransition(currentScene, "BedSpawn", 1.5f, 1.5f, () => 
         {

@@ -16,9 +16,11 @@ public sealed class CompanionFollowingState : IState
 
     public void Update()
     {
-        float distance = Vector2.Distance(brain.transform.position, brain.targetPlayer.transform.position);
+        Vector2 diff = (Vector2)brain.targetPlayer.position - (Vector2)brain.transform.position;
+        float sqrDistance = diff.sqrMagnitude;
 
-        if (distance <= brain.distanceToStop)
+        float sqrDistanceToStop = brain.distanceToStop * brain.distanceToStop;
+        if (sqrDistance <= sqrDistanceToStop)
             brain.ChangeState(brain.IdleState);
     }
 

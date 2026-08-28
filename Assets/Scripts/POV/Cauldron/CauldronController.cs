@@ -34,11 +34,17 @@ public class CauldronController : MonoBehaviour, IDropHandler, IPointerClickHand
     public Action<bool> onPotionFinished;
 
     private HashSet<PlantDataSO> currentIngredients = new HashSet<PlantDataSO>();
-    private readonly int maxIngredients = 3;
+    private readonly int MaxIngredients = 3;
+
+    private static readonly int PotionReadyHash = Animator.StringToHash("PotionReady");
+    private static readonly int SpellUsedHash = Animator.StringToHash("SpellUsed");
+    private static readonly int PotionStartedHash = Animator.StringToHash("PotionStarted");
+    private static readonly int CauldronSpellUsedStateHash = Animator.StringToHash("cauldronSpellUsed");
+    private static readonly int CauldronPotionFinishedStateHash = Animator.StringToHash("cauldronPotionFinished");
 
     private void OnEnable()
     {
-        if (!popup) Debug.Log("Missing popup reference on cauldron canvas!");
+        if (!popup) Debug.LogWarning("Missing popup reference on cauldron canvas!");
 
         if (sessionData && sessionData.potionAwaitingDelivery)
         {
@@ -51,11 +57,11 @@ public class CauldronController : MonoBehaviour, IDropHandler, IPointerClickHand
                     wasSpellUsed = inventoryData.craftedPotions[0].isSpellUsed; 
                 }
 
-                cauldronAnimator.SetBool("PotionReady", true);
-                cauldronAnimator.SetBool("SpellUsed", wasSpellUsed);
+                cauldronAnimator.SetBool(PotionReadyHash, true);
+                cauldronAnimator.SetBool(SpellUsedHash, wasSpellUsed);
 
-                string stateName = wasSpellUsed ? "cauldronSpellUsed" : "cauldronPotionFinished"; 
-                cauldronAnimator.Play(stateName); 
+                int targetStateHash = wasSpellUsed ? CauldronSpellUsedStateHash : CauldronPotionFinishedStateHash;
+                cauldronAnimator.Play(targetStateHash); 
             }
         }
         else
@@ -63,7 +69,8 @@ public class CauldronController : MonoBehaviour, IDropHandler, IPointerClickHand
             currentIngredients.Clear();
             ResetVisuals();
         }
-            popup.gameObject.SetActive(false);
+
+        if (popup) popup.gameObject.SetActive(false);
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -74,48 +81,45 @@ public class CauldronController : MonoBehaviour, IDropHandler, IPointerClickHand
             return;
         }
 
+        if (eventData.pointerDrag == null) return;
+
         IngredientSlot draggedSlot = eventData.pointerDrag.GetComponent<IngredientSlot>();
         
-        if (draggedSlot)
+        if (draggedSlot == null) return;
+
+        if (onValidateIngredientDrop != null && !onValidateIngredientDrop.Invoke(draggedSlot.plantData)) return; 
+
+        if (currentIngredients.Count >= MaxIngredients)
         {
-            if (onValidateIngredientDrop != null && !onValidateIngredientDrop.Invoke(draggedSlot.plantData))
-            {
-                return; 
-            }
+            ShowErrorMessage("O caldeirao já está cheio");
+            return;
+        }
 
-            if (currentIngredients.Count < maxIngredients)
-            {
-                if (currentIngredients.Add(draggedSlot.plantData))
-                {
-                    AudioManager.Instance.PlaySFX(ingredientAddedSound);
+        if (currentIngredients.Add(draggedSlot.plantData))
+        {
+            AudioManager.Instance.PlaySFX(ingredientAddedSound);
 
-                    bool hasBg = draggedSlot.backgroundImg.sprite != null ? true : false;
-                    UpdateFloatingIcons(draggedSlot.plantData.dragSprite, hasBg);
-                    
-                    string message = (currentIngredients.Count == maxIngredients) ? "Clique no caldeirão para engarrafar a poção" : "Ingrediente adicionado";
-                    popup.ShowMessage(message);
+            bool hasBg = draggedSlot.backgroundImg.sprite != null;
+            UpdateFloatingIcons(draggedSlot.plantData.dragSprite, hasBg);
+            
+            string message = (currentIngredients.Count == MaxIngredients) ? "Clique no caldeirão para engarrafar a poção" : "Ingrediente adicionado";
+            if (popup) popup.ShowMessage(message);
 
-                    if (cauldronAnimator != null)
-                    {
-                        cauldronAnimator.SetBool("PotionStarted", true);
-                    }
+            if (cauldronAnimator != null)
+                cauldronAnimator.SetBool("PotionStarted", true);
 
-                    onIngredientAdded?.Invoke(currentIngredients.Count);
-                }
-                else
-                {
-                    ShowErrorMessage("Ingrediente repetido");
-                }
-            }
-            else
-            {
-               ShowErrorMessage("O caldeirao já está cheio");
-            }
+            onIngredientAdded?.Invoke(currentIngredients.Count);
+        }
+        else
+        {
+            ShowErrorMessage("Ingrediente repetido");
         }
     }
 
     private void UpdateFloatingIcons(Sprite ingredientSprite, bool hasBg)
     {
+        if (floatingIcons == null) return;
+        
         for (int i = 0; i < floatingIcons.Length; i++)
         {
             if (!floatingIcons[i].enabled)
@@ -140,19 +144,12 @@ public class CauldronController : MonoBehaviour, IDropHandler, IPointerClickHand
             return;
         }
 
-        if (onValidateCauldronClick != null && !onValidateCauldronClick.Invoke())
-        {
-            return; 
-        }
-
-        if (currentIngredients.Count == maxIngredients)
-        {
+        if (onValidateCauldronClick != null && !onValidateCauldronClick.Invoke()) return; 
+    
+        if (currentIngredients.Count == MaxIngredients)
             FinishPotion(false);
-        }
         else
-        {
-            ShowErrorMessage($"Adicione {maxIngredients} ingredientes primeiro");
-        }
+            ShowErrorMessage($"Adicione {MaxIngredients} ingredientes primeiro");
     }
 
     public void BrewWithMagic()
@@ -163,15 +160,16 @@ public class CauldronController : MonoBehaviour, IDropHandler, IPointerClickHand
             return;
         }
 
-        if (currentIngredients.Count == maxIngredients)
+        if (currentIngredients.Count == MaxIngredients)
         {
             AudioManager.Instance.PlaySFX(spellCastedSound);
-            spellFilter.SetActive(true);
+            if (spellFilter) spellFilter.SetActive(true);
+
             FinishPotion(true);
         }
         else
         {
-            ShowErrorMessage($"Adicione {maxIngredients} ingredientes primeiro");
+            ShowErrorMessage($"Adicione {MaxIngredients} ingredientes primeiro");
         }
     }
 
@@ -180,9 +178,7 @@ public class CauldronController : MonoBehaviour, IDropHandler, IPointerClickHand
         AudioManager.Instance.PlaySFX(potionPreparedSound);
 
         if (sessionData != null)
-        {
             sessionData.potionAwaitingDelivery = true;
-        }
 
         PotionDataSO visualToken = isSpellUsed ? magicPotionVisual : normalPotionVisual;
         BrewedPotion potion = new BrewedPotion(currentIngredients, isSpellUsed, visualToken);
@@ -193,9 +189,11 @@ public class CauldronController : MonoBehaviour, IDropHandler, IPointerClickHand
 
             foreach (ItemDataSO item in currentIngredients)
             {
-                inventoryData.savedInv[item] -= 1;
+                if (inventoryData.savedInv.ContainsKey(item))
+                    inventoryData.savedInv[item] -= 1;
             }
-            ingredientManager.UpdateShelves();
+            
+            if (ingredientManager) ingredientManager.UpdateShelves();
         }
 
         currentIngredients.Clear();
@@ -203,8 +201,8 @@ public class CauldronController : MonoBehaviour, IDropHandler, IPointerClickHand
         
         if (cauldronAnimator)
         {
-            cauldronAnimator.SetBool("PotionReady", true);
-            cauldronAnimator.SetBool("SpellUsed", isSpellUsed);
+            cauldronAnimator.SetBool(PotionReadyHash, true);
+            cauldronAnimator.SetBool(SpellUsedHash, isSpellUsed);
         }
 
         if (popup) popup.ShowMessage("Poção enviada para o inventário");
@@ -214,15 +212,15 @@ public class CauldronController : MonoBehaviour, IDropHandler, IPointerClickHand
 
     private void ResetVisuals()
     {
-        foreach (Image icon in floatingIcons)
-        {
-            icon.enabled = false;
-            icon.sprite = null;
-        }
+        if (floatingIcons != null)
+            foreach (Image icon in floatingIcons)
+            {
+                icon.enabled = false;
+                icon.sprite = null;
+            }
+
         if (cauldronAnimator != null)
-        {
             cauldronAnimator.SetBool("PotionStarted", false);
-        }
     }
 
     private void ShowErrorMessage(string popupText)

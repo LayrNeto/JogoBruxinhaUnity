@@ -49,34 +49,33 @@ public class InteractionController : MonoBehaviour
     }
 
     private void UpdateClosestTarget()
+{
+    interactablesInRange.RemoveAll(item => item == null);
+
+    if (interactablesInRange.Count == 0) { ClearTarget(); return; }
+
+    Interactable closest = null;
+    float minSqrDistance = float.MaxValue;
+    Vector2 playerPos = transform.position;
+
+    foreach (Interactable item in interactablesInRange)
     {
-        interactablesInRange.RemoveAll(item => item == null);
+        if (!item.IsAvailable()) continue;
 
-        if (interactablesInRange.Count == 0) { ClearTarget(); return; }
-
-        Interactable closest = null;
-        float minDistance = float.MaxValue;
-        Vector2 playerPos = transform.position;
-
-        foreach (Interactable item in interactablesInRange)
+        float sqrDist = ((Vector2)item.transform.position - playerPos).sqrMagnitude;
+        if (sqrDist < minSqrDistance)
         {
-            if (!item.IsAvailable()) continue;
-
-            float dist = Vector2.Distance(playerPos, item.transform.position);
-
-            if (dist < minDistance)
-            {
-                minDistance = dist;
-                closest = item;
-            }
-        }
-
-        if (closest != currentTarget)
-        {
-            if (closest != null) SetNewTarget(closest);
-            else ClearTarget();
+            minSqrDistance = sqrDist;
+            closest = item;
         }
     }
+
+    if (closest != currentTarget)
+    {
+        if (closest != null) SetNewTarget(closest);
+        else ClearTarget();
+    }
+}
 
     private void SetNewTarget(Interactable target)
     {

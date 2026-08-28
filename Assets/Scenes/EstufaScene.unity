@@ -3394,6 +3394,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 49547337}
     - target: {fileID: 3676305069059380762, guid: 4bf6a4bcd3b486447a92d6dd428b7876, type: 3}
+      propertyPath: fadeOutTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676305069059380762, guid: 4bf6a4bcd3b486447a92d6dd428b7876, type: 3}
       propertyPath: spawnDestinyID
       value: HouseFromEstufa
       objectReference: {fileID: 0}
