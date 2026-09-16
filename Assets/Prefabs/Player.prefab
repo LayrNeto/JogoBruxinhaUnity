@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &798420313155365241
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6688649337913671210}
-  m_Layer: 0
-  m_Name: Visuals
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6688649337913671210
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 798420313155365241}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 453586322967329908}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3208688599741281793
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,8 +31,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6688649337913671210}
+  m_Children: []
   m_Father: {fileID: 8669868272548857714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1696788780972983334
@@ -159,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b26beae28fb28a48aa34545df15f152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
-  player: {fileID: 4905367385868197771}
+  _player: {fileID: 0}
 --- !u!1 &5216034517504060945
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,13 +251,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94827de3eccebe84aa1e87a61362f847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  entityTracker: {fileID: 11400000, guid: ba0562ea474e4a14fa723344d30c520f, type: 2}
-  moveSpeed: 2.5
-  runMultiplier: 1.5
-  dashSpeed: 25
-  dashDuration: 0.12
-  dashCooldown: 1
-  isAutoWalking: 0
+  _entityTracker: {fileID: 0}
+  _moveSpeed: 5
+  _runMultiplier: 1.5
+  _dashSpeed: 6
+  _dashDuration: 0.12
+  _dashCooldown: 1
 --- !u!114 &3324781230997578228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,8 +269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f90ca1182fe364286de77ceafc0a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionController
-  showUIEvent: {fileID: 11400000, guid: 50d44c30b00ff1247b91a09d1ab6f0cf, type: 2}
-  hideUIEvent: {fileID: 11400000, guid: 79b0fa9f2906d8c4eac08201abafd9d1, type: 2}
+  _showUIEvent: {fileID: 0}
+  _hideUIEvent: {fileID: 0}
 --- !u!114 &5501153500145956266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,8 +283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7649301032efaa24898b8abfb2f6919c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
-  toggleInventoryEvent: {fileID: 11400000, guid: 0a19627dd879bf94ea6a1aa649775476, type: 2}
-  inventorySO: {fileID: 11400000, guid: e11c5374a0df63d4fa1836207585af58, type: 2}
+  _toggleInventoryEvent: {fileID: 0}
+  _inventorySO: {fileID: 0}
 --- !u!114 &6393822752900608768
 MonoBehaviour:
   m_ObjectHideFlags: 0

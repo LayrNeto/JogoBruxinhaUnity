@@ -44,19 +44,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5436412408fe6894f9d927b3f1e28a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveManager
-  sessionData: {fileID: 11400000, guid: 83c8e740045d9894ca3e8c252765fbb7, type: 2}
-  tutorialData: {fileID: 11400000, guid: dd7bbb90fbb79ed44a0edb6e175bce7f, type: 2}
-  inventoryData: {fileID: 11400000, guid: e11c5374a0df63d4fa1836207585af58, type: 2}
-  tracker: {fileID: 11400000, guid: ba0562ea474e4a14fa723344d30c520f, type: 2}
-  allItemsDatabase:
+  _sessionData: {fileID: 11400000, guid: 83c8e740045d9894ca3e8c252765fbb7, type: 2}
+  _tutorialData: {fileID: 11400000, guid: dd7bbb90fbb79ed44a0edb6e175bce7f, type: 2}
+  _inventoryData: {fileID: 11400000, guid: e11c5374a0df63d4fa1836207585af58, type: 2}
+  _tracker: {fileID: 11400000, guid: ba0562ea474e4a14fa723344d30c520f, type: 2}
+  _allItemsDatabase:
   - {fileID: 11400000, guid: 3b002a218d69dfa42969e5f850cf972f, type: 2}
   - {fileID: 11400000, guid: 39298dfe97f7a2e459cfbacf25531be6, type: 2}
   - {fileID: 11400000, guid: 341445148ca031f4e8e7fe81e7fa2890, type: 2}
   - {fileID: 11400000, guid: c8104816b34717d489f65bf2dd3ca45a, type: 2}
   - {fileID: 11400000, guid: e143f2938045b3a4da2b762a5815adcc, type: 2}
   - {fileID: 11400000, guid: 5d8ecbddf24eb034cb399c22513dd774, type: 2}
-  - {fileID: 11400000, guid: 8ad534602b73e9d46ab67a67b6e138fc, type: 2}
   - {fileID: 11400000, guid: 865f970153d8c2f42bb1af6f8b93aafc, type: 2}
+  - {fileID: 11400000, guid: 8ad534602b73e9d46ab67a67b6e138fc, type: 2}
 --- !u!1 &4649738360524264781
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,8 +103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cde2f20b4a370448908e6d715d12249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  musicSource: {fileID: 9153358918461327443}
-  uiSource: {fileID: 115354753480765444}
+  _musicSource: {fileID: 9153358918461327443}
+  _uiSource: {fileID: 115354753480765444}
 --- !u!82 &9153358918461327443
 AudioSource:
   m_ObjectHideFlags: 0
@@ -430,7 +430,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.39426, y: -1.88806, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0141, y: 1.0141, z: 1.0141}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7285910350542457171}
@@ -463,10 +463,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77d270d905c8c34c8bb6f8d2f1dd4ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SystemBootstrapper
-  saveManager: {fileID: 3238888795217880916}
-  gameStateManager: {fileID: 1532984620930140679}
-  fadeManager: {fileID: 3468953195631588733}
-  audioManager: {fileID: 6933766716979525731}
+  _fadeManager: {fileID: 3468953195631588733}
+  _audioManager: {fileID: 6933766716979525731}
 --- !u!1 &6843546075914114318
 GameObject:
   m_ObjectHideFlags: 0

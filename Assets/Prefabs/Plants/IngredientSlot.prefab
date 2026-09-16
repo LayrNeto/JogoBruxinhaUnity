@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b7d4f21763a214ba8ad695af27c185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IngredientSlot
-  backgroundImg: {fileID: 4515667303714169891}
-  foregroundImg: {fileID: 7873733793704377422}
-  amount: {fileID: 2757563891646254429}
-  plantData: {fileID: 0}
+  _backgroundImg: {fileID: 4515667303714169891}
+  _foregroundImg: {fileID: 7873733793704377422}
+  _amount: {fileID: 2757563891646254429}
+  _plantData: {fileID: 0}

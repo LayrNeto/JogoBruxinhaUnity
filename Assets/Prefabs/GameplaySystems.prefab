@@ -51,7 +51,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &137187964658457490
 RectTransform:
   m_ObjectHideFlags: 0
@@ -149,11 +149,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f114913f39c064c47a6b8c658d6d6f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  dialogueCanvasRoot: {fileID: 655520995375777139}
-  nextButton: {fileID: 0}
-  dialogueBackgroundImage: {fileID: 1133240632301923118}
-  dialogueText: {fileID: 5252908332713974916}
-  playerDialogueBox: {fileID: 21300000, guid: 826dc37ace09c5742a42aa631c1a6b67, type: 3}
+  _dialogueCanvasRoot: {fileID: 655520995375777139}
+  _nextButton: {fileID: 1135098027061722026}
+  _dialogueBackgroundImage: {fileID: 1133240632301923118}
+  _dialogueText: {fileID: 5252908332713974916}
+  _playerDialogueBox: {fileID: 21300000, guid: 826dc37ace09c5742a42aa631c1a6b67, type: 3}
 --- !u!1 &1135098027061722026
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3738397705891047730
 RectTransform:
   m_ObjectHideFlags: 0
@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 8436645036306781582}
   - component: {fileID: 3707465215636695080}
   - component: {fileID: 3007815149401852909}
-  - component: {fileID: 3783101828365672764}
+  - component: {fileID: 2489257192932958271}
   m_Layer: 5
   m_Name: Save
   m_TagString: Untagged
@@ -532,9 +532,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 179294208606418072}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -244}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 248, y: 88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8436645036306781582
@@ -631,7 +631,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3783101828365672764
+--- !u!114 &2489257192932958271
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -642,9 +642,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6371803dc3b12a54a800400c14dc611f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonFX
-  hoverSound: {fileID: 11400000, guid: 42452e15c12b9b0459a78d90fce474b2, type: 2}
-  clickSound: {fileID: 11400000, guid: 55ed2e95b56b93a429f2ff0c8ff85ab3, type: 2}
+  m_EditorClassIdentifier: JogoBruxinha.Core::JogoBruxinha.Core.UI.ButtonFX
+  _hoverSound: {fileID: 11400000, guid: 42452e15c12b9b0459a78d90fce474b2, type: 2}
+  _clickSound: {fileID: 11400000, guid: 55ed2e95b56b93a429f2ff0c8ff85ab3, type: 2}
 --- !u!1 &1987690580092526131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,7 +1032,7 @@ GameObject:
   - component: {fileID: 153814468149067874}
   - component: {fileID: 3925162221349379128}
   - component: {fileID: 6973936852943859381}
-  - component: {fileID: 1227594470682913779}
+  - component: {fileID: 1333551079335552885}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -1054,9 +1054,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 179294208606418072}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -344}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 248, y: 88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &153814468149067874
@@ -1153,7 +1153,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1227594470682913779
+--- !u!114 &1333551079335552885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1164,9 +1164,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6371803dc3b12a54a800400c14dc611f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonFX
-  hoverSound: {fileID: 11400000, guid: 42452e15c12b9b0459a78d90fce474b2, type: 2}
-  clickSound: {fileID: 11400000, guid: 55ed2e95b56b93a429f2ff0c8ff85ab3, type: 2}
+  m_EditorClassIdentifier: JogoBruxinha.Core::JogoBruxinha.Core.UI.ButtonFX
+  _hoverSound: {fileID: 11400000, guid: 42452e15c12b9b0459a78d90fce474b2, type: 2}
+  _clickSound: {fileID: 11400000, guid: 55ed2e95b56b93a429f2ff0c8ff85ab3, type: 2}
 --- !u!1 &4736755520880985269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,7 +1179,7 @@ GameObject:
   - component: {fileID: 5503810721527651685}
   - component: {fileID: 9218681698000553470}
   - component: {fileID: 2712552284362818890}
-  - component: {fileID: 6583441167485160296}
+  - component: {fileID: 6131234852656287961}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -1201,9 +1201,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 179294208606418072}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -144}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 248, y: 88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5503810721527651685
@@ -1300,7 +1300,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6583441167485160296
+--- !u!114 &6131234852656287961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1311,9 +1311,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6371803dc3b12a54a800400c14dc611f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonFX
-  hoverSound: {fileID: 11400000, guid: 42452e15c12b9b0459a78d90fce474b2, type: 2}
-  clickSound: {fileID: 11400000, guid: 55ed2e95b56b93a429f2ff0c8ff85ab3, type: 2}
+  m_EditorClassIdentifier: JogoBruxinha.Core::JogoBruxinha.Core.UI.ButtonFX
+  _hoverSound: {fileID: 11400000, guid: 42452e15c12b9b0459a78d90fce474b2, type: 2}
+  _clickSound: {fileID: 11400000, guid: 55ed2e95b56b93a429f2ff0c8ff85ab3, type: 2}
 --- !u!1 &5267281789832325631
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,8 +1358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e082470dfad792244ae8bca6cc9488ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseManager
-  pauseCanvas: {fileID: 6491980250159439762}
-  savingScreen: {fileID: 7269878254586866571}
+  _pauseCanvas: {fileID: 6491980250159439762}
+  _savingScreen: {fileID: 7269878254586866571}
 --- !u!1 &5412212097948968199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,7 +1540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8136d596eae1b247a87b58595cc0df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIToggler
-  isActive: 0
+  _startsActive: 0
 --- !u!114 &1879490744360003120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1553,9 +1553,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7a76b878c877d041bc4f5a0cb4f8901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryUI
-  gridParent: {fileID: 3419346472905060675}
-  slotPrefab: {fileID: 7366918349184821050, guid: cb0e243118b2a7d41a51a347cbdfd21a, type: 3}
-  openInventorySound: {fileID: 11400000, guid: 900ad94ac1a68d946a697616fdd8d763, type: 2}
+  _gridParent: {fileID: 3419346472905060675}
+  _slotPrefab: {fileID: 7366918349184821050, guid: cb0e243118b2a7d41a51a347cbdfd21a, type: 3}
+  _openInventorySound: {fileID: 11400000, guid: 900ad94ac1a68d946a697616fdd8d763, type: 2}
+  _playerInv: {fileID: 0}
 --- !u!1 &5973570979401113664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,11 +1647,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b005c0e908f2ab84180ba7b035272920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PopupManager
-  popupPanel: {fileID: 5973570979401113664}
-  iconImage: {fileID: 8435784437003975257}
-  nameText: {fileID: 4010392316544492698}
-  showPopupSound: {fileID: 11400000, guid: ce3741683ece3b646a73c76a9fc52cbe, type: 2}
-  displayTime: 2.5
+  _popupPanel: {fileID: 5973570979401113664}
+  _iconImage: {fileID: 8435784437003975257}
+  _nameText: {fileID: 4010392316544492698}
+  _showPopupSound: {fileID: 11400000, guid: ce3741683ece3b646a73c76a9fc52cbe, type: 2}
+  _displayTime: 2.5
 --- !u!1 &6204164180569806792
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,7 +2227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25fd5709469f754684a9ce711972611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneMusic
-  musicData: {fileID: 11400000, guid: 4dc0f52ac69ffce41a31ca884f5696e1, type: 2}
+  _musicData: {fileID: 11400000, guid: 4dc0f52ac69ffce41a31ca884f5696e1, type: 2}
 --- !u!1 &7269878254586866571
 GameObject:
   m_ObjectHideFlags: 0
@@ -2276,7 +2277,7 @@ GameObject:
   - component: {fileID: 6446286326320570351}
   - component: {fileID: 802853355081679197}
   - component: {fileID: 1956563675049872423}
-  - component: {fileID: 4882349542318212572}
+  - component: {fileID: 7299361461599574590}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -2298,9 +2299,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 179294208606418072}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -44}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 248, y: 88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6446286326320570351
@@ -2397,7 +2398,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4882349542318212572
+--- !u!114 &7299361461599574590
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2408,9 +2409,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6371803dc3b12a54a800400c14dc611f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonFX
-  hoverSound: {fileID: 11400000, guid: 42452e15c12b9b0459a78d90fce474b2, type: 2}
-  clickSound: {fileID: 11400000, guid: 55ed2e95b56b93a429f2ff0c8ff85ab3, type: 2}
+  m_EditorClassIdentifier: JogoBruxinha.Core::JogoBruxinha.Core.UI.ButtonFX
+  _hoverSound: {fileID: 11400000, guid: 42452e15c12b9b0459a78d90fce474b2, type: 2}
+  _clickSound: {fileID: 11400000, guid: 55ed2e95b56b93a429f2ff0c8ff85ab3, type: 2}
 --- !u!1 &7758053817500460320
 GameObject:
   m_ObjectHideFlags: 0
@@ -2455,12 +2456,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd7aea2fceeec44da264b8081525f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPoint
-  spawnPointID: SAVED_SPAWN
-  tracker: {fileID: 11400000, guid: ba0562ea474e4a14fa723344d30c520f, type: 2}
-  sessionData: {fileID: 11400000, guid: 83c8e740045d9894ca3e8c252765fbb7, type: 2}
-  dir: {x: 0, y: -1}
-  companionOffset: {x: 0, y: 0, z: 0}
-  companionDir: {x: 0, y: 0}
+  _spawnPointID: SAVED_SPAWN
+  _tracker: {fileID: 11400000, guid: ba0562ea474e4a14fa723344d30c520f, type: 2}
+  _sessionData: {fileID: 11400000, guid: 83c8e740045d9894ca3e8c252765fbb7, type: 2}
+  _dir: {x: 0, y: -1}
+  _companionOffset: {x: 0, y: 0, z: 0}
+  _companionDir: {x: 0, y: 0}
 --- !u!1 &7953276579969127012
 GameObject:
   m_ObjectHideFlags: 0

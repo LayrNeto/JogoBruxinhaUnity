@@ -302,5 +302,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a2227d0a6a235b41a29b6c7efc43e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySlotUI
-  iconImage: {fileID: 4403434021558357910}
-  amountText: {fileID: 495529691933417134}
+  _iconImage: {fileID: 4403434021558357910}
+  _amountText: {fileID: 495529691933417134}

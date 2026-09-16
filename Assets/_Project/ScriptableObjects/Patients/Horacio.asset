@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f60ee7a54703c5498e14ccffe278a97, type: 3}
+  m_Name: Horacio
+  m_EditorClassIdentifier: Assembly-CSharp::PatientDataSO
+  cursedMovementSpeed: 0.3
+  healedMovementSpeed: 1
+  animatorController: {fileID: 9100000, guid: d9401ed75ecc5504ea457d2583509296, type: 2}
+  clientName: "Hor\xE1cio"
+  povCursedSprite: {fileID: 21300000, guid: c3dbd1cf44192df47b166f74424f2aa6, type: 3}
+  povHealedSprite: {fileID: 21300000, guid: 34b3b5145df1dda4083e918b7eaebcac, type: 3}
+  dialogueBoxSprite: {fileID: 21300000, guid: 5b338a8c7afa2c94aa3f203e3b3ca537, type: 3}
+  requiredPlants:
+  - {fileID: 11400000, guid: 3b002a218d69dfa42969e5f850cf972f, type: 2}
+  - {fileID: 11400000, guid: 341445148ca031f4e8e7fe81e7fa2890, type: 2}
+  - {fileID: 11400000, guid: 5d8ecbddf24eb034cb399c22513dd774, type: 2}
+  introDialogue:
+  - speaker: 0
+    text: .............
+    requiresMagic: 0
+  - speaker: 1
+    text: Bom dia, senhor, como posso ajudar?
+    requiresMagic: 0
+  - speaker: 0
+    text: Bom..............
+    requiresMagic: 0
+  - speaker: 0
+    text: ............ dia.
+    requiresMagic: 0
+  - speaker: 0
+    text: Comi.......... fruta.............. infestada.........
+    requiresMagic: 0
+  - speaker: 0
+    text: "Agora.......... tudo......... est\xE1.........."
+    requiresMagic: 0
+  - speaker: 0
+    text: "........muito ....... r\xE1pido."
+    requiresMagic: 0
+  - speaker: 1
+    text: "Oh n\xE3o! Ser\xE1 que voc\xEA ingeriu um daqueles vermes let\xE1rgicos?"
+    requiresMagic: 0
+  - speaker: 1
+    text: "Ouvi dizer que eles injetam uma subst\xE2ncia que desacelera o hospedeiro.
+      Deve ser por isso que voc\xEA est\xE1 lento desse jeito."
+    requiresMagic: 0
+  - speaker: 0
+    text: .............
+    requiresMagic: 0
+  - speaker: 0
+    text: .................... lento.
+    requiresMagic: 0
+  - speaker: 0
+    text: "Voc\xEA........... que....... fala........... r\xE1pido........."
+    requiresMagic: 0
+  - speaker: 1
+    text: "N\xE3o, o senhor que... Ah, deixa pra l\xE1."
+    requiresMagic: 0
+  - speaker: 1
+    text: "(Ele com certeza est\xE1 parasitado por um desses vermes.)"
+    requiresMagic: 0
+  - speaker: 1
+    text: "Est\xE1 sentindo mais alguma coisa?"
+    requiresMagic: 0
+  - speaker: 0
+    text: "Tudo............. est\xE1........ girando......."
+    requiresMagic: 0
+  - speaker: 0
+    text: Sinto....... que vou....... passar mal.......
+    requiresMagic: 0
+  - speaker: 0
+    text: Muito......... enjoado........
+    requiresMagic: 0
+  - speaker: 0
+    text: (Ele boceja.)
+    requiresMagic: 0
+  - speaker: 1
+    text: "(Al\xE9m de tudo, ele parece cansado. Talvez eu tenha algo que possa lhe
+      dar mais energia.)"
+    requiresMagic: 0
+  - speaker: 1
+    text: "Certo, farei uma po\xE7\xE3o para ajudar o senhor."
+    requiresMagic: 0
+  - speaker: 0
+    text: O que.......? Fala....... mais........... devagar........
+    requiresMagic: 0
+  - speaker: 1
+    text: Aguarde...... aqui........ por favor!
+    requiresMagic: 0
+  waitingDialogues:
+  - lines:
+    - speaker: 0
+      text: Tudo....... pronto......?
+      requiresMagic: 0
+  successDialogue:
+  - speaker: 0
+    text: "Nossa! Finalmente tudo est\xE1 na velocidade normal!"
+    requiresMagic: 0
+  - speaker: 0
+    text: "J\xE1 estava ficando maluco com o mundo todo acelerado daquele jeito."
+    requiresMagic: 0
+  - speaker: 0
+    text: "Incr\xEDvel como uma po\xE7\xE3o pode alterar a realidade assim."
+    requiresMagic: 0
+  - speaker: 1
+    text: "Pois \xE9..."
+    requiresMagic: 0
+  - speaker: 1
+    text: "S\xF3 evite comer as frutas daquele mesmo p\xE9 por um tempo."
+    requiresMagic: 0
+  - speaker: 0
+    text: "N\xE3o sei como viverei sem comer minhas goiabas, mas acho que terei que
+      fazer esse esfor\xE7o."
+    requiresMagic: 0
+  - speaker: 0
+    text: "Bom, muito obrigado! Com certeza irei recomendar os seus servi\xE7os para
+      o pessoal do vilarejo!"
+    requiresMagic: 0
+  - speaker: 1
+    text: Ah... Obrigada!
+    requiresMagic: 0
+  failDialogue:
+  - speaker: 0
+    text: Fun....... cionou......?
+    requiresMagic: 0
+  - speaker: 1
+    text: "Oh n\xE3o... Devo ter errado algum ingrediente..."
+    requiresMagic: 0
+  - speaker: 0
+    text: Vou........ procurar...... ajuda........
+    requiresMagic: 0
+  - speaker: 0
+    text: ..... em outro....... lugar...........
+    requiresMagic: 0
