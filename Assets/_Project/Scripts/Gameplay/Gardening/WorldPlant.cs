@@ -29,6 +29,7 @@ namespace JogoBruxinha.Gameplay.Gardening
         private bool _isCollected;
 
         public PlantDataSO PlantData => _plantData;
+        public bool CanCollect => !_isCollected && _interactableComponent != null && _interactableComponent.IsAvailable();
         public string UniqueInstanceID => _uniqueInstanceID;
 
         private void Awake()

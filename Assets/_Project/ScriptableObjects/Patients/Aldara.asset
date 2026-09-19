@@ -19,6 +19,7 @@ MonoBehaviour:
   povCursedSprite: {fileID: 21300000, guid: 1991bb6a089c31a409d4a9f90feb158d, type: 3}
   povHealedSprite: {fileID: 21300000, guid: 5b654330d12bf2b43b142a3b0f6e07a4, type: 3}
   dialogueBoxSprite: {fileID: 21300000, guid: e7142edc97cd6ad4e9e450f0f9298aee, type: 3}
+  voiceSound: {fileID: 11400000, guid: 52a60de93d4d4451b77b706e97081a86, type: 2}
   requiredPlants:
   - {fileID: 11400000, guid: 39298dfe97f7a2e459cfbacf25531be6, type: 2}
   - {fileID: 11400000, guid: 341445148ca031f4e8e7fe81e7fa2890, type: 2}

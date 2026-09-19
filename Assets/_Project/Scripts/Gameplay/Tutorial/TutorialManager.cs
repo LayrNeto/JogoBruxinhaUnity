@@ -101,19 +101,7 @@ namespace JogoBruxinha.Gameplay.Tutorial
         private bool CollectedAllIngredients()
         {
             TutorialDataSO tData = _sessionData.tutorialData;
-            if (tData == null || tData.requiredIngredients == null || tData.requiredIngredients.Count == 0) return true;
-
-            foreach (PlantDataSO plant in tData.requiredIngredients)
-            {
-                if (plant == null) continue;
-
-                if (!_inventoryData.savedInv.TryGetValue(plant, out int amount) || amount < 1)
-                {
-                    return false;
-                }
-            }
-
-            return true;
+            return tData == null || tData.HasAllIngredients(_inventoryData);
         }
 
         public void AdvanceTutorial()
@@ -212,7 +200,7 @@ namespace JogoBruxinha.Gameplay.Tutorial
 
             if (_cauldronController != null)
             {
-                if (step == 2) _cauldronController.onValidateIngredientDrop = ValidateTutorialIngredient;
+                _cauldronController.onValidateIngredientDrop = step == 2 ? ValidateTutorialIngredient : null;
 
                 _cauldronController.onValidateCauldronClick = ValidateCauldronClick;
                 _cauldronController.onIngredientAdded = EvaluateIngredientCount;
@@ -313,7 +301,7 @@ namespace JogoBruxinha.Gameplay.Tutorial
 
             if (DialogueManager.Instance != null)
             {
-                DialogueManager.Instance.PlayDialogue(agataBox, seq.lines, onDialogueClosed);
+                DialogueManager.Instance.PlayDialogue(agataBox, seq.lines, onDialogueClosed, _sessionData.tutorialData.agataVoice);
             }
         }
 

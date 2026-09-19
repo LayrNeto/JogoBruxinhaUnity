@@ -80,6 +80,7 @@ namespace JogoBruxinha.Gameplay.SaveSystem
                 playerPos = new SaveVector3(_sessionData.playerPos),
                 companionPos = new SaveVector3(_sessionData.companionPos),
                 currentDay = _sessionData.currentDay,
+                vitalEnergy = _sessionData.VitalEnergy,
                 isNight = _sessionData.isNight,
                 potionAwaitingDelivery = _sessionData.potionAwaitingDelivery,
                 savedNPCState = (int)_sessionData.savedNPCState,
@@ -141,6 +142,7 @@ namespace JogoBruxinha.Gameplay.SaveSystem
             _sessionData.playerPos = data.playerPos.ToUnityVector();
             _sessionData.companionPos = data.companionPos.ToUnityVector();
             _sessionData.currentDay = data.currentDay;
+            _sessionData.RestoreVitalEnergy(data.vitalEnergy);
             _sessionData.isNight = data.isNight;
             _sessionData.potionAwaitingDelivery = data.potionAwaitingDelivery;
             _sessionData.savedNPCState = (NPCBrain.NPCStateEnum)data.savedNPCState;

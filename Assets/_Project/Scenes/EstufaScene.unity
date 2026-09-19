@@ -4523,10 +4523,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4682472027694402968, guid: 4eef701817b181747a2211eb4eba4ff9, type: 3}
   m_PrefabInstance: {fileID: 7999438512795586982}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &910000001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 910000002}
+  - component: {fileID: 910000003}
+  m_Layer: 0
+  m_Name: TutorialHighlights
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &910000002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910000001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &910000003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910000001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e450ac804c6465eab8982821f14144e, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: JogoBruxinha.Gameplay::JogoBruxinha.Gameplay.Tutorial.TutorialHighlightGuide
+  _sessionData: {fileID: 11400000, guid: 83c8e740045d9894ca3e8c252765fbb7, type: 2}
+  _inventoryData: {fileID: 11400000, guid: e11c5374a0df63d4fa1836207585af58, type: 2}
+  _outlineShader: {fileID: 4800000, guid: f06d72dc4e2d42bfaef968fa26db6f16, type: 3}
+  _gold: {r: 1, g: 0.76, b: 0.18, a: 1}
+  _outlinePixels: 1.5
+  _areaLineWidth: 0.06
+  _counterExit: {fileID: 0}
+  _cauldronExit: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 910000002}
   - {fileID: 791805855}
   - {fileID: 1726488439}
   - {fileID: 1265329898}

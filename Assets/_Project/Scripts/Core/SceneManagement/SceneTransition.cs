@@ -11,6 +11,8 @@ namespace JogoBruxinha.Core.SceneManagement
         [SerializeField] private string _sceneName;
         [SerializeField] private string _spawnDestinyID;
 
+        public string TargetSceneName => _sceneName;
+
         private void Awake()
         {
             Debug.Assert(!string.IsNullOrEmpty(_sceneName), $"Missing sceneName reference on {name}", this);

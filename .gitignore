@@ -51,6 +51,7 @@ ExportedObj/
 *.csproj
 *.unityproj
 *.sln
+*.slnx
 *.suo
 *.tmp
 *.user
@@ -105,3 +106,29 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# Local recovery copies; keep the actual game scenes under Assets/_Project/Scenes.
+/[Aa]ssets/_Recovery/
+/[Aa]ssets/_Recovery.meta
+
+# Builds accidentally exported to the project root.
+# Anchor these rules so native plugins inside Assets are still versioned.
+/*_Data/
+/*.x86
+/*.x86_64
+/*.exe
+/*.dll
+/UnityPlayer.so
+/libdecor*.so*
+/*_s.debug
+/*_BurstDebugInformation_DoNotShip/
+/*_BackUpThisFolder_ButDontShipItWithYourGame/
+/[Dd]ist/
+
+# Local IDE and operating-system caches.
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+/Documentation

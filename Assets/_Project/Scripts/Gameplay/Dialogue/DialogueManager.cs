@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using JogoBruxinha.Core.Audio;
 using JogoBruxinha.Gameplay.Counter;
 using JogoBruxinha.Gameplay.GameFlow;
 using TMPro;
@@ -22,6 +23,23 @@ namespace JogoBruxinha.Gameplay.Dialogue
         [Header("Assets")]
         [SerializeField] private Sprite _playerDialogueBox;
 
+        [Header("Typewriter")]
+        [SerializeField, Min(1f)] private float _charactersPerSecond = 32f;
+        [SerializeField, Min(0f)] private float _punctuationDelay = 0.12f;
+        [SerializeField] private SoundDataSO _playerVoice;
+        [Tooltip("Global voice multiplier, applied to each voice asset's Volume.")]
+        [SerializeField, Range(0f, 1f)] private float _voiceVolume = 0.6f;
+
+        private AudioSource _voiceSource;
+        private SoundDataSO _npcVoice;
+        private SoundDataSO _currentVoice;
+        private GameStateManager _inputOwner;
+        private int _visibleCharacters;
+        private int _lastAdvanceFrame = -1;
+        private float _nextCharacterTime;
+        public bool IsPlaying { get; private set; }
+        public bool IsTyping { get; private set; }
+
         private Sprite _currentNPCBox;
         private List<DialogueLine> _currentDialogueList;
         private int _currentLineIndex = -1;
@@ -34,6 +52,10 @@ namespace JogoBruxinha.Gameplay.Dialogue
             {
                 Instance = this;
                 ValidateDependencies();
+                _voiceSource = gameObject.AddComponent<AudioSource>();
+                _voiceSource.playOnAwake = false;
+                _voiceSource.loop = false;
+                _voiceSource.spatialBlend = 0f;
             }
             else
             {
@@ -52,20 +74,41 @@ namespace JogoBruxinha.Gameplay.Dialogue
 
         private void OnEnable()
         {
-            if (GameStateManager.Instance != null && GameStateManager.Instance.InputControls != null)
+            SubscribeInput();
+        }
+
+        private void Start()
+        {
+            SubscribeInput();
+        }
+
+        private void SubscribeInput()
+        {
+            if (_inputOwner == null && GameStateManager.Instance != null && GameStateManager.Instance.InputControls != null)
             {
-                GameStateManager.Instance.InputControls.UI.SkipDialogue.performed += OnSkipDialoguePerformed;
-                GameStateManager.Instance.InputControls.UI.ScrollWheel.performed += OnScroll;
+                _inputOwner = GameStateManager.Instance;
+                _inputOwner.InputControls.UI.SkipDialogue.performed += OnSkipDialoguePerformed;
+                _inputOwner.InputControls.UI.ScrollWheel.performed += OnScroll;
             }
         }
 
         private void OnDisable()
         {
-            if (GameStateManager.Instance != null && GameStateManager.Instance.InputControls != null)
+            StopTyping();
+            IsPlaying = false;
+            _currentDialogueList = null;
+            _dynamicOnFinishCallback = null;
+            if (_inputOwner != null && _inputOwner.InputControls != null)
             {
-                GameStateManager.Instance.InputControls.UI.SkipDialogue.performed -= OnSkipDialoguePerformed;
-                GameStateManager.Instance.InputControls.UI.ScrollWheel.performed -= OnScroll;
+                _inputOwner.InputControls.UI.SkipDialogue.performed -= OnSkipDialoguePerformed;
+                _inputOwner.InputControls.UI.ScrollWheel.performed -= OnScroll;
             }
+            _inputOwner = null;
+        }
+
+        private void OnDestroy()
+        {
+            if (Instance == this) Instance = null;
         }
 
         private void OnScroll(InputAction.CallbackContext ctx)
@@ -87,8 +130,9 @@ namespace JogoBruxinha.Gameplay.Dialogue
             ShowNextLine();
         }
 
-        public void PlayDialogue(Sprite boxSprite, List<DialogueLine> dialogue, Action onFinish = null)
+        public void PlayDialogue(Sprite boxSprite, List<DialogueLine> dialogue, Action onFinish = null, SoundDataSO npcVoice = null)
         {
+            ForceCloseDialogue();
             if (dialogue == null || dialogue.Count == 0)
             {
                 onFinish?.Invoke();
@@ -97,7 +141,8 @@ namespace JogoBruxinha.Gameplay.Dialogue
 
             _currentDialogueList = dialogue;
             _currentNPCBox = boxSprite;
-            _currentLineIndex = -1;
+            _npcVoice = npcVoice;
+            _currentLineIndex = 0;
             _maxLineIndex = 0;
             _dynamicOnFinishCallback = onFinish;
 
@@ -105,14 +150,21 @@ namespace JogoBruxinha.Gameplay.Dialogue
             if (_nextButton != null) _nextButton.SetActive(true);
             if (_dialogueBackgroundImage != null) _dialogueBackgroundImage.gameObject.SetActive(true);
 
-            ShowNextLine();
+            IsPlaying = true;
+            _lastAdvanceFrame = Time.frameCount;
+            DisplayCurrentLine(true);
         }
 
         public void ShowNextLine()
         {
-            if (_currentDialogueList == null || _currentDialogueList.Count == 0)
+            if (!IsPlaying || _currentDialogueList == null || _lastAdvanceFrame == Time.frameCount) return;
+            _lastAdvanceFrame = Time.frameCount;
+
+            // A single input completes the text OR advances; never both.
+            if (IsTyping)
             {
-                FinishDialogue();
+                StopTyping();
+                _dialogueText.maxVisibleCharacters = int.MaxValue;
                 return;
             }
 
@@ -120,16 +172,9 @@ namespace JogoBruxinha.Gameplay.Dialogue
 
             if (_currentLineIndex < _currentDialogueList.Count)
             {
-                if (_currentLineIndex > _maxLineIndex)
-                {
-                    _maxLineIndex = _currentLineIndex;
-                }
-
-                DialogueLine currentLine = _currentDialogueList[_currentLineIndex];
-                _dialogueText.text = currentLine.text;
-                _dialogueBackgroundImage.sprite = (currentLine.speaker == SpeakerType.Player) 
-                    ? _playerDialogueBox 
-                    : _currentNPCBox;
+                bool unread = _currentLineIndex > _maxLineIndex;
+                _maxLineIndex = Mathf.Max(_maxLineIndex, _currentLineIndex);
+                DisplayCurrentLine(unread);
             }
             else
             {
@@ -139,37 +184,85 @@ namespace JogoBruxinha.Gameplay.Dialogue
 
         public void ShowPreviousLine()
         {
-            if (_currentDialogueList == null) return;
+            if (!IsPlaying || _currentDialogueList == null || _lastAdvanceFrame == Time.frameCount) return;
+            _lastAdvanceFrame = Time.frameCount;
 
             if (_currentLineIndex > 0)
             {
                 _currentLineIndex--;
 
-                DialogueLine currentLine = _currentDialogueList[_currentLineIndex];
-                _dialogueText.text = currentLine.text;
-                _dialogueBackgroundImage.sprite = (currentLine.speaker == SpeakerType.Player) 
-                    ? _playerDialogueBox 
-                    : _currentNPCBox;
+                DisplayCurrentLine(false);
             }
+        }
+
+        private void DisplayCurrentLine(bool animate)
+        {
+            StopTyping();
+            DialogueLine line = _currentDialogueList[_currentLineIndex];
+            _currentVoice = line.speaker == SpeakerType.Player ? _playerVoice : _npcVoice;
+            _dialogueBackgroundImage.sprite = line.speaker == SpeakerType.Player ? _playerDialogueBox : _currentNPCBox;
+            _dialogueText.text = line.text ?? string.Empty;
+            // Lay out the full paragraph before revealing it, avoiding jumping words.
+            _dialogueText.maxVisibleCharacters = int.MaxValue;
+            _dialogueText.ForceMeshUpdate();
+            _visibleCharacters = 0;
+            IsTyping = animate && _dialogueText.textInfo.characterCount > 0;
+            _dialogueText.maxVisibleCharacters = IsTyping ? 0 : int.MaxValue;
+            _nextCharacterTime = Time.unscaledTime;
+        }
+
+        private void Update()
+        {
+            if (!IsPlaying || !IsTyping) return;
+
+            int count = _dialogueText.textInfo.characterCount;
+            bool playVoice = false;
+            while (_visibleCharacters < count && Time.unscaledTime >= _nextCharacterTime)
+            {
+                char c = _dialogueText.textInfo.characterInfo[_visibleCharacters].character;
+                _visibleCharacters++;
+                if (char.IsWhiteSpace(c)) continue;
+                playVoice |= char.IsLetterOrDigit(c);
+                _nextCharacterTime += 1f / Mathf.Max(1f, _charactersPerSecond);
+                if (char.IsPunctuation(c) && (_visibleCharacters == count ||
+                    !char.IsPunctuation(_dialogueText.textInfo.characterInfo[_visibleCharacters].character)))
+                    _nextCharacterTime += _punctuationDelay;
+            }
+
+            _dialogueText.maxVisibleCharacters = _visibleCharacters;
+            if (playVoice && _currentVoice != null && _currentVoice.Clip != null && _voiceSource != null)
+            {
+                // One retrigger per rendered frame, never a burst of overlapping voices.
+                _voiceSource.clip = _currentVoice.Clip;
+                _voiceSource.volume = Mathf.Clamp01(_voiceVolume * _currentVoice.Volume);
+                _voiceSource.pitch = _currentVoice.Pitch;
+                _voiceSource.Play();
+            }
+            if (_visibleCharacters >= count) IsTyping = false;
+        }
+
+        private void StopTyping()
+        {
+            IsTyping = false;
+            if (_voiceSource != null) _voiceSource.Stop();
         }
 
         private void FinishDialogue()
         {
-            if (_dialogueCanvasRoot != null) _dialogueCanvasRoot.SetActive(false);
-            if (_nextButton != null) _nextButton.SetActive(false);
-            if (_dialogueBackgroundImage != null) _dialogueBackgroundImage.gameObject.SetActive(false);
-
             Action callback = _dynamicOnFinishCallback;
-            _dynamicOnFinishCallback = null;
+            ForceCloseDialogue();
             callback?.Invoke();
         }
 
         public void ForceCloseDialogue()
         {
-            if (_dialogueCanvasRoot != null) _dialogueCanvasRoot.SetActive(false);
-            if (_dialogueBackgroundImage != null) _dialogueBackgroundImage.gameObject.SetActive(false);
-
+            StopTyping();
+            IsPlaying = false;
+            _currentDialogueList = null;
             _dynamicOnFinishCallback = null;
+            if (_dialogueCanvasRoot != null) _dialogueCanvasRoot.SetActive(false);
+            if (_nextButton != null) _nextButton.SetActive(false);
+            if (_dialogueBackgroundImage != null) _dialogueBackgroundImage.gameObject.SetActive(false);
         }
 
         public void SetSortOrder(int newOrder)

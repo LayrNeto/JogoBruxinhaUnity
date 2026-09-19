@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using JogoBruxinha.Core.Audio;
 using JogoBruxinha.Gameplay.Counter;
 using JogoBruxinha.Gameplay.Inventory;
 using UnityEngine;
@@ -37,6 +38,7 @@ namespace JogoBruxinha.Gameplay.Tutorial
         [Header("Agata Base Visuals")]
         public Sprite agataPovSprite;
         public Sprite agataDialogueBox;
+        public SoundDataSO agataVoice;
 
         [Header("Quest Requirements")]
         [Tooltip("Quais plantas o jogador deve ter no inventário para passar do Step 1")]
@@ -71,6 +73,18 @@ namespace JogoBruxinha.Gameplay.Tutorial
         public void ResetTutorial()
         {
             tutorialStep = 0;
+        }
+
+        public bool HasAllIngredients(InventoryDataSO inventory)
+        {
+            if (requiredIngredients == null || requiredIngredients.Count == 0) return true;
+            if (inventory == null) return false;
+            foreach (PlantDataSO plant in requiredIngredients)
+            {
+                if (plant != null && (!inventory.savedInv.TryGetValue(plant, out int amount) || amount < 1))
+                    return false;
+            }
+            return true;
         }
     }
 }

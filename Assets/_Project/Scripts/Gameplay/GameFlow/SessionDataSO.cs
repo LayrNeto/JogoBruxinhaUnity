@@ -13,6 +13,24 @@ namespace JogoBruxinha.Gameplay.GameFlow
         [Tooltip("Se for nulo, o jogo roda normalmente. Se for atribuído, roda o tutorial.")]
         public TutorialDataSO tutorialData;
 
+        public const int MaxVitalEnergy = 100;
+        public const int RitualEnergyCost = 75;
+        public const int DailyEnergyRecovery = 25;
+
+        [Header("Vital Energy")]
+        [SerializeField, Range(0, MaxVitalEnergy)] private int _vitalEnergy = MaxVitalEnergy;
+        public int VitalEnergy => Mathf.Clamp(_vitalEnergy, 0, MaxVitalEnergy);
+        public bool CanUseRitual => tutorialData != null || VitalEnergy >= RitualEnergyCost;
+
+        public void RestoreVitalEnergy(int value) => _vitalEnergy = Mathf.Clamp(value, 0, MaxVitalEnergy);
+
+        public bool TrySpendRitualEnergy()
+        {
+            if (!CanUseRitual) return false;
+            if (tutorialData == null) _vitalEnergy = VitalEnergy - RitualEnergyCost;
+            return true;
+        }
+
         [Header("Time & Progression")]
         public bool isNight = false;
         public int currentDay = 0;
@@ -42,6 +60,7 @@ namespace JogoBruxinha.Gameplay.GameFlow
         [ContextMenu("Reset Session Data")]
         public void ResetSession()
         {
+            _vitalEnergy = MaxVitalEnergy;
             currentDay = 0;
             currentScene = string.Empty;
 
@@ -72,6 +91,7 @@ namespace JogoBruxinha.Gameplay.GameFlow
 
         public void AdvanceDay()
         {
+            RestoreVitalEnergy(VitalEnergy + DailyEnergyRecovery);
             currentDay++;
 
             savedNPCState = NPCBrain.NPCStateEnum.HIDDEN;

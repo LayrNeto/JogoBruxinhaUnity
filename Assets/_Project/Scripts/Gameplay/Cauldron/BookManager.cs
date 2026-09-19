@@ -22,6 +22,11 @@ namespace JogoBruxinha.Gameplay.Cauldron
 
         private int _currentPage = 0;
 
+        public GameObject TableBook => _tableSupport;
+        public GameObject NextPageButton => _nextButton;
+        public GameObject RitualSymbol => _ritualSymbol;
+        public bool IsOpen => gameObject.activeInHierarchy;
+
         private void Awake()
         {
             Debug.Assert(_contentImage != null, $"Missing _contentImage reference on {name}", this);

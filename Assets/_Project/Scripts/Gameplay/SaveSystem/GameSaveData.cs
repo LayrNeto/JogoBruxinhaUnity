@@ -36,6 +36,8 @@ namespace JogoBruxinha.Gameplay.SaveSystem
         public SaveVector3 companionPos;
         public bool isNight;
         public int currentDay;
+        // Field initializer keeps saves from before the energy system compatible.
+        public int vitalEnergy = 100;
         public bool potionAwaitingDelivery;
         public int savedNPCState;
         public bool hasNPCSpawnedToday;

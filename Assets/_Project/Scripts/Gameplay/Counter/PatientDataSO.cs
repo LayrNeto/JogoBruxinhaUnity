@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using JogoBruxinha.Core.Audio;
 using JogoBruxinha.Gameplay.Inventory;
 using UnityEngine;
 
@@ -39,6 +40,9 @@ namespace JogoBruxinha.Gameplay.Counter
         public Sprite povCursedSprite;
         public Sprite povHealedSprite;
         public Sprite dialogueBoxSprite;
+
+        [Header("Dialogue Audio")]
+        public SoundDataSO voiceSound;
 
         [Header("Recipe Requirements")]
         public List<PlantDataSO> requiredPlants = new List<PlantDataSO>();

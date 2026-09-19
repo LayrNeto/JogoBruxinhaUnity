@@ -15,6 +15,7 @@ MonoBehaviour:
   tutorialStep: 6
   agataPovSprite: {fileID: 21300000, guid: cd4f35779456a2643b0d600b4aebc5e6, type: 3}
   agataDialogueBox: {fileID: 21300000, guid: ffe40abf2c17fd44097d87a209f8210c, type: 3}
+  agataVoice: {fileID: 11400000, guid: 6ae76f214c444a11b9351d0c80bfbacf, type: 2}
   requiredIngredients:
   - {fileID: 11400000, guid: 3b002a218d69dfa42969e5f850cf972f, type: 2}
   - {fileID: 11400000, guid: 39298dfe97f7a2e459cfbacf25531be6, type: 2}

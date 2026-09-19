@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 using JogoBruxinha.Core.Audio;
 using JogoBruxinha.Gameplay.Inventory;
 using JogoBruxinha.Gameplay.GameFlow;
+using JogoBruxinha.Gameplay.Dialogue;
+using JogoBruxinha.Core.SceneManagement;
 
 namespace JogoBruxinha.Gameplay.Cauldron
 {
@@ -42,6 +44,10 @@ namespace JogoBruxinha.Gameplay.Cauldron
 
         private const int MaxIngredients = 3;
 
+        public bool HasEnoughIngredients => _currentIngredients.Count >= MaxIngredients;
+        public Image CauldronImage => _cauldronAnimator != null ? _cauldronAnimator.GetComponent<Image>() : null;
+        public bool ContainsIngredient(PlantDataSO plant) => _currentIngredients.Contains(plant);
+
         private static readonly int PotionReadyHash = Animator.StringToHash("PotionReady");
         private static readonly int SpellUsedHash = Animator.StringToHash("SpellUsed");
         private static readonly int PotionStartedHash = Animator.StringToHash("PotionStarted");
@@ -50,6 +56,8 @@ namespace JogoBruxinha.Gameplay.Cauldron
 
         private void Awake()
         {
+            // Receive drops on the visible cauldron, including areas outside the old hitbox.
+            if (CauldronImage != null) CauldronImage.raycastTarget = true;
             Debug.Assert(_cauldronAnimator != null, $"Missing _cauldronAnimator reference on {name}", this);
             Debug.Assert(_popup != null, $"Missing _popup reference on {name}", this);
             Debug.Assert(_ingredientManager != null, $"Missing _ingredientManager reference on {name}", this);
@@ -93,34 +101,43 @@ namespace JogoBruxinha.Gameplay.Cauldron
 
         public void OnDrop(PointerEventData eventData)
         {
+            if (eventData.button != PointerEventData.InputButton.Left || eventData.pointerDrag == null) return;
+            IngredientSlot draggedSlot = eventData.pointerDrag.GetComponent<IngredientSlot>();
+            if (draggedSlot == null || IngredientSlot.Selected != draggedSlot) return;
+            TryAddIngredient(draggedSlot.PlantData);
+            draggedSlot.CancelSelection();
+        }
+
+        private static bool InputBlocked => (DialogueManager.Instance != null && DialogueManager.Instance.IsPlaying) ||
+            (FadeManager.Instance != null && FadeManager.Instance.IsFading);
+
+        public bool TryAddIngredient(PlantDataSO plant)
+        {
+            if (plant == null || InputBlocked) return false;
             if (_sessionData != null && _sessionData.potionAwaitingDelivery)
             {
                 ShowErrorMessage("Já existe uma poção no balcão");
-                return;
+                return false;
             }
 
-            if (eventData.pointerDrag == null) return;
-
-            IngredientSlot draggedSlot = eventData.pointerDrag.GetComponent<IngredientSlot>();
-            if (draggedSlot == null) return;
-
-            if (onValidateIngredientDrop != null && !onValidateIngredientDrop.Invoke(draggedSlot.PlantData)) return;
+            if (_inventoryData == null || !_inventoryData.savedInv.TryGetValue(plant, out int quantity) || quantity < 1) return false;
+            if (onValidateIngredientDrop != null && !onValidateIngredientDrop.Invoke(plant)) return false;
 
             if (_currentIngredients.Count >= MaxIngredients)
             {
                 ShowErrorMessage("O caldeirao já está cheio");
-                return;
+                return false;
             }
 
-            if (_currentIngredients.Add(draggedSlot.PlantData))
+            if (_currentIngredients.Add(plant))
             {
                 if (AudioManager.Instance != null && _ingredientAddedSound != null)
                 {
                     AudioManager.Instance.PlaySFX(_ingredientAddedSound);
                 }
 
-                bool hasBg = draggedSlot.BackgroundImg.sprite != null;
-                UpdateFloatingIcons(draggedSlot.PlantData.dragSprite, hasBg);
+                bool hasBg = plant.emptyShelfSprite != null;
+                UpdateFloatingIcons(plant.dragSprite, hasBg);
 
                 string message = (_currentIngredients.Count == MaxIngredients) 
                     ? "Clique no caldeirão para engarrafar a poção" 
@@ -134,10 +151,12 @@ namespace JogoBruxinha.Gameplay.Cauldron
                 }
 
                 onIngredientAdded?.Invoke(_currentIngredients.Count);
+                return true;
             }
             else
             {
                 ShowErrorMessage("Ingrediente repetido");
+                return false;
             }
         }
 
@@ -153,7 +172,7 @@ namespace JogoBruxinha.Gameplay.Cauldron
                 {
                     if (hasBg)
                     {
-                        _floatingIcons[i].gameObject.transform.localScale = new Vector3(1f, 1f, 0f);
+                        _floatingIcons[i].gameObject.transform.localScale = Vector3.one;
                     }
 
                     _floatingIcons[i].sprite = ingredientSprite;
@@ -166,6 +185,14 @@ namespace JogoBruxinha.Gameplay.Cauldron
 
         public void OnPointerClick(PointerEventData eventData)
         {
+            if (eventData.button != PointerEventData.InputButton.Left || InputBlocked) return;
+            if (IngredientSlot.Selected != null)
+            {
+                IngredientSlot selected = IngredientSlot.Selected;
+                TryAddIngredient(selected.PlantData);
+                selected.CancelSelection();
+                return;
+            }
             if (_sessionData != null && _sessionData.potionAwaitingDelivery)
             {
                 ShowErrorMessage("Leve primeiro a poção ao balcão");
@@ -186,6 +213,7 @@ namespace JogoBruxinha.Gameplay.Cauldron
 
         public void BrewWithMagic()
         {
+            if (InputBlocked) return;
             if (_sessionData != null && _sessionData.potionAwaitingDelivery)
             {
                 ShowErrorMessage("Leve primeiro a poção ao balcão");
@@ -194,13 +222,6 @@ namespace JogoBruxinha.Gameplay.Cauldron
 
             if (_currentIngredients.Count == MaxIngredients)
             {
-                if (AudioManager.Instance != null && _spellCastedSound != null)
-                {
-                    AudioManager.Instance.PlaySFX(_spellCastedSound);
-                }
-
-                if (_spellFilter != null) _spellFilter.SetActive(true);
-
                 FinishPotion(true);
             }
             else
@@ -208,8 +229,25 @@ namespace JogoBruxinha.Gameplay.Cauldron
                 ShowErrorMessage($"Adicione {MaxIngredients} ingredientes primeiro");
             }
         }
-private void FinishPotion(bool isSpellUsed)
+        private void FinishPotion(bool isSpellUsed)
         {
+            if (_inventoryData == null || !_inventoryData.HasSpaceForPotion())
+            {
+                ShowErrorMessage("Sem espaço no inventário para a poção");
+                return;
+            }
+            if (isSpellUsed && (_sessionData == null || !_sessionData.TrySpendRitualEnergy()))
+            {
+                ShowErrorMessage($"O ritual precisa de {SessionDataSO.RitualEnergyCost} de energia vital");
+                return;
+            }
+
+            if (isSpellUsed)
+            {
+                if (AudioManager.Instance != null && _spellCastedSound != null)
+                    AudioManager.Instance.PlaySFX(_spellCastedSound);
+                if (_spellFilter != null) _spellFilter.SetActive(true);
+            }
             if (AudioManager.Instance != null && _potionPreparedSound != null)
             {
                 AudioManager.Instance.PlaySFX(_potionPreparedSound);

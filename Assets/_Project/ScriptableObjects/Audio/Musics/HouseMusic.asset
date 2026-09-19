@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: HouseMusic
   m_EditorClassIdentifier: Assembly-CSharp::SoundDataSO
   <Clip>k__BackingField: {fileID: 8300000, guid: e605a2dbd3a9eee4f8bc853e33f8e7d6, type: 3}
-  <Volume>k__BackingField: 0.3
+  <Volume>k__BackingField: 0.134
   <Pitch>k__BackingField: 1

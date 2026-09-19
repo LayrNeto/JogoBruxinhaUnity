@@ -154,6 +154,10 @@ MonoBehaviour:
   _dialogueBackgroundImage: {fileID: 1133240632301923118}
   _dialogueText: {fileID: 5252908332713974916}
   _playerDialogueBox: {fileID: 21300000, guid: 826dc37ace09c5742a42aa631c1a6b67, type: 3}
+  _charactersPerSecond: 32
+  _punctuationDelay: 0.12
+  _playerVoice: {fileID: 11400000, guid: c6ea0b7d2366419a9141ed96e52e768a, type: 2}
+  _voiceVolume: 0.35
 --- !u!1 &1135098027061722026
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +279,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2236688422860458945}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: JogoBruxinha.Gameplay.Dialogue.DialogueManager, JogoBruxinha.Gameplay
         m_MethodName: ShowNextLine
         m_Mode: 1
         m_Arguments:
