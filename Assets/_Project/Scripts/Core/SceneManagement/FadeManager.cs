@@ -78,7 +78,7 @@ namespace JogoBruxinha.Core.SceneManagement
 
             while (t < fadeOutTime)
             {
-                t += Time.deltaTime;
+                t += Time.unscaledDeltaTime;
                 c.a = Mathf.Lerp(startAlpha, 1f, t / fadeOutTime);
                 blackScreen.color = c;
                 yield return null;
@@ -111,7 +111,7 @@ namespace JogoBruxinha.Core.SceneManagement
             float t = 0f;
             while (t < duration)
             {
-                t += Time.deltaTime;
+                t += Time.unscaledDeltaTime;
                 c.a = Mathf.Lerp(startAlpha, targetAlpha, t / duration);
                 blackScreen.color = c;
                 yield return null;
@@ -130,7 +130,7 @@ namespace JogoBruxinha.Core.SceneManagement
             float t = 0f;
             while (t < fadeOutTime)
             {
-                t += Time.deltaTime;
+                t += Time.unscaledDeltaTime;
                 c.a = Mathf.Lerp(0f, 1f, t / fadeOutTime);
                 blackScreen.color = c;
                 yield return null;

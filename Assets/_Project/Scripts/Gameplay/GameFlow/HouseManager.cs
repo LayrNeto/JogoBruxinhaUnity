@@ -14,6 +14,9 @@ namespace JogoBruxinha.Gameplay.GameFlow
         [SerializeField] private TriggerArea _npcTriggerArea;
         [SerializeField] private TriggerArea _doorbellArea;
 
+        [Header("References")]
+        [SerializeField] private GameObject _demoEndScreen;
+
         [Header("Daily Data")]
         [SerializeField] private SessionDataSO _sessionData;
 
@@ -22,6 +25,7 @@ namespace JogoBruxinha.Gameplay.GameFlow
             Debug.Assert(_npcBrain != null, $"Missing _npcBrain reference on {name}", this);
             Debug.Assert(_npcTriggerArea != null, $"Missing _npcTriggerArea reference on {name}", this);
             Debug.Assert(_doorbellArea != null, $"Missing _doorbellArea reference on {name}", this);
+            Debug.Assert(_demoEndScreen != null, $"Missing _demoEndScreen reference on {name}", this);
             Debug.Assert(_sessionData != null, $"Missing _sessionData reference on {name}", this);
         }
 
@@ -46,8 +50,17 @@ namespace JogoBruxinha.Gameplay.GameFlow
             string currentScene = SceneManager.GetActiveScene().name;
 
             if (AudioManager.Instance != null)
-            {
                 AudioManager.Instance.StopMusic(1f);
+
+            if (_sessionData.currentDay == 1)
+            {
+                FadeManager.Instance.StartFullFade(1.5f, 0.5f, () =>
+                {
+                    _demoEndScreen.SetActive(true);
+                    Time.timeScale = 0f;
+                    GameStateManager.Instance.InputControls.Disable();
+                });
+                return;
             }
 
             if (FadeManager.Instance != null)

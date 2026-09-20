@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1251c66d04f5db24d9527a4f66d960cb, type: 3}
   m_Name: PlayerInventory
   m_EditorClassIdentifier: Assembly-CSharp::InventoryDataSO
-  keys: []
-  values: 
   craftedPotions: []
   maxPotionSlots: 1
+  _keys: []
+  _values: 
