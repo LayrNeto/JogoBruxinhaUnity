@@ -1,4 +1,5 @@
 using System.Collections;
+using JogoBruxinha.Core.Analytics;
 using JogoBruxinha.Core.SceneManagement;
 using JogoBruxinha.Gameplay.GameFlow;
 using JogoBruxinha.Gameplay.SaveSystem;
@@ -82,6 +83,13 @@ namespace JogoBruxinha.Gameplay.UI
             {
                 GameStateManager.Instance.ResetToDefaultState();
             }
+
+            // Playtest Analytics ==================================
+            if (PlaytestLogger.Instance != null)
+            {
+                PlaytestLogger.Instance.EndAndSaveSession();
+            }
+            // Playtest Analytics ==================================
 
             if (FadeManager.Instance != null)
             {

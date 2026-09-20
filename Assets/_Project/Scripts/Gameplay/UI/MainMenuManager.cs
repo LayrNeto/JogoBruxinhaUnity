@@ -1,4 +1,5 @@
 using System.Collections;
+using JogoBruxinha.Core.Analytics;
 using JogoBruxinha.Core.Audio;
 using JogoBruxinha.Core.SceneManagement;
 using JogoBruxinha.Gameplay.GameFlow;
@@ -40,7 +41,7 @@ namespace JogoBruxinha.Gameplay.UI
         {
             if (_continueButton != null)
             {
-                _continueButton.interactable = SaveManager.Instance != null && SaveManager.Instance.HasSaveFile();
+                _continueButton.interactable = SaveManager.Instance != null && SaveManager.Instance.HasSaveFile() && PlaytestLogger.Instance == null;
             }
 
             if (_mainMenuMusic != null && AudioManager.Instance != null)
@@ -101,6 +102,10 @@ namespace JogoBruxinha.Gameplay.UI
             if (FadeManager.Instance != null)
             {
                 FadeManager.Instance.StartTransition("HouseScene", "TutorialSpawn", 1f, 1f);
+
+                // Playtest Analytics ==================================
+                PlaytestLogger.Instance.StartNewSession();
+                // Playtest Analytics ==================================
             }
         }
 
@@ -121,6 +126,10 @@ namespace JogoBruxinha.Gameplay.UI
             if (FadeManager.Instance != null)
             {
                 FadeManager.Instance.StartTransition("HouseScene", "BedSpawn", 1f, 1f);
+
+                // Playtest Analytics ==================================
+                PlaytestLogger.Instance.StartNewSession();
+                // Playtest Analytics ==================================
             }
         }
 

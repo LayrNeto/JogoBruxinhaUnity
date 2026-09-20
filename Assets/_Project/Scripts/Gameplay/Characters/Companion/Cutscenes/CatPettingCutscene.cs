@@ -1,4 +1,5 @@
 using System.Collections;
+using JogoBruxinha.Core.Analytics;
 using JogoBruxinha.Core.Audio;
 using JogoBruxinha.Gameplay.Characters.Player;
 using JogoBruxinha.Gameplay.Environment;
@@ -144,6 +145,10 @@ namespace JogoBruxinha.Gameplay.Characters.Companion
             _catInteractable.canInteract = false;
 
             _puppetVisuals.transform.localPosition = playerOnRight ? _offsetRight : _offsetLeft;
+
+            // Playtest Analytics ==================================
+            PlaytestLogger.Instance.RecordCatPetting();
+            // Playtest Analytics ==================================
 
             if (playerOnRight)
             {

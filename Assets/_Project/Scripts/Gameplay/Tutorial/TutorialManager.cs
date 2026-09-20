@@ -13,6 +13,7 @@ using JogoBruxinha.Gameplay.Dialogue;
 using JogoBruxinha.Gameplay.GameFlow;
 using JogoBruxinha.Gameplay.Inventory;
 using JogoBruxinha.Core.Audio;
+using JogoBruxinha.Core.Analytics;
 
 namespace JogoBruxinha.Gameplay.Tutorial
 {
@@ -125,6 +126,10 @@ namespace JogoBruxinha.Gameplay.Tutorial
             else
             {
                 Debug.Log("Tutorial Finalizado! Iniciando transição...");
+
+                // Playtest Analytics ==================================
+                PlaytestLogger.Instance.RecordTutorialFinished();
+                // Playtest Analytics ==================================
 
                 _sessionData.tutorialData = null;
                 _sessionData.ResetSession();

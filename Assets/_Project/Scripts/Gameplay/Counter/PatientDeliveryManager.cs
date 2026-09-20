@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using JogoBruxinha.Core.Analytics;
 using JogoBruxinha.Core.Audio;
 using JogoBruxinha.Core.Events;
 using JogoBruxinha.Gameplay.Characters.NPC;
@@ -187,6 +188,11 @@ namespace JogoBruxinha.Gameplay.Counter
                 DialogueManager.Instance.PlayDialogue(_currentPatient.dialogueBoxSprite, filteredDialogue, npcVoice: _currentPatient.voiceSound);
             }
 
+            // Playtest Analytics ==================================
+            if (PlaytestLogger.Instance != null)
+                PlaytestLogger.Instance.RecordPatientAttended();
+            // Playtest Analytics ==================================
+
             _sessionData.isNight = true;
             _nightFallEvent?.Raise();
         }
@@ -213,6 +219,14 @@ namespace JogoBruxinha.Gameplay.Counter
 
             HashSet<PlantDataSO> potionSet = new HashSet<PlantDataSO>(potionIngredients);
             HashSet<PlantDataSO> recipeSet = new HashSet<PlantDataSO>(patientRecipe);
+
+            // Playtest Analytics ==================================
+            if (!potionSet.SetEquals(recipeSet) && PlaytestLogger.Instance != null)
+            {
+                PlaytestLogger.Instance.RecordWrongPotionMade();
+                PlaytestLogger.Instance.RecordPatientTreatedWrong(_sessionData.currentPatient.clientName);
+            }
+            // Playtest Analytics ==================================
 
             return potionSet.SetEquals(recipeSet);
         }
@@ -244,6 +258,11 @@ namespace JogoBruxinha.Gameplay.Counter
                     if (_potionButton != null) _potionButton.enabled = true;
                 }, _currentPatient.voiceSound);
             }
+
+            // Playtest Analytics ==================================
+            if (PlaytestLogger.Instance != null)
+                PlaytestLogger.Instance.RecordDialogueRestarted();
+            // Playtest Analytics ==================================
         }
     }
 }
