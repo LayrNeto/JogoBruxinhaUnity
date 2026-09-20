@@ -164,12 +164,11 @@ public static class PovRegressionChecks
             hover.OnPointerEnter(pointer);
             Require(image.sprite == black && !animator.enabled, "Disabled ritual stays black on hover");
             CheckEnergy(cauldron, slots);
-            VoiceRegressionChecks.CheckInPlayMode();
-            PovPointerChecks.Run(() =>
+            VoiceRegressionChecks.Run(cauldron, () => PovPointerChecks.Run(() =>
             {
                 Debug.Log("POV_CHECKS_PASSED");
                 Finish(0);
-            }, Fail);
+            }, Fail), Fail);
         }
         catch (Exception error) { Fail(error); }
     }

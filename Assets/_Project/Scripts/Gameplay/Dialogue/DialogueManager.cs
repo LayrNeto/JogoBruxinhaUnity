@@ -31,6 +31,7 @@ namespace JogoBruxinha.Gameplay.Dialogue
         [SerializeField, Range(0f, 1f)] private float _voiceVolume = 0.6f;
 
         private AudioSource _voiceSource;
+        private DialogueVoicePlayback _voicePlayback;
         private SoundDataSO _npcVoice;
         private SoundDataSO _currentVoice;
         private GameStateManager _inputOwner;
@@ -56,6 +57,7 @@ namespace JogoBruxinha.Gameplay.Dialogue
                 _voiceSource.playOnAwake = false;
                 _voiceSource.loop = false;
                 _voiceSource.spatialBlend = 0f;
+                _voicePlayback = new DialogueVoicePlayback(_voiceSource);
             }
             else
             {
@@ -108,6 +110,7 @@ namespace JogoBruxinha.Gameplay.Dialogue
 
         private void OnDestroy()
         {
+            _voicePlayback?.Dispose();
             if (Instance == this) Instance = null;
         }
 
@@ -200,6 +203,7 @@ namespace JogoBruxinha.Gameplay.Dialogue
             StopTyping();
             DialogueLine line = _currentDialogueList[_currentLineIndex];
             _currentVoice = line.speaker == SpeakerType.Player ? _playerVoice : _npcVoice;
+            _voicePlayback?.Prepare(_currentVoice);
             _dialogueBackgroundImage.sprite = line.speaker == SpeakerType.Player ? _playerDialogueBox : _currentNPCBox;
             _dialogueText.text = line.text ?? string.Empty;
             // Lay out the full paragraph before revealing it, avoiding jumping words.
@@ -230,21 +234,14 @@ namespace JogoBruxinha.Gameplay.Dialogue
             }
 
             _dialogueText.maxVisibleCharacters = _visibleCharacters;
-            if (playVoice && _currentVoice != null && _currentVoice.Clip != null && _voiceSource != null)
-            {
-                // One retrigger per rendered frame, never a burst of overlapping voices.
-                _voiceSource.clip = _currentVoice.Clip;
-                _voiceSource.volume = Mathf.Clamp01(_voiceVolume * _currentVoice.Volume);
-                _voiceSource.pitch = _currentVoice.Pitch;
-                _voiceSource.Play();
-            }
+            if (playVoice) _voicePlayback?.TryPlay(_currentVoice, _voiceVolume);
             if (_visibleCharacters >= count) IsTyping = false;
         }
 
         private void StopTyping()
         {
             IsTyping = false;
-            if (_voiceSource != null) _voiceSource.Stop();
+            // No queued syllables: let only the current short blip finish its release envelope.
         }
 
         private void FinishDialogue()

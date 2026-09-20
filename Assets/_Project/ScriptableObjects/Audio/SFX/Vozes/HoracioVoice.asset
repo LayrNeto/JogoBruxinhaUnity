@@ -15,3 +15,5 @@ MonoBehaviour:
   <Clip>k__BackingField: {fileID: 8300000, guid: 567185fbd7831a66289ef7550158b326, type: 3}
   <Volume>k__BackingField: 1
   <Pitch>k__BackingField: 1
+  <VoiceGainDb>k__BackingField: 12
+  <VoiceBlipDuration>k__BackingField: 0.08
