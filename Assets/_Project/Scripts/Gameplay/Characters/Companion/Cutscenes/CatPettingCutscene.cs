@@ -111,12 +111,23 @@ namespace JogoBruxinha.Gameplay.Characters.Companion
 
             Vector2 targetPos = targetPoint.position;
             Vector2 diff = targetPos - _playerRb.position;
+            _catInteractable.canInteract = false;
 
             while (diff.sqrMagnitude > stopThresholdSqr)
             {
                 if (timer >= _timeout)
                 {
-                    if (GameStateManager.Instance != null)
+                    Debug.LogWarning("Timeout ao tentar alcançar o gato, abortando cutscene.");
+
+                    _playerController.StopAutoWalk(diff.normalized);
+                    _playerRb.linearVelocity = Vector2.zero;
+
+                    if (_catInteractable != null)
+                    {
+                        _catInteractable.canInteract = true;
+                    }
+
+                    if (GameStateManager.Instance != null && GameStateManager.Instance.CurrentState == GameStateManager.GameState.CUTSCENE)
                     {
                         GameStateManager.Instance.PopState();
                     }
@@ -142,7 +153,6 @@ namespace JogoBruxinha.Gameplay.Characters.Companion
             _playerSR.enabled = false;
             _catSR.enabled = false;
             _puppetVisuals.SetActive(true);
-            _catInteractable.canInteract = false;
 
             _puppetVisuals.transform.localPosition = playerOnRight ? _offsetRight : _offsetLeft;
 

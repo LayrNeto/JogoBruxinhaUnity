@@ -1,0 +1,12 @@
+{
+  "sessionID": "20260921_143823",
+  "totalPlaytime": 441.157227,
+  "finishedTutorial": false,
+  "patientsAttended": 2,
+  "catPetted": 7,
+  "dialogueRestarted": 1,
+  "wrongPotionMade": 1,
+  "patientsTreatedWrong": [
+    "Horácio"
+  ]
+}
