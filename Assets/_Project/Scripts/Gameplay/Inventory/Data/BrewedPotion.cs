@@ -17,5 +17,22 @@ namespace JogoBruxinha.Gameplay.Inventory
             this.isSpellUsed = isSpellUsed;
             this.potionData = potionData;
         }
+
+        public HashSet<SymptomType> GetTreatedSymptoms()
+        {
+            HashSet<SymptomType> symptoms = new HashSet<SymptomType>();
+
+            if (ingredients == null) return symptoms;
+
+            foreach (PlantDataSO plant in ingredients)
+            {
+                if (plant != null && plant.treatedSymptoms != null)
+                {
+                    symptoms.UnionWith(plant.treatedSymptoms);
+                }
+            }
+
+            return symptoms;
+        }
     }
 }

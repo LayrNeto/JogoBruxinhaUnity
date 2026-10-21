@@ -23,6 +23,7 @@ MonoBehaviour:
   dragSprite: {fileID: 21300000, guid: 3c551d7a67e50754e820ce256277e9f9, type: 3}
   emptyShelfSprite: {fileID: 21300000, guid: 80460c0f7229c214ebc3a424ca20456b, type: 3}
   daysToGrow: 1
+  treatedSymptoms: 03000000
   collectSound:
   - {fileID: 11400000, guid: 8c39c36072b4096419570a1a92686f2a, type: 2}
   - {fileID: 11400000, guid: e14f8a80446d0674f8123cd6fce4f8de, type: 2}

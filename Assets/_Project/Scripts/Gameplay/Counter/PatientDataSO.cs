@@ -45,7 +45,7 @@ namespace JogoBruxinha.Gameplay.Counter
         public SoundDataSO voiceSound;
 
         [Header("Recipe Requirements")]
-        public List<PlantDataSO> requiredPlants = new List<PlantDataSO>();
+        public List<SymptomType> requiredSymptoms = new List<SymptomType>();
 
         [Header("Dialogue: First Meeting")]
         public List<DialogueLine> introDialogue = new List<DialogueLine>();

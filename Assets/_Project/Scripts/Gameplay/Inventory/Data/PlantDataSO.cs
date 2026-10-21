@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using JogoBruxinha.Core.Audio;
 using UnityEngine;
 
@@ -17,6 +18,9 @@ namespace JogoBruxinha.Gameplay.Inventory
 
         [Header("Growth System")]
         public int daysToGrow;
+
+        [Header("Potion System")]
+        public List<SymptomType> treatedSymptoms = new List<SymptomType>();
 
         [Header("Audio")]
         public SoundDataSO[] collectSound = new SoundDataSO[0];

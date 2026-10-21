@@ -128,7 +128,8 @@ namespace JogoBruxinha.Gameplay.UI
                 FadeManager.Instance.StartTransition("HouseScene", "BedSpawn", 1f, 1f);
 
                 // Playtest Analytics ==================================
-                PlaytestLogger.Instance.StartNewSession();
+                if (PlaytestLogger.Instance != null)
+                    PlaytestLogger.Instance.StartNewSession();
                 // Playtest Analytics ==================================
             }
         }

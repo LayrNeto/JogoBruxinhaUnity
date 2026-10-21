@@ -214,21 +214,20 @@ namespace JogoBruxinha.Gameplay.Counter
 
         private bool VerifyRecipe()
         {
-            List<PlantDataSO> potionIngredients = _inventoryData.craftedPotions[0].ingredients;
-            List<PlantDataSO> patientRecipe = _currentPatient.requiredPlants;
+            HashSet<SymptomType> potionSymptoms = _inventoryData.craftedPotions[0].GetTreatedSymptoms();
+            HashSet<SymptomType> patientSymptoms = new HashSet<SymptomType>(_currentPatient.requiredSymptoms);
 
-            HashSet<PlantDataSO> potionSet = new HashSet<PlantDataSO>(potionIngredients);
-            HashSet<PlantDataSO> recipeSet = new HashSet<PlantDataSO>(patientRecipe);
+            bool isCorrect = potionSymptoms.IsSupersetOf(patientSymptoms);
 
             // Playtest Analytics ==================================
-            if (!potionSet.SetEquals(recipeSet) && PlaytestLogger.Instance != null)
+            if (!isCorrect && PlaytestLogger.Instance != null)
             {
                 PlaytestLogger.Instance.RecordWrongPotionMade();
-                PlaytestLogger.Instance.RecordPatientTreatedWrong(_sessionData.currentPatient.clientName);
+                PlaytestLogger.Instance.RecordPatientTreatedWrong(_currentPatient.clientName);
             }
             // Playtest Analytics ==================================
 
-            return potionSet.SetEquals(recipeSet);
+            return isCorrect;
         }
 
         private List<DialogueLine> FilterMagicDialogue(List<DialogueLine> originalList, bool potionHasMagic)
