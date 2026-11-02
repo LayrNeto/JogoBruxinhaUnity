@@ -214,10 +214,12 @@ namespace JogoBruxinha.Gameplay.Counter
 
         private bool VerifyRecipe()
         {
-            HashSet<SymptomType> potionSymptoms = _inventoryData.craftedPotions[0].GetTreatedSymptoms();
-            HashSet<SymptomType> patientSymptoms = new HashSet<SymptomType>(_currentPatient.requiredSymptoms);
+            if (_inventoryData.craftedPotions.Count == 0 || _currentPatient == null) return false;
 
-            bool isCorrect = potionSymptoms.IsSupersetOf(patientSymptoms);
+            HashSet<SymptomType> potionSymptoms = _inventoryData.craftedPotions[0].GetTreatedSymptoms();
+            int potionScore = _currentPatient.EvaluatePotionScore(potionSymptoms);
+
+            bool isCorrect = potionScore >= _currentPatient.targetScore;
 
             // Playtest Analytics ==================================
             if (!isCorrect && PlaytestLogger.Instance != null)
@@ -226,6 +228,8 @@ namespace JogoBruxinha.Gameplay.Counter
                 PlaytestLogger.Instance.RecordPatientTreatedWrong(_currentPatient.clientName);
             }
             // Playtest Analytics ==================================
+
+            Debug.Log($"[Alquimia] Paciente: {_currentPatient.clientName} | Pontos obtidos: {potionScore}/{_currentPatient.targetScore} | Sucesso: {isCorrect}");
 
             return isCorrect;
         }

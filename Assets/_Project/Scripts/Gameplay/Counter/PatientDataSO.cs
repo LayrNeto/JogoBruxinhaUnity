@@ -44,8 +44,9 @@ namespace JogoBruxinha.Gameplay.Counter
         [Header("Dialogue Audio")]
         public SoundDataSO voiceSound;
 
-        [Header("Recipe Requirements")]
-        public List<SymptomType> requiredSymptoms = new List<SymptomType>();
+        [Header("Recipe Scoring Requirements")]
+        public int targetScore = 30;
+        public List<SymptomScoreWeight> symptomWeights = new List<SymptomScoreWeight>();
 
         [Header("Dialogue: First Meeting")]
         public List<DialogueLine> introDialogue = new List<DialogueLine>();
@@ -58,5 +59,23 @@ namespace JogoBruxinha.Gameplay.Counter
 
         [Header("Dialogue: Delivery Failed")]
         public List<DialogueLine> failDialogue = new List<DialogueLine>();
+
+
+        public int EvaluatePotionScore(HashSet<SymptomType> potionSymptoms)
+        {
+            if (potionSymptoms == null || symptomWeights == null) return 0;
+
+            int totalScore = 0;
+
+            foreach (var weight in symptomWeights)
+            {
+                if (potionSymptoms.Contains(weight.symptom))
+                {
+                    totalScore += weight.points;
+                }
+            }            
+
+            return totalScore;
+        }
     }
 }

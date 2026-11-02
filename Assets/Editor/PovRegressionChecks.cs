@@ -22,6 +22,8 @@ public static class PovRegressionChecks
     private const string Pending = "Bruxinha.PovRegressionChecks";
     private const string RestoreKey = Pending + ".Restore";
     [Serializable] private sealed class SceneSnapshot { public SceneSetup[] scenes; }
+
+    [Obsolete]
     static PovRegressionChecks()
     {
         EditorApplication.playModeStateChanged += state =>
@@ -95,11 +97,12 @@ public static class PovRegressionChecks
         catch (Exception error) { Fail(error); }
     }
 
+    [Obsolete]
     private static void CheckInPlayMode()
     {
         try
         {
-            var cauldron = Object.FindFirstObjectByType<CauldronController>();
+            var cauldron = Object.FindAnyObjectByType<CauldronController>();
             var slots = Object.FindObjectsByType<IngredientSlot>(FindObjectsSortMode.None);
             IngredientSlot first = slots.Single(slot => slot.name == "Babosa");
             IngredientSlot second = slots.Single(slot => slot.name == "Amora");
@@ -173,6 +176,7 @@ public static class PovRegressionChecks
         catch (Exception error) { Fail(error); }
     }
 
+    [Obsolete]
     private static void CheckEnergy(CauldronController cauldron, IngredientSlot[] slots)
     {
         var session = Get<SessionDataSO>(cauldron, "_sessionData");

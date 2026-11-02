@@ -128,7 +128,8 @@ namespace JogoBruxinha.Gameplay.Tutorial
                 Debug.Log("Tutorial Finalizado! Iniciando transição...");
 
                 // Playtest Analytics ==================================
-                PlaytestLogger.Instance.RecordTutorialFinished();
+                if (PlaytestLogger.Instance != null)
+                    PlaytestLogger.Instance.RecordTutorialFinished();
                 // Playtest Analytics ==================================
 
                 _sessionData.tutorialData = null;

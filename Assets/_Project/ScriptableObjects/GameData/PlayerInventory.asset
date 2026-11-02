@@ -14,5 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InventoryDataSO
   craftedPotions: []
   maxPotionSlots: 1
-  _keys: []
-  _values: 
+  _keys:
+  - {fileID: 11400000, guid: 39298dfe97f7a2e459cfbacf25531be6, type: 2}
+  - {fileID: 11400000, guid: c8104816b34717d489f65bf2dd3ca45a, type: 2}
+  - {fileID: 11400000, guid: 3b002a218d69dfa42969e5f850cf972f, type: 2}
+  - {fileID: 11400000, guid: 341445148ca031f4e8e7fe81e7fa2890, type: 2}
+  - {fileID: 11400000, guid: 5d8ecbddf24eb034cb399c22513dd774, type: 2}
+  - {fileID: 11400000, guid: e143f2938045b3a4da2b762a5815adcc, type: 2}
+  - {fileID: 11400000, guid: 8ad534602b73e9d46ab67a67b6e138fc, type: 2}
+  _values: 08000000070000000700000008000000070000000800000000000000

@@ -157,7 +157,8 @@ namespace JogoBruxinha.Gameplay.Characters.Companion
             _puppetVisuals.transform.localPosition = playerOnRight ? _offsetRight : _offsetLeft;
 
             // Playtest Analytics ==================================
-            PlaytestLogger.Instance.RecordCatPetting();
+            if (PlaytestLogger.Instance != null)
+                PlaytestLogger.Instance.RecordCatPetting();
             // Playtest Analytics ==================================
 
             if (playerOnRight)
