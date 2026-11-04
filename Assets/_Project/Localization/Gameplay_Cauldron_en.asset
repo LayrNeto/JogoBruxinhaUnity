@@ -17,7 +17,47 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 9ec17b862ca873e41b208872216eb253, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 684030115840
+    m_Localized: There's already a potion on the counter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 252976604069888
+    m_Localized: The cauldron is already full
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253054379048960
+    m_Localized: Duplicate ingredient
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253125040488448
+    m_Localized: Take the potion to the counter first
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253160885010432
+    m_Localized: Add {0} ingredients first
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253220674813952
+    m_Localized: No inventory space for the potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253299716472832
+    m_Localized: The ritual requires {0} life energy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253352564703232
+    m_Localized: Ingredient added
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253386354016256
+    m_Localized: Click the cauldron to bottle the potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253444944248832
+    m_Localized: Potion sent to inventory
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

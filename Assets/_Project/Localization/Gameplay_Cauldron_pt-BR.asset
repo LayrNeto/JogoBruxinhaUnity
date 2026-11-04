@@ -17,7 +17,47 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 9ec17b862ca873e41b208872216eb253, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 684030115840
+    m_Localized: "J\xE1 existe uma po\xE7\xE3o no balc\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 252976604069888
+    m_Localized: "O caldeir\xE3o j\xE1 est\xE1 cheio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253054379048960
+    m_Localized: Ingrediente repetido
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253125040488448
+    m_Localized: "Leve primeiro a po\xE7\xE3o ao balc\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253160885010432
+    m_Localized: Adicione {0} ingredientes primeiro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253220674813952
+    m_Localized: "Sem espa\xE7o no invent\xE1rio para a po\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253299716472832
+    m_Localized: O ritual precisa de {0} de energia vital
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253352564703232
+    m_Localized: Ingrediente adicionado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253386354016256
+    m_Localized: "Clique no caldeir\xE3o para engarrafar a po\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253444944248832
+    m_Localized: "Po\xE7\xE3o enviada para o invent\xE1rio"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -16,7 +16,43 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 9ec17b862ca873e41b208872216eb253
   m_Entries:
   - m_Id: 684030115840
-    m_Key: New Entry
+    m_Key: cauldron_popup_potion_on_counter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 252976604069888
+    m_Key: cauldron_popup_cauldron_full
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253054379048960
+    m_Key: cauldron_popup_repeated_ingredient
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253125040488448
+    m_Key: cauldron_popup_deliver_first
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253160885010432
+    m_Key: cauldron_popup_need_ingredients
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253220674813952
+    m_Key: cauldron_popup_no_inventory_space
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253299716472832
+    m_Key: cauldron_popup_need_energy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253352564703232
+    m_Key: cauldron_popup_ingredient_added
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253386354016256
+    m_Key: cauldron_popup_click_to_bottle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253444944248832
+    m_Key: cauldron_popup_potion_sent
     m_Metadata:
       m_Items: []
   m_Metadata:

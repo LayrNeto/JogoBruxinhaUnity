@@ -8,6 +8,7 @@ using JogoBruxinha.Gameplay.Inventory;
 using JogoBruxinha.Gameplay.GameFlow;
 using JogoBruxinha.Gameplay.Dialogue;
 using JogoBruxinha.Core.SceneManagement;
+using UnityEngine.Localization;
 
 namespace JogoBruxinha.Gameplay.Cauldron
 {
@@ -33,6 +34,18 @@ namespace JogoBruxinha.Gameplay.Cauldron
         [SerializeField] private SoundDataSO _errorSound;
         [SerializeField] private SoundDataSO _ingredientAddedSound;
         [SerializeField] private SoundDataSO _potionPreparedSound;
+
+        [Header("Localized Popups")]
+        [SerializeField] private LocalizedString _msgPotionOnCounter;      
+        [SerializeField] private LocalizedString _msgCauldronFull;          
+        [SerializeField] private LocalizedString _msgRepeatedIngredient;    
+        [SerializeField] private LocalizedString _msgDeliverFirst;          
+        [SerializeField] private LocalizedString _msgNeedMoreIngredients;   
+        [SerializeField] private LocalizedString _msgNoInventorySpace;      
+        [SerializeField] private LocalizedString _msgNeedVitalEnergy;       
+        [SerializeField] private LocalizedString _msgIngredientAdded;       
+        [SerializeField] private LocalizedString _msgClickToBottle;         
+        [SerializeField] private LocalizedString _msgPotionSentToInventory;
 
         [Header("Delegates/Hooks")]
         public Func<PlantDataSO, bool> onValidateIngredientDrop;
@@ -116,7 +129,7 @@ namespace JogoBruxinha.Gameplay.Cauldron
             if (plant == null || InputBlocked) return false;
             if (_sessionData != null && _sessionData.potionAwaitingDelivery)
             {
-                ShowErrorMessage("Já existe uma poção no balcão");
+                ShowErrorMessage(_msgPotionOnCounter.GetLocalizedString());
                 return false;
             }
 
@@ -125,7 +138,7 @@ namespace JogoBruxinha.Gameplay.Cauldron
 
             if (_currentIngredients.Count >= MaxIngredients)
             {
-                ShowErrorMessage("O caldeirao já está cheio");
+                ShowErrorMessage(_msgCauldronFull.GetLocalizedString());
                 return false;
             }
 
@@ -140,8 +153,8 @@ namespace JogoBruxinha.Gameplay.Cauldron
                 UpdateFloatingIcons(plant.dragSprite, hasBg);
 
                 string message = (_currentIngredients.Count == MaxIngredients) 
-                    ? "Clique no caldeirão para engarrafar a poção" 
-                    : "Ingrediente adicionado";
+                                ? _msgClickToBottle.GetLocalizedString()
+                                : _msgIngredientAdded.GetLocalizedString();
 
                 if (_popup != null) _popup.ShowMessage(message);
 
@@ -155,7 +168,7 @@ namespace JogoBruxinha.Gameplay.Cauldron
             }
             else
             {
-                ShowErrorMessage("Ingrediente repetido");
+                ShowErrorMessage(_msgRepeatedIngredient.GetLocalizedString());
                 return false;
             }
         }
@@ -195,7 +208,7 @@ namespace JogoBruxinha.Gameplay.Cauldron
             }
             if (_sessionData != null && _sessionData.potionAwaitingDelivery)
             {
-                ShowErrorMessage("Leve primeiro a poção ao balcão");
+                ShowErrorMessage(_msgDeliverFirst.GetLocalizedString());
                 return;
             }
 
@@ -206,8 +219,8 @@ namespace JogoBruxinha.Gameplay.Cauldron
                 FinishPotion(false);
             }
             else
-            {
-                ShowErrorMessage($"Adicione {MaxIngredients} ingredientes primeiro");
+            {   
+                ShowErrorMessage(_msgNeedMoreIngredients.GetLocalizedString(MaxIngredients));
             }
         }
 
@@ -216,7 +229,7 @@ namespace JogoBruxinha.Gameplay.Cauldron
             if (InputBlocked) return;
             if (_sessionData != null && _sessionData.potionAwaitingDelivery)
             {
-                ShowErrorMessage("Leve primeiro a poção ao balcão");
+                ShowErrorMessage(_msgDeliverFirst.GetLocalizedString());
                 return;
             }
 
@@ -226,19 +239,19 @@ namespace JogoBruxinha.Gameplay.Cauldron
             }
             else
             {
-                ShowErrorMessage($"Adicione {MaxIngredients} ingredientes primeiro");
+                ShowErrorMessage(_msgNeedMoreIngredients.GetLocalizedString(MaxIngredients));
             }
         }
         private void FinishPotion(bool isSpellUsed)
         {
             if (_inventoryData == null || !_inventoryData.HasSpaceForPotion())
             {
-                ShowErrorMessage("Sem espaço no inventário para a poção");
+                ShowErrorMessage(_msgNoInventorySpace.GetLocalizedString());
                 return;
             }
             if (isSpellUsed && (_sessionData == null || !_sessionData.TrySpendRitualEnergy()))
             {
-                ShowErrorMessage($"O ritual precisa de {SessionDataSO.RitualEnergyCost} de energia vital");
+                ShowErrorMessage(_msgNeedVitalEnergy.GetLocalizedString(SessionDataSO.RitualEnergyCost));
                 return;
             }
 
@@ -290,7 +303,7 @@ namespace JogoBruxinha.Gameplay.Cauldron
 
             if (_popup != null)
             {
-                _popup.ShowMessage("Poção enviada para o inventário");
+                _popup.ShowMessage(_msgPotionSentToInventory.GetLocalizedString());
             }
 
             onPotionFinished?.Invoke(isSpellUsed);

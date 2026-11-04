@@ -41,6 +41,7 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pt-BR
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fbb77a47b26c73e4a8fc4e203bc865f1
     m_Address: Gameplay_Tutorial_pt-BR

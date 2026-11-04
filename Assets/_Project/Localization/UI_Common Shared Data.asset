@@ -14,7 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
   m_TableCollectionName: UI_Common
   m_TableCollectionNameGuidString: eeea39d2e85adb647a33179c78564675
-  m_Entries: []
+  m_Entries:
+  - m_Id: 276336033611776
+    m_Key: btn_play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 276879837708288
+    m_Key: btn_continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 276923835957248
+    m_Key: btn_credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 276976638050304
+    m_Key: btn_quit
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
