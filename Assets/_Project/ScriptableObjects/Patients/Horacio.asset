@@ -12,10 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f60ee7a54703c5498e14ccffe278a97, type: 3}
   m_Name: Horacio
   m_EditorClassIdentifier: Assembly-CSharp::PatientDataSO
+  patientId: horacio
+  patientName:
+    m_TableReference:
+      m_TableCollectionName: Gameplay_Patients
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: patient_horacio_name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   cursedMovementSpeed: 0.3
   healedMovementSpeed: 1
   animatorController: {fileID: 9100000, guid: d9401ed75ecc5504ea457d2583509296, type: 2}
-  clientName: "Hor\xE1cio"
   povCursedSprite: {fileID: 21300000, guid: c3dbd1cf44192df47b166f74424f2aa6, type: 3}
   povHealedSprite: {fileID: 21300000, guid: 34b3b5145df1dda4083e918b7eaebcac, type: 3}
   dialogueBoxSprite: {fileID: 21300000, guid: 5b338a8c7afa2c94aa3f203e3b3ca537, type: 3}
@@ -30,118 +39,405 @@ MonoBehaviour:
     points: 10
   introDialogue:
   - speaker: 0
-    text: .............
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_0
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 1
-    text: Bom dia, senhor, como posso ajudar?
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_1
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: Bom..............
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_2
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: ............ dia.
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_3
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: Comi.......... fruta.............. infestada.........
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_4
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: "Agora.......... tudo......... est\xE1.........."
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_5
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: "........muito ....... r\xE1pido."
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_6
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 1
-    text: "Oh n\xE3o! Ser\xE1 que voc\xEA ingeriu um daqueles vermes let\xE1rgicos?"
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_7
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 1
-    text: "Ouvi dizer que eles injetam uma subst\xE2ncia que desacelera o hospedeiro.
-      Deve ser por isso que voc\xEA est\xE1 lento desse jeito."
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_8
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: .............
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_9
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: .................... lento.
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_10
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: "Voc\xEA........... que....... fala........... r\xE1pido........."
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_11
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 1
-    text: "N\xE3o, o senhor que... Ah, deixa pra l\xE1."
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_12
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 1
-    text: "(Ele com certeza est\xE1 parasitado por um desses vermes.)"
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_13
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 1
-    text: "Est\xE1 sentindo mais alguma coisa?"
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_14
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: "Tudo............. est\xE1........ girando......."
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_15
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: Sinto....... que vou....... passar mal.......
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_16
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: Muito......... enjoado........
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_17
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: (Ele boceja.)
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_18
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 1
-    text: "(Al\xE9m de tudo, ele parece cansado. Talvez eu tenha algo que possa lhe
-      dar mais energia.)"
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_19
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 1
-    text: "Certo, farei uma po\xE7\xE3o para ajudar o senhor."
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_20
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: O que.......? Fala....... mais........... devagar........
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_21
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 1
-    text: Aguarde...... aqui........ por favor!
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_intro_22
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   waitingDialogues:
   - lines:
     - speaker: 0
-      text: Tudo....... pronto......?
+      text:
+        m_TableReference:
+          m_TableCollectionName: Gameplay_Patients
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: dialogue_horacio_waiting_0
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       requiresMagic: 0
   successDialogue:
   - speaker: 0
-    text: "Nossa! Finalmente tudo est\xE1 na velocidade normal!"
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_success_0
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: "J\xE1 estava ficando maluco com o mundo todo acelerado daquele jeito."
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_success_1
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: "Incr\xEDvel como uma po\xE7\xE3o pode alterar a realidade assim."
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_success_2
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 1
-    text: "Pois \xE9..."
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_success_3
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 1
-    text: "S\xF3 evite comer as frutas daquele mesmo p\xE9 por um tempo."
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_success_4
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: "N\xE3o sei como viverei sem comer minhas goiabas, mas acho que terei que
-      fazer esse esfor\xE7o."
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_success_5
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: "Bom, muito obrigado! Com certeza irei recomendar os seus servi\xE7os para
-      o pessoal do vilarejo!"
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_success_6
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 1
-    text: Ah... Obrigada!
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_success_7
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   failDialogue:
   - speaker: 0
-    text: Fun....... cionou......?
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_fail_0
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 1
-    text: "Oh n\xE3o... Devo ter errado algum ingrediente..."
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_fail_1
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: Vou........ procurar...... ajuda........
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_fail_2
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
   - speaker: 0
-    text: ..... em outro....... lugar...........
+    text:
+      m_TableReference:
+        m_TableCollectionName: Gameplay_Patients
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: dialogue_horacio_fail_3
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     requiresMagic: 0
+  references:
+    version: 2
+    RefIds: []

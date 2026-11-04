@@ -61,7 +61,7 @@ namespace JogoBruxinha.Gameplay.Counter
             PatientDataSO patient = _sessionData.currentPatient;
             if (patient != null)
             {
-                Debug.Log($"Balcão aberto para atender paciente {patient.clientName}");
+                Debug.Log($"Balcão aberto para atender paciente {patient.GetLocalizedPatientName()}");
                 HandlePatientDialogue(patient);
                 return;
             }
@@ -80,6 +80,8 @@ namespace JogoBruxinha.Gameplay.Counter
                 int waitingIndex = _sessionData.interactionCount - 1;
                 int maxIndex = patient.waitingDialogues.Count - 1;
                 int safeIndex = Mathf.Min(waitingIndex, Mathf.Max(0, maxIndex));
+
+                Debug.Log(waitingIndex + " " + maxIndex + " " + safeIndex);
 
                 _patientDelivery.StartPatientEncounter(patient, patient.waitingDialogues[safeIndex].lines);
             }

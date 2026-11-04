@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Gameplay_Tutorial Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Gameplay_Tutorial
+  m_TableCollectionNameGuidString: 6741925cc682c1845b875a8926a0c3bf
+  m_Entries:
+  - m_Id: 137478750208
+    m_Key: tutorial_counter_intro_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 788086603776
+    m_Key: tutorial_counter_intro_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 912351248384
+    m_Key: tutorial_counter_intro_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 931456303104
+    m_Key: tutorial_counter_intro_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 941979811840
+    m_Key: tutorial_counter_intro_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 955246395392
+    m_Key: tutorial_counter_intro_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 966231277568
+    m_Key: tutorial_counter_intro_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1255663419392
+    m_Key: tutorial_counter_request_ingredients_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1568822738944
+    m_Key: tutorial_cauldron_intro_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1742471118848
+    m_Key: tutorial_cauldron_intro_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1747042910208
+    m_Key: tutorial_cauldron_intro_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1770321297408
+    m_Key: tutorial_cauldron_intro_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1779129335808
+    m_Key: tutorial_cauldron_intro_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1787400503296
+    m_Key: tutorial_cauldron_first_potion_done_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2254234927104
+    m_Key: tutorial_counter_deliver_potion_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2604824215552
+    m_Key: tutorial_counter_deliver_potion_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2700471123968
+    m_Key: tutorial_cauldron_advanced_prep_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3301439389696
+    m_Key: tutorial_cauldron_advanced_prep_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3315586777088
+    m_Key: tutorial_cauldron_advanced_prep_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3324281569280
+    m_Key: tutorial_cauldron_advanced_prep_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3334691831808
+    m_Key: tutorial_cauldron_advanced_prep_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3344393256960
+    m_Key: tutorial_cauldron_advanced_prep_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3532356796416
+    m_Key: tutorial_cauldron_hint_use_spell_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4038424739840
+    m_Key: tutorial_cauldron_magic_potion_done_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4204728893440
+    m_Key: tutorial_cutscene_over_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4303211151360
+    m_Key: tutorial_cutscene_over_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4447180636160
+    m_Key: tutorial_error_wrong_recipe_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4790744465408
+    m_Key: tutorial_error_wrong_recipe_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4951340171264
+    m_Key: tutorial_error_spell_not_used_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12607442337792
+    m_Key: tutorial_cauldron_hint_use_spell_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12623082897408
+    m_Key: tutorial_cauldron_hint_use_spell_2
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 1405564066981740804
+  references:
+    version: 2
+    RefIds:
+    - rid: 1405564066981740804
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1793758027267

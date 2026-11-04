@@ -13,19 +13,25 @@ MonoBehaviour:
   m_Name: SesionData
   m_EditorClassIdentifier: Assembly-CSharp::SessionDataSO
   tutorialData: {fileID: 0}
-  _vitalEnergy: 100
-  isNight: 0
-  currentDay: 0
+  _vitalEnergy: 50
+  isNight: 1
+  currentDay: 1
   patientsPerDay:
   - {fileID: 11400000, guid: f0270a14d8b6df14aa0917648a32be3b, type: 2}
   - {fileID: 11400000, guid: 2a0840cf11dc34748a6810cedf3654f9, type: 2}
   currentScene: HouseScene
-  playerPos: {x: -1.75, y: -8, z: 0}
-  companionPos: {x: -3.03, y: -8.000004, z: -0.09999811}
+  playerPos: {x: 9.237849, y: 1.1135659, z: 0}
+  companionPos: {x: 2.7110195, y: 0.9302222, z: -0.0999987}
   potionAwaitingDelivery: 0
-  currentPatient: {fileID: 11400000, guid: f0270a14d8b6df14aa0917648a32be3b, type: 2}
-  savedNPCState: 0
-  hasNPCSpawnedToday: 0
-  interactionCount: 0
-  _plantKeys: []
-  _plantValues: 
+  currentPatient: {fileID: 11400000, guid: 2a0840cf11dc34748a6810cedf3654f9, type: 2}
+  savedNPCState: 3
+  hasNPCSpawnedToday: 1
+  interactionCount: 3
+  _plantKeys:
+  - amora1
+  - calendula1
+  - alecrim1
+  - babosa1
+  - gengibre1
+  - camomila1
+  _plantValues: 010000000100000001000000010000000100000001000000

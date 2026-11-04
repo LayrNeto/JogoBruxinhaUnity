@@ -13,6 +13,17 @@ MonoBehaviour:
   m_Name: MagicPotion
   m_EditorClassIdentifier: Assembly-CSharp::PotionDataSO
   id: magic_potion
-  displayName: "Po\xE7\xE3o M\xE1gica"
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: GUID:df8ed605b02125e4d80317ecb8a6cabc
+    m_TableEntryReference:
+      m_KeyId: 3292698460160
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   inventoryIcon: {fileID: 21300000, guid: 48003839cccb4c04eba8fee7d15e8a9b, type: 3}
   tableSprite: {fileID: 21300000, guid: 9f5d0bb715d2edf4db38048201b85cdf, type: 3}
+  references:
+    version: 2
+    RefIds: []

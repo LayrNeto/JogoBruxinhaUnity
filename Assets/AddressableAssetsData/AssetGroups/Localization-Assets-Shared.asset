@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-Shared
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Localization-Assets-Shared
+  m_GUID: cdcc890791f7d804ebe09991c1b6cb73
+  m_SerializeEntries:
+  - m_GUID: 6741925cc682c1845b875a8926a0c3bf
+    m_Address: Assets/_Project/Localization/Gameplay_Tutorial Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9ec17b862ca873e41b208872216eb253
+    m_Address: Assets/_Project/Localization/Gameplay_Cauldron Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9ec3a92cd5df712429c5a885d484e1b9
+    m_Address: Assets/_Project/Localization/Gameplay_Patients Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df8ed605b02125e4d80317ecb8a6cabc
+    m_Address: Assets/_Project/Localization/Items_Glossary Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eeea39d2e85adb647a33179c78564675
+    m_Address: Assets/_Project/Localization/UI_Common Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 4fedea5202b9d3a419e55a3ad3ae2a9b, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 353197447abd87049a8bd5ed017eb3f2, type: 2}
+    - {fileID: 11400000, guid: 6d03c14a0dad1c14d939017f9becc3ff, type: 2}
+    - {fileID: 11400000, guid: 7a8c89ceb63d2c1439acf22002c6326c, type: 2}

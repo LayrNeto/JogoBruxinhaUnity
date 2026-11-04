@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Items_Glossary Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Items_Glossary
+  m_TableCollectionNameGuidString: df8ed605b02125e4d80317ecb8a6cabc
+  m_Entries:
+  - m_Id: 961990836224
+    m_Key: item_potion_normal_potion_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3292698460160
+    m_Key: item_potion_magic_potion_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3423887900672
+    m_Key: item_plant_alecrim_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3550904008704
+    m_Key: item_plant_amora_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3890915262464
+    m_Key: item_plant_babosa_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4272672423936
+    m_Key: item_plant_calendula_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4519654014976
+    m_Key: item_plant_camomila_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4950903963648
+    m_Key: item_plant_gengibre_name
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 1405564066981740758
+  references:
+    version: 2
+    RefIds:
+    - rid: 1405564066981740758
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1793730401266

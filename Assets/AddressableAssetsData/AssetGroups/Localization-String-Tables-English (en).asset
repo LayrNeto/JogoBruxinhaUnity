@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-English (en)
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Localization-String-Tables-English (en)
+  m_GUID: 4406e7292d4e50f46a68edde4555bf5a
+  m_SerializeEntries:
+  - m_GUID: 9a996cc7ee2a6544183aa946bc9e57cb
+    m_Address: Gameplay_Cauldron_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a0d79d195ff4222438feb639b5c02020
+    m_Address: Gameplay_Patients_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: be18ac6b8aeaa04459ff918ce99a95d7
+    m_Address: UI_Common_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cba0f1c6cbabb484b95b0b0d3f206a16
+    m_Address: Items_Glossary_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f418ac2be71b0044c8130ef1112edc5c
+    m_Address: Gameplay_Tutorial_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 4fedea5202b9d3a419e55a3ad3ae2a9b, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: e29b97208c73d92498b062797bd553d6, type: 2}
+    - {fileID: 11400000, guid: c18cc3482848fc145824b3ce5a2b7d70, type: 2}
+    - {fileID: 11400000, guid: a7196f2b3fbbf4b46b4c3817f75d9795, type: 2}

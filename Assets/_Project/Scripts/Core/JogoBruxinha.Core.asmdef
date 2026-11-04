@@ -2,7 +2,8 @@
     "name": "JogoBruxinha.Core",
     "rootNamespace": "JogoBruxinha.Core",
     "references": [
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "Unity.Localization"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

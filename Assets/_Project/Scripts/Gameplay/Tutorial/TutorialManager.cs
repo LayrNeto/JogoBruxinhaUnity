@@ -14,6 +14,8 @@ using JogoBruxinha.Gameplay.GameFlow;
 using JogoBruxinha.Gameplay.Inventory;
 using JogoBruxinha.Core.Audio;
 using JogoBruxinha.Core.Analytics;
+using JogoBruxinha.Gameplay.Environment;
+using UnityEngine.Localization.SmartFormat.PersistentVariables;
 
 namespace JogoBruxinha.Gameplay.Tutorial
 {

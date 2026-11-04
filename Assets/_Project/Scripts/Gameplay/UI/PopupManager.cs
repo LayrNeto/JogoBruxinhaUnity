@@ -49,7 +49,7 @@ namespace JogoBruxinha.Gameplay.UI
 
             if (_nameText != null)
             {
-                _nameText.text = itemData.item.displayName;
+                _nameText.text = itemData.item.GetLocalizedName();
             }
 
             _popupPanel.SetActive(true);

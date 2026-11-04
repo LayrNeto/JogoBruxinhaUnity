@@ -279,7 +279,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2236688422860458945}
-        m_TargetAssemblyTypeName: JogoBruxinha.Gameplay.Dialogue.DialogueManager, JogoBruxinha.Gameplay
+        m_TargetAssemblyTypeName: JogoBruxinha.Gameplay.Dialogue.DialogueManager,
+          JogoBruxinha.Gameplay
         m_MethodName: ShowNextLine
         m_Mode: 1
         m_Arguments:
@@ -1544,6 +1545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8136d596eae1b247a87b58595cc0df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIToggler
+  _targetUI: {fileID: 0}
   _startsActive: 0
 --- !u!114 &1879490744360003120
 MonoBehaviour:

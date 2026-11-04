@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace JogoBruxinha.Gameplay.Inventory
 {
@@ -7,9 +8,17 @@ namespace JogoBruxinha.Gameplay.Inventory
     {
         [Header("Base Identification")]
         public string id;
-        public string displayName;
+        public LocalizedString displayName;
 
         [Header("Base Visuals")]
         public Sprite inventoryIcon;
+
+        public string GetLocalizedName()
+        {
+            if (displayName == null || displayName.IsEmpty)
+                return id; // Fallback seguro caso esqueça de associar a tabela
+
+            return displayName.GetLocalizedString();
+        }
     }
 }

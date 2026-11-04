@@ -55,7 +55,7 @@ namespace JogoBruxinha.Gameplay.Characters.Player
 
             _inventorySO.savedInv[itemStruct.item] += itemStruct.amount;
 
-            Debug.Log($"Inventory: {itemStruct.item.displayName} now has {_inventorySO.savedInv[itemStruct.item]} units.");
+            Debug.Log($"Inventory: {itemStruct.item.GetLocalizedName()} now has {_inventorySO.savedInv[itemStruct.item]} units.");
         }
 
         public Dictionary<ItemDataSO, int> GetInventory()

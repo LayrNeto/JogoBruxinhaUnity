@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using JogoBruxinha.Core.Audio;
 using JogoBruxinha.Gameplay.Inventory;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace JogoBruxinha.Gameplay.Counter
 {
@@ -16,9 +17,16 @@ namespace JogoBruxinha.Gameplay.Counter
     {
         public SpeakerType speaker;
 
-        [TextArea(3, 5)]
-        public string text;
+        public LocalizedString text;
         public bool requiresMagic;
+
+        public string GetLocalizedText()
+        {
+            if (text == null || text.IsEmpty)
+                return string.Empty;
+
+            return text.GetLocalizedString();
+        }
     }
 
     [System.Serializable]
@@ -30,13 +38,16 @@ namespace JogoBruxinha.Gameplay.Counter
     [CreateAssetMenu(fileName = "NewPatientData", menuName = "Scriptable Objects/Game Data/Patient Data")]
     public sealed class PatientDataSO : ScriptableObject
     {
+        [Header("Identification")]
+        public string patientId;
+        public LocalizedString patientName;
+
         [Header("Top-Down Data")]
         public float cursedMovementSpeed = 1f;
         public float healedMovementSpeed = 1f;
         public RuntimeAnimatorController animatorController;
 
         [Header("Visuals")]
-        public string clientName;
         public Sprite povCursedSprite;
         public Sprite povHealedSprite;
         public Sprite dialogueBoxSprite;
@@ -76,6 +87,14 @@ namespace JogoBruxinha.Gameplay.Counter
             }            
 
             return totalScore;
+        }
+
+        public string GetLocalizedPatientName()
+        {
+            if (patientName == null || patientName.IsEmpty)
+                return patientId;
+
+            return patientName.GetLocalizedString();
         }
     }
 }

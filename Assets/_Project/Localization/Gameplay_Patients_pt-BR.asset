@@ -1,0 +1,410 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Gameplay_Patients_pt-BR
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: 9ec3a92cd5df712429c5a885d484e1b9, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 9285880725504
+    m_Localized: Aldara
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9432496816128
+    m_Localized: "Hor\xE1cio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10394435272704
+    m_Localized: "\xC9 aqui mesmo que vive a bruxa de que tanto falam nesse vilarejo?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11285846507520
+    m_Localized: "J\xE1 tem quase uma semana que t\xF4 procurando por ajuda. Os curandeiros
+      que visitei foram uma decep\xE7\xE3o!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11687916683264
+    m_Localized: F-fique tranquila! Veio pro lugar certo! O que houve?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14012857139200
+    m_Localized: "Eu tava no p\xE2ntano que fica a alguns dias de viagem daqui, sabe?
+      Fui atr\xE1s de duas crian\xE7as desaparecidas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14057933324288
+    m_Localized: "Nessa empreitada encontrei um drag\xE3o enorme..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14066825248768
+    m_Localized: "E n\xE3o podia deixar uma criatura daquelas correndo solta por
+      a\xED!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14075243216896
+    m_Localized: "Consegui espantar ele, mas n\xE3o antes de ser atingida por um
+      cuspe de \xE1cido, como voc\xEA pode ver."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14085062082560
+    m_Localized: "(O rosto dela est\xE1 repleto de queimaduras.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14094667038720
+    m_Localized: "E olha, j\xE1 tentei de tudo! Parece que nada \xE9 o suficiente
+      pra fechar essa ferida..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14115806330880
+    m_Localized: "Drag\xF5es s\xE3o criaturas m\xE1gicas\u2026 Acho que tratamentos
+      convencionais n\xE3o v\xE3o te ajudar com uma queimadura dessas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14143732006912
+    m_Localized: "E como se n\xE3o bastasse, s\xF3 t\xE1 ficando pior. Cheio de bolhas
+      e pus..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14163470401536
+    m_Localized: Hmm... A ferida deve ter infeccionado.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14170953039872
+    m_Localized: "Mas n\xE3o se preocupe, vou levar isso em conta na hora de preparar
+      a po\xE7\xE3o para voc\xEA."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14230155640832
+    m_Localized: "Ent\xE3o \xE9 voc\xEA que faz po\xE7\xF5es? N\xE3o \xE9 a bruxa?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14252611944448
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14263093510144
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14274934030336
+    m_Localized: "Ah! Voc\xEA \xE9 a bruxa!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14299542011904
+    m_Localized: Eu sou a... Substituta!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14312728903680
+    m_Localized: "Uma bruxa t\xE3o jovem! Nunca imaginaria! Tamb\xE9m pensava que
+      ia ser mais assustadora, pelas hist\xF3rias que ouvi."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14329720029184
+    m_Localized: "Meu escudeiro disse que s\xF3 de olhar torto pra uma bruxa ela
+      j\xE1 te joga uma praga, acredita?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14345482223616
+    m_Localized: "Voc\xEA n\xE3o faria uma coisa dessas n\xE9? Hahaha!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14385592352768
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14397336403968
+    m_Localized: Ou faria?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14404819042304
+    m_Localized: "Claro que n\xE3o!!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14412322652160
+    m_Localized: Um problema a menos... Haha...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14420266663936
+    m_Localized: (Bom, pelo menos ela parece estar de bom humor)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14440361574400
+    m_Localized: "Antes de preparar a po\xE7\xE3o, preciso saber se est\xE1 sentindo
+      mais alguma coisa. Pelo visto n\xE3o est\xE1 com tanta dor, n\xE3o \xE9?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14454454435840
+    m_Localized: "Ah, eu t\xF4 me sentindo horr\xEDvel na verdade. Nunca estive pior!
+      T\xF4 prestes a desmaiar de dor."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14476457754624
+    m_Localized: "Porque voc\xEA n\xE3o disse isso antes!? Vou fazer uma po\xE7\xE3o
+      agora mesmo!!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14500235264000
+    m_Localized: "Sem pressa! Eu j\xE1 aguentei por dias at\xE9 te encontrar, umas
+      horinhas a mais n\xE3o faz mal!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14511371141120
+    m_Localized: Eu acho...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15575096967168
+    m_Localized: "Ent\xE3o... A po\xE7\xE3o j\xE1 t\xE1 pronta?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15635293618176
+    m_Localized: "N\xE3o sei se vou aguentar por muito mais tempo\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15780152295424
+    m_Localized: "Essa po\xE7\xE3o deve ser o suficiente para te curar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15844358701056
+    m_Localized: "Voc\xEA t\xE1 bem, bruxa? Seu rosto t\xE1 p\xE1lido."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15865070174208
+    m_Localized: "*tosse* n\xE3o se preocupe, estou \xF3tima. Agora beba a po\xE7\xE3o,
+      voc\xEA j\xE1 t\xE1 sofreu por tempo o suficiente."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15875711123456
+    m_Localized: "Incr\xEDvel... A ferida desapareceu completamente! Voc\xEA faz
+      milagres senhorita bruxa substituta!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15899434106880
+    m_Localized: Inclusive, vou te pedir mais um favor.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15911614365696
+    m_Localized: "Olha... A verdade \xE9 que me feri cuidando de um filhote de drag\xE3o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15916567838720
+    m_Localized: "O coitado tava t\xE3o doente e fraquinho... Foi abandonado pela
+      m\xE3e! N\xE3o podia deixar ele sozinho."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15930358710272
+    m_Localized: "Vou trazer ele aqui assim que poss\xEDvel!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15938575351808
+    m_Localized: "Um drag\xE3o!?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15947001708544
+    m_Localized: "Por que n\xE3o? Uma bruxa talentosa como voc\xEA n\xE3o vai ter
+      nenhuma dificuldade pra curar ele, n\xE3o \xE9?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15956413726720
+    m_Localized: "E-eu n\xE3o fa\xE7o ideia..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15966798823424
+    m_Localized: "Voc\xEA n\xE3o tem um gato a\xED? \xC9 quase a mesma coisa que
+      um drag\xE3o, haha! Te vejo em breve!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18437621366784
+    m_Localized: "Essa po\xE7\xE3o deve ser o suficiente para te curar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18503551631360
+    m_Localized: "Finalmente algum al\xEDvio... Mas ainda n\xE3o me sinto muito bem...
+      Quanto tempo at\xE9 a po\xE7\xE3o fazer efeito?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18514108694528
+    m_Localized: "(Parece que a po\xE7\xE3o n\xE3o foi efetiva, devo ter errado a
+      receita.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18533234720768
+    m_Localized: "Alguma coisa n\xE3o deu certo..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18576427663360
+    m_Localized: Obrigada pela tentativa senhorita substituta, mas quando que a outra
+      bruxa vai voltar? Acho que preciso de algo mais forte.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18597596315648
+    m_Localized: "Eu... N\xE3o sei."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18608811884544
+    m_Localized: '*suspiro* vou procurar ajuda em outro lugar.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19058713903104
+    m_Localized: .............
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19153366761472
+    m_Localized: Bom dia, senhor, como posso ajudar?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19162808139776
+    m_Localized: Bom..............
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19169506443264
+    m_Localized: ............ dia.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19179543412736
+    m_Localized: Comi.......... fruta.............. infestada.........
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19192608669696
+    m_Localized: "Agora.......... tudo......... est\xE1.........."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19202251374592
+    m_Localized: "........muito ....... r\xE1pido."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19210979721216
+    m_Localized: "Oh n\xE3o! Ser\xE1 que voc\xEA ingeriu um daqueles vermes let\xE1rgicos?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19219699679232
+    m_Localized: "Ouvi dizer que eles injetam uma subst\xE2ncia que desacelera o
+      hospedeiro. Deve ser por isso que voc\xEA est\xE1 lento desse jeito."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19228285419520
+    m_Localized: .............
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19238498549760
+    m_Localized: .................... lento.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19249802199040
+    m_Localized: "Voc\xEA........... que....... fala........... r\xE1pido........."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19260258598912
+    m_Localized: "N\xE3o, o senhor que... Ah, deixa pra l\xE1."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19270291374080
+    m_Localized: "(Ele com certeza est\xE1 parasitado por um desses vermes.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19281163010048
+    m_Localized: "Est\xE1 sentindo mais alguma coisa?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19291007041536
+    m_Localized: "Tudo............. est\xE1........ girando......."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19304588197888
+    m_Localized: Sinto....... que vou....... passar mal.......
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19317020114944
+    m_Localized: Muito......... enjoado........
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19328218906624
+    m_Localized: (Ele boceja.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19338725638144
+    m_Localized: "(Al\xE9m de tudo, ele parece cansado. Talvez eu tenha algo que
+      possa lhe dar mais energia.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19350897508352
+    m_Localized: "Certo, farei uma po\xE7\xE3o para ajudar o senhor."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19364927455232
+    m_Localized: O que.......? Fala....... mais........... devagar........
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19373970374656
+    m_Localized: Aguarde...... aqui........ por favor!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19957028962304
+    m_Localized: Tudo....... pronto......?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20163480993792
+    m_Localized: "Nossa! Finalmente tudo est\xE1 na velocidade normal!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20235555913728
+    m_Localized: "J\xE1 estava ficando maluco com o mundo todo acelerado daquele
+      jeito."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20245307670528
+    m_Localized: "Incr\xEDvel como uma po\xE7\xE3o pode alterar a realidade assim."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20253243293696
+    m_Localized: "Pois \xE9..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20266769924096
+    m_Localized: "S\xF3 evite comer as frutas daquele mesmo p\xE9 por um tempo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20274038652928
+    m_Localized: "N\xE3o sei como viverei sem comer minhas goiabas, mas acho que
+      terei que fazer esse esfor\xE7o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20282620198912
+    m_Localized: "Bom, muito obrigado! Com certeza irei recomendar os seus servi\xE7os
+      para o pessoal do vilarejo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20295291191296
+    m_Localized: Ah... Obrigada!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20498232590336
+    m_Localized: Fun....... cionou......?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20567505715200
+    m_Localized: "Oh n\xE3o... Devo ter errado algum ingrediente..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20578415099904
+    m_Localized: Vou........ procurar...... ajuda........
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20586178756608
+    m_Localized: ..... em outro....... lugar...........
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

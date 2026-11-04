@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Gameplay_Tutorial_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 6741925cc682c1845b875a8926a0c3bf, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 137478750208
+    m_Localized: Good morning, Cora. Get ready for today's magic lesson.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 788086603776
+    m_Localized: Good morning, sister! I'm ready!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 912351248384
+    m_Localized: Good. Today's lesson is an important one. I'm going to teach you
+      how to brew potions with healing properties.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 931456303104
+    m_Localized: Like the ones you use on your patients?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 941979811840
+    m_Localized: Exactly. You've made great progress in your studies, and the time
+      has come for you to start helping me treat the villagers.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 955246395392
+    m_Localized: Imagine I was attacked by a magical creature and now have open wounds,
+      feeling pain and nausea. Keep those in mind.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 966231277568
+    m_Localized: To brew a potion, you need ingredients. Head to the greenhouse and
+      harvest every plant available. Then, meet me at the cauldron.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1255663419392
+    m_Localized: Go gather the ingredients, then come back.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1568822738944
+    m_Localized: Got everything? Excellent.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1742471118848
+    m_Localized: All living beings carry an amount of life energy within them. This
+      energy can heal injuries, illnesses, and even certain curses.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1747042910208
+    m_Localized: When brewing a healing potion, we channel the life energy of plants.
+      We always use 3 ingredients to reach the required amount of energy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1770321297408
+    m_Localized: Each plant has different medicinal properties. Knowing them is essential
+      to brewing the right potion to help a patient. You can look them up anytime
+      in the grimoire beside the cauldron.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1779129335808
+    m_Localized: Remember the symptoms I mentioned earlier? Brew a potion capable
+      of curing them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1787400503296
+    m_Localized: This potion looks adequate. Head back to the counter to deliver
+      it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2254234927104
+    m_Localized: Excellent, Cora.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2604824215552
+    m_Localized: Now, I will teach you another method for brewing potions. Meet me
+      at the cauldron once more.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2700471123968
+    m_Localized: As I said, the life energy of living beings is what we use to heal.
+      Plant energy works well, but it has its limits.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3301439389696
+    m_Localized: There is a spell that lets you channel your own life energy into
+      the potion. Human energy is potent and versatile.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3315586777088
+    m_Localized: Using your life energy guarantees the potion heals the patient,
+      regardless of the ingredients' efficacy. However, drawing on it means expending
+      a bit of what keeps you alive.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3324281569280
+    m_Localized: When you sleep, part of your life energy is restored.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3334691831808
+    m_Localized: With time and practice, you will learn to manage your life energy
+      more efficiently. For now, you can only use it once a day without harming yourself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3344393256960
+    m_Localized: Well, let's begin. First, add 3 ingredients to the cauldron. Since
+      we'll be using the spell, your choice of ingredients doesn't matter.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3532356796416
+    m_Localized: 'Great. Now, before finishing the potion, open the journal. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4038424739840
+    m_Localized: "Oops\u2026 I think I mispronounced a word\u2026 Did I botch the
+      spell?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4204728893440
+    m_Localized: "Oh no\u2026 What have I done?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4303211151360
+    m_Localized: I have to fix this. I need to find a way! And I still have to step
+      up as the village healer in my sister's place and take care of everyone!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4447180636160
+    m_Localized: Check the book so you don't mess this up.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4790744465408
+    m_Localized: My symptoms are open wounds, pain, and nausea.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4951340171264
+    m_Localized: Open the book to finish the potion!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12607442337792
+    m_Localized: In addition to the ingredient details, the journal also contains
+      instructions for casting the spell.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12623082897408
+    m_Localized: The rune is on the last page.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

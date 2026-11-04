@@ -6,6 +6,8 @@ using JogoBruxinha.Gameplay.GameFlow;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 namespace JogoBruxinha.Gameplay.Dialogue
@@ -77,11 +79,42 @@ namespace JogoBruxinha.Gameplay.Dialogue
         private void OnEnable()
         {
             SubscribeInput();
+            LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
         }
 
         private void Start()
         {
             SubscribeInput();
+        }
+
+        private void OnDisable()
+        {
+            LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+            
+            StopTyping();
+            IsPlaying = false;
+            _currentDialogueList = null;
+            _dynamicOnFinishCallback = null;
+
+            if (_inputOwner != null && _inputOwner.InputControls != null)
+            {
+                _inputOwner.InputControls.UI.SkipDialogue.performed -= OnSkipDialoguePerformed;
+                _inputOwner.InputControls.UI.ScrollWheel.performed -= OnScroll;
+            }
+            _inputOwner = null;
+        }
+
+        private void OnLocaleChanged(Locale newLocale)
+        {
+            if (!IsPlaying || _currentDialogueList == null || _currentLineIndex < 0 || _currentLineIndex >= _currentDialogueList.Count)
+                return;
+
+            // Se o idioma mudou com o balão aberto, atualiza para o novo idioma na hora
+            StopTyping();
+            DialogueLine line = _currentDialogueList[_currentLineIndex];
+            _dialogueText.text = line.GetLocalizedText() ?? string.Empty;
+            _dialogueText.maxVisibleCharacters = int.MaxValue;
+            _dialogueText.ForceMeshUpdate();
         }
 
         private void SubscribeInput()
@@ -92,20 +125,6 @@ namespace JogoBruxinha.Gameplay.Dialogue
                 _inputOwner.InputControls.UI.SkipDialogue.performed += OnSkipDialoguePerformed;
                 _inputOwner.InputControls.UI.ScrollWheel.performed += OnScroll;
             }
-        }
-
-        private void OnDisable()
-        {
-            StopTyping();
-            IsPlaying = false;
-            _currentDialogueList = null;
-            _dynamicOnFinishCallback = null;
-            if (_inputOwner != null && _inputOwner.InputControls != null)
-            {
-                _inputOwner.InputControls.UI.SkipDialogue.performed -= OnSkipDialoguePerformed;
-                _inputOwner.InputControls.UI.ScrollWheel.performed -= OnScroll;
-            }
-            _inputOwner = null;
         }
 
         private void OnDestroy()
@@ -193,7 +212,6 @@ namespace JogoBruxinha.Gameplay.Dialogue
             if (_currentLineIndex > 0)
             {
                 _currentLineIndex--;
-
                 DisplayCurrentLine(false);
             }
         }
@@ -205,7 +223,8 @@ namespace JogoBruxinha.Gameplay.Dialogue
             _currentVoice = line.speaker == SpeakerType.Player ? _playerVoice : _npcVoice;
             _voicePlayback?.Prepare(_currentVoice);
             _dialogueBackgroundImage.sprite = line.speaker == SpeakerType.Player ? _playerDialogueBox : _currentNPCBox;
-            _dialogueText.text = line.text ?? string.Empty;
+            _dialogueText.text = line.GetLocalizedText() ?? string.Empty;
+            
             // Lay out the full paragraph before revealing it, avoiding jumping words.
             _dialogueText.maxVisibleCharacters = int.MaxValue;
             _dialogueText.ForceMeshUpdate();
@@ -241,7 +260,6 @@ namespace JogoBruxinha.Gameplay.Dialogue
         private void StopTyping()
         {
             IsTyping = false;
-            // No queued syllables: let only the current short blip finish its release envelope.
         }
 
         private void FinishDialogue()

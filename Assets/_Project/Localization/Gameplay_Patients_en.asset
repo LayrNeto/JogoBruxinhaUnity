@@ -1,0 +1,407 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Gameplay_Patients_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 9ec3a92cd5df712429c5a885d484e1b9, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 9285880725504
+    m_Localized: Aldara
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9432496816128
+    m_Localized: Horacio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11285846507520
+    m_Localized: I've been looking for help for almost a week now. The healers I
+      visited were a total letdown!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10394435272704
+    m_Localized: Is this really where the witch everyone in this village talks about
+      lives?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11687916683264
+    m_Localized: D-don't worry! You came to the right place! What happened?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14012857139200
+    m_Localized: I was down in the marsh a few days' ride from here, you see. Tracking
+      two missing children.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14057933324288
+    m_Localized: Along the way, I ran straight into a massive dragon...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14066825248768
+    m_Localized: And I couldn't just let a beast like that roam wild!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14075243216896
+    m_Localized: I managed to drive it off, but not before taking a blast of acid
+      spit, as you can see.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14085062082560
+    m_Localized: (Her face is covered in burns.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14094667038720
+    m_Localized: And believe me, I've tried everything! Nothing seems to close this
+      wound...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14115806330880
+    m_Localized: "Dragons are magical creatures\u2026 I don't think ordinary treatments
+      will help with a burn like that."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14143732006912
+    m_Localized: And as if that weren't enough, it's only getting worse. Blisters
+      and pus all over...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14163470401536
+    m_Localized: Hmm... The wound must be infected.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14170953039872
+    m_Localized: Don't worry, though. I'll keep that in mind when brewing your potion.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14230155640832
+    m_Localized: So you're the one brewing the potions? Not the witch?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14252611944448
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14263093510144
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14274934030336
+    m_Localized: Oh! YOU'RE the witch!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14299542011904
+    m_Localized: I'm the... Substitute!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14312728903680
+    m_Localized: Such a young witch! I never would've guessed! From the tales I heard,
+      I thought you'd be a lot scarier.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14329720029184
+    m_Localized: My squire told me that if you even look at a witch sideways, she'll
+      curse you on the spot. Can you believe that?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14345482223616
+    m_Localized: You wouldn't do something like that, right? Hahaha!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14385592352768
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14397336403968
+    m_Localized: ...Would you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14404819042304
+    m_Localized: Of course not!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14412322652160
+    m_Localized: One less thing to worry about... Haha...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14420266663936
+    m_Localized: (Well, at least she seems to be in good spirits.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14440361574400
+    m_Localized: Before I brew the potion, I need to know if you're feeling anything
+      else. You don't seem to be in much pain, are you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14454454435840
+    m_Localized: Oh, I actually feel awful. Never been worse! I'm about to pass out
+      from the pain, honestly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14476457754624
+    m_Localized: Why didn't you say so earlier!? I'll brew something right away!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14500235264000
+    m_Localized: No rush! I've endured it for days trying to find you, a few more
+      hours won't hurt!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14511371141120
+    m_Localized: I think...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15575096967168
+    m_Localized: So... Is the potion ready yet?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15635293618176
+    m_Localized: "I don't know if I can hold out for much longer\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15780152295424
+    m_Localized: This potion should be enough to heal you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15844358701056
+    m_Localized: Are you alright, witch? You look pale.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15865070174208
+    m_Localized: '*coughs* Don''t worry, I''m fine. Now drink the potion, you''ve
+      suffered long enough already.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15875711123456
+    m_Localized: Incredible... The wound is completely gone! You work miracles, Miss
+      Substitute Witch!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15899434106880
+    m_Localized: Actually, I've got one more favor to ask.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15911614365696
+    m_Localized: Look... The truth is, I got hurt taking care of a dragon whelp.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15916567838720
+    m_Localized: The poor thing was so sick and weak... Abandoned by its mother!
+      I couldn't just leave it behind.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15930358710272
+    m_Localized: I'll bring him over as soon as I can!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15938575351808
+    m_Localized: A dragon!?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15947001708544
+    m_Localized: Why not? A talented witch like you won't have any trouble healing
+      him, right?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15956413726720
+    m_Localized: I-I have no idea...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15966798823424
+    m_Localized: Don't you have a cat around? It's basically the same as a dragon,
+      haha! See you soon!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18437621366784
+    m_Localized: This potion should be enough to heal you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18503551631360
+    m_Localized: Some relief at last... But I still don't feel too well... How long
+      until the potion kicks in?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18514108694528
+    m_Localized: (The potion doesn't seem to have worked. I must've messed up the
+      recipe.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18533234720768
+    m_Localized: Something didn't quite work...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18576427663360
+    m_Localized: Thanks for trying, Miss Substitute, but when is the other witch
+      coming back? I think I need something stronger.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18597596315648
+    m_Localized: I... don't know.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18608811884544
+    m_Localized: '*sighs* I''ll look for help somewhere else.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19058713903104
+    m_Localized: .............
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19162808139776
+    m_Localized: Gooood..............
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19153366761472
+    m_Localized: Good morning, sir. How can I help you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19169506443264
+    m_Localized: ............ morning.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19179543412736
+    m_Localized: Ate.......... buggy.............. fruit.........
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19192608669696
+    m_Localized: Now.......... everything......... is..........
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19202251374592
+    m_Localized: ........too ....... fast.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19210979721216
+    m_Localized: Oh no! Did you swallow one of those lethargy worms?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19219699679232
+    m_Localized: I heard they inject a substance that slows down their host. That
+      must be why you're moving so slowly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19228285419520
+    m_Localized: .............
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19238498549760
+    m_Localized: .................... slow.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19249802199040
+    m_Localized: You're........... the one....... talking........... fast.........
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19260258598912
+    m_Localized: No, you're the one who... Ah, never mind.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19270291374080
+    m_Localized: (He's definitely infested with one of those worms.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19281163010048
+    m_Localized: Are you feeling anything else?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19291007041536
+    m_Localized: Everything............. is........ spinning.......
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19304588197888
+    m_Localized: Feel....... like throwing....... up.......
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19317020114944
+    m_Localized: So......... nauseous........
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19338725638144
+    m_Localized: (On top of everything, he looks exhausted. Maybe I have something
+      that could give him more energy.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19328218906624
+    m_Localized: (He yawns.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19350897508352
+    m_Localized: Alright, I'll brew a potion to help you out.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19364927455232
+    m_Localized: Whaaaat.......? Talk....... more........... slowly........
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19373970374656
+    m_Localized: Pleease...... wait........ right........ here!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19957028962304
+    m_Localized: All....... done......?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20163480993792
+    m_Localized: Whoa! Everything is finally back to normal speed!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20235555913728
+    m_Localized: I was going crazy with the whole world rushing by like that.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20245307670528
+    m_Localized: It's incredible how a potion can warp reality like that.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20253243293696
+    m_Localized: Yeah...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20266769924096
+    m_Localized: Just avoid eating fruit from that same tree for a while.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20274038652928
+    m_Localized: I don't know how I'll live without my guavas, but I guess I'll have
+      to make do.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20282620198912
+    m_Localized: Well, thank you so much! I'll be sure to recommend your services
+      to folks in the village!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20295291191296
+    m_Localized: Ah... Thank you!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20498232590336
+    m_Localized: Did it....... work......?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20567505715200
+    m_Localized: Oh no... I must have messed up an ingredient...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20578415099904
+    m_Localized: I'll........ look...... for help........
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20586178756608
+    m_Localized: ..... some....... where else...........
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

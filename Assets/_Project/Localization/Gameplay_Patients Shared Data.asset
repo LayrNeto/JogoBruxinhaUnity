@@ -1,0 +1,388 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Gameplay_Patients Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Gameplay_Patients
+  m_TableCollectionNameGuidString: 9ec3a92cd5df712429c5a885d484e1b9
+  m_Entries:
+  - m_Id: 9285880725504
+    m_Key: patient_aldara_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9432496816128
+    m_Key: patient_horacio_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10394435272704
+    m_Key: dialogue_aldara_intro_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11285846507520
+    m_Key: dialogue_aldara_intro_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11687916683264
+    m_Key: dialogue_aldara_intro_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14012857139200
+    m_Key: dialogue_aldara_intro_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14057933324288
+    m_Key: dialogue_aldara_intro_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14066825248768
+    m_Key: dialogue_aldara_intro_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14075243216896
+    m_Key: dialogue_aldara_intro_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14085062082560
+    m_Key: dialogue_aldara_intro_7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14094667038720
+    m_Key: dialogue_aldara_intro_8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14115806330880
+    m_Key: dialogue_aldara_intro_9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14143732006912
+    m_Key: dialogue_aldara_intro_10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14163470401536
+    m_Key: dialogue_aldara_intro_11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14170953039872
+    m_Key: dialogue_aldara_intro_12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14230155640832
+    m_Key: dialogue_aldara_intro_13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14252611944448
+    m_Key: dialogue_aldara_intro_14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14263093510144
+    m_Key: dialogue_aldara_intro_15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14274934030336
+    m_Key: dialogue_aldara_intro_16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14299542011904
+    m_Key: dialogue_aldara_intro_17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14312728903680
+    m_Key: dialogue_aldara_intro_18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14329720029184
+    m_Key: dialogue_aldara_intro_19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14345482223616
+    m_Key: dialogue_aldara_intro_20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14385592352768
+    m_Key: dialogue_aldara_intro_21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14397336403968
+    m_Key: dialogue_aldara_intro_22
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14404819042304
+    m_Key: dialogue_aldara_intro_23
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14412322652160
+    m_Key: dialogue_aldara_intro_24
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14420266663936
+    m_Key: dialogue_aldara_intro_25
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14440361574400
+    m_Key: dialogue_aldara_intro_26
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14454454435840
+    m_Key: dialogue_aldara_intro_27
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14476457754624
+    m_Key: dialogue_aldara_intro_28
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14500235264000
+    m_Key: dialogue_aldara_intro_29
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14511371141120
+    m_Key: dialogue_aldara_intro_30
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15575096967168
+    m_Key: dialogue_aldara_waiting_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15635293618176
+    m_Key: dialogue_aldara_waiting_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15780152295424
+    m_Key: dialogue_aldara_success_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15844358701056
+    m_Key: dialogue_aldara_success_1_magic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15865070174208
+    m_Key: dialogue_aldara_success_2_magic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15875711123456
+    m_Key: dialogue_aldara_success_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15899434106880
+    m_Key: dialogue_aldara_success_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15911614365696
+    m_Key: dialogue_aldara_success_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15916567838720
+    m_Key: dialogue_aldara_success_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15930358710272
+    m_Key: dialogue_aldara_success_7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15938575351808
+    m_Key: dialogue_aldara_success_8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15947001708544
+    m_Key: dialogue_aldara_success_9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15956413726720
+    m_Key: dialogue_aldara_success_10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15966798823424
+    m_Key: dialogue_aldara_success_11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18437621366784
+    m_Key: dialogue_aldara_fail_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18503551631360
+    m_Key: dialogue_aldara_fail_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18514108694528
+    m_Key: dialogue_aldara_fail_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18533234720768
+    m_Key: dialogue_aldara_fail_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18576427663360
+    m_Key: dialogue_aldara_fail_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18597596315648
+    m_Key: dialogue_aldara_fail_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18608811884544
+    m_Key: dialogue_aldara_fail_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19058713903104
+    m_Key: dialogue_horacio_intro_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19153366761472
+    m_Key: dialogue_horacio_intro_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19162808139776
+    m_Key: dialogue_horacio_intro_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19169506443264
+    m_Key: dialogue_horacio_intro_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19179543412736
+    m_Key: dialogue_horacio_intro_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19192608669696
+    m_Key: dialogue_horacio_intro_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19202251374592
+    m_Key: dialogue_horacio_intro_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19210979721216
+    m_Key: dialogue_horacio_intro_7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19219699679232
+    m_Key: dialogue_horacio_intro_8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19228285419520
+    m_Key: dialogue_horacio_intro_9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19238498549760
+    m_Key: dialogue_horacio_intro_10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19249802199040
+    m_Key: dialogue_horacio_intro_11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19260258598912
+    m_Key: dialogue_horacio_intro_12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19270291374080
+    m_Key: dialogue_horacio_intro_13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19281163010048
+    m_Key: dialogue_horacio_intro_14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19291007041536
+    m_Key: dialogue_horacio_intro_15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19304588197888
+    m_Key: dialogue_horacio_intro_16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19317020114944
+    m_Key: dialogue_horacio_intro_17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19328218906624
+    m_Key: dialogue_horacio_intro_18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19338725638144
+    m_Key: dialogue_horacio_intro_19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19350897508352
+    m_Key: dialogue_horacio_intro_20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19364927455232
+    m_Key: dialogue_horacio_intro_21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19373970374656
+    m_Key: dialogue_horacio_intro_22
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19957028962304
+    m_Key: dialogue_horacio_waiting_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20163480993792
+    m_Key: dialogue_horacio_success_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20235555913728
+    m_Key: dialogue_horacio_success_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20245307670528
+    m_Key: dialogue_horacio_success_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20253243293696
+    m_Key: dialogue_horacio_success_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20266769924096
+    m_Key: dialogue_horacio_success_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20274038652928
+    m_Key: dialogue_horacio_success_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20282620198912
+    m_Key: dialogue_horacio_success_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20295291191296
+    m_Key: dialogue_horacio_success_7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20498232590336
+    m_Key: dialogue_horacio_fail_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20567505715200
+    m_Key: dialogue_horacio_fail_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20578415099904
+    m_Key: dialogue_horacio_fail_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20586178756608
+    m_Key: dialogue_horacio_fail_3
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 1405564066981740759
+  references:
+    version: 2
+    RefIds:
+    - rid: 1405564066981740759
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1793730425626

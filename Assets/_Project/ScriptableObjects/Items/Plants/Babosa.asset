@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: Babosa
   m_EditorClassIdentifier: Assembly-CSharp::PlantDataSO
   id: babosa
-  displayName: Babosa
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: GUID:df8ed605b02125e4d80317ecb8a6cabc
+    m_TableEntryReference:
+      m_KeyId: 3890915262464
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   inventoryIcon: {fileID: 21300000, guid: 148a7ae2a95f81b49b96d4d361f1a8a8, type: 3}
   worldSprites:
   - {fileID: 21300000, guid: fa70df73c383c7142ac9325200c773fc, type: 3}
@@ -27,3 +35,6 @@ MonoBehaviour:
   collectSound:
   - {fileID: 11400000, guid: 8c39c36072b4096419570a1a92686f2a, type: 2}
   - {fileID: 11400000, guid: e14f8a80446d0674f8123cd6fce4f8de, type: 2}
+  references:
+    version: 2
+    RefIds: []

@@ -7243,25 +7243,6 @@ Transform:
   - {fileID: 2141987728}
   m_Father: {fileID: 2119282044}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &744810422 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8635569601060024197, guid: 2963e377937a4aa41929794a5b85ca24, type: 3}
-  m_PrefabInstance: {fileID: 4562268427840766966}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &744810425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 744810422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3483bfb0dac2c0a47908f1dd096148af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TutorialCSVImporter
-  _csvFile: {fileID: 0}
-  _targetTutorialSO: {fileID: 0}
 --- !u!1 &764511535
 GameObject:
   m_ObjectHideFlags: 0
@@ -14577,6 +14558,47 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 27547347}
+        m_TargetAssemblyTypeName: JogoBruxinha.Gameplay.Environment.Interactable,
+          JogoBruxinha.Gameplay
+        m_MethodName: SetInteractionState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3970844633221762778}
+        m_TargetAssemblyTypeName: JogoBruxinha.Gameplay.Environment.Interactable,
+          JogoBruxinha.Gameplay
+        m_MethodName: SetInteractionState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3450240630100586466}
+        m_TargetAssemblyTypeName: JogoBruxinha.Gameplay.Environment.Interactable,
+          JogoBruxinha.Gameplay
+        m_MethodName: SetInteractionState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1294973191
 GameObject:
   m_ObjectHideFlags: 0
@@ -18286,74 +18308,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5cc44b0240c6bf4ba85b8cfc8165665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CatPettingCutscene
---- !u!1001 &4562268427840766966
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1279490436688161400, guid: 2963e377937a4aa41929794a5b85ca24, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 806.5118
-      objectReference: {fileID: 0}
-    - target: {fileID: 1279490436688161400, guid: 2963e377937a4aa41929794a5b85ca24, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 155.611
-      objectReference: {fileID: 0}
-    - target: {fileID: 1279490436688161400, guid: 2963e377937a4aa41929794a5b85ca24, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1279490436688161400, guid: 2963e377937a4aa41929794a5b85ca24, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1279490436688161400, guid: 2963e377937a4aa41929794a5b85ca24, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1279490436688161400, guid: 2963e377937a4aa41929794a5b85ca24, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1279490436688161400, guid: 2963e377937a4aa41929794a5b85ca24, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1279490436688161400, guid: 2963e377937a4aa41929794a5b85ca24, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1279490436688161400, guid: 2963e377937a4aa41929794a5b85ca24, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1279490436688161400, guid: 2963e377937a4aa41929794a5b85ca24, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4903260267906487638, guid: 2963e377937a4aa41929794a5b85ca24, type: 3}
-      propertyPath: m_Name
-      value: TOOLS
-      objectReference: {fileID: 0}
-    - target: {fileID: 5185035086497172108, guid: 2963e377937a4aa41929794a5b85ca24, type: 3}
-      propertyPath: csvFile
-      value: 
-      objectReference: {fileID: 4900000, guid: 321dc5d258f958545ac4f926feaa071f, type: 3}
-    - target: {fileID: 5185035086497172108, guid: 2963e377937a4aa41929794a5b85ca24, type: 3}
-      propertyPath: targetPatientSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 2a0840cf11dc34748a6810cedf3654f9, type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8635569601060024197, guid: 2963e377937a4aa41929794a5b85ca24, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 744810425}
-  m_SourcePrefab: {fileID: 100100000, guid: 2963e377937a4aa41929794a5b85ca24, type: 3}
 --- !u!1001 &4820568427190058375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18933,7 +18887,6 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 494343722}
   - {fileID: 1928021600}
-  - {fileID: 4562268427840766966}
   - {fileID: 57449816}
   - {fileID: 923586870}
   - {fileID: 1014992174}

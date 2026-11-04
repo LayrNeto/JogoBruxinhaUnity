@@ -15,4 +15,6 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/EstufaScene.unity
     guid: 26051845d37bc9444a470c086b279587
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: f643ff7650d86b84294750bb7b8fbbb4, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    com.unity.localization.settings: {fileID: 11400000, guid: 3b6fef401a8b59342b94506d88f3aaf2, type: 2}

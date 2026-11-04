@@ -225,11 +225,11 @@ namespace JogoBruxinha.Gameplay.Counter
             if (!isCorrect && PlaytestLogger.Instance != null)
             {
                 PlaytestLogger.Instance.RecordWrongPotionMade();
-                PlaytestLogger.Instance.RecordPatientTreatedWrong(_currentPatient.clientName);
+                PlaytestLogger.Instance.RecordPatientTreatedWrong(_currentPatient.GetLocalizedPatientName());
             }
             // Playtest Analytics ==================================
 
-            Debug.Log($"[Alquimia] Paciente: {_currentPatient.clientName} | Pontos obtidos: {potionScore}/{_currentPatient.targetScore} | Sucesso: {isCorrect}");
+            Debug.Log($"[Alquimia] Paciente: {_currentPatient.GetLocalizedPatientName()} | Pontos obtidos: {potionScore}/{_currentPatient.targetScore} | Sucesso: {isCorrect}");
 
             return isCorrect;
         }
