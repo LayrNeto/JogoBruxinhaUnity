@@ -34,6 +34,38 @@ MonoBehaviour:
     m_Localized: Sair
     m_Metadata:
       m_Items: []
+  - m_Id: 479410702467072
+    m_Localized: "Op\xE7\xF5es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 641755630223360
+    m_Localized: Carregando
+    m_Metadata:
+      m_Items: []
+  - m_Id: 641792301023232
+    m_Localized: Salvando
+    m_Metadata:
+      m_Items: []
+  - m_Id: 657653313257472
+    m_Localized: Pular
+    m_Metadata:
+      m_Items: []
+  - m_Id: 658523354513408
+    m_Localized: Tutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 681277747314688
+    m_Localized: Salvar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 681939293913088
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 683301436080128
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

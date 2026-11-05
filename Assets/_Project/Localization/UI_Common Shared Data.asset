@@ -31,6 +31,38 @@ MonoBehaviour:
     m_Key: btn_quit
     m_Metadata:
       m_Items: []
+  - m_Id: 479410702467072
+    m_Key: btn_settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 641755630223360
+    m_Key: label_loading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 641792301023232
+    m_Key: label_saving
+    m_Metadata:
+      m_Items: []
+  - m_Id: 657653313257472
+    m_Key: btn_skip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 658523354513408
+    m_Key: label_tutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 681277747314688
+    m_Key: btn_save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 681939293913088
+    m_Key: btn_menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 683301436080128
+    m_Key: label_pause
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

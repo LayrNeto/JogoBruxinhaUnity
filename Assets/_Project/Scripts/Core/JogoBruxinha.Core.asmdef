@@ -3,7 +3,8 @@
     "rootNamespace": "JogoBruxinha.Core",
     "references": [
         "Unity.InputSystem",
-        "Unity.Localization"
+        "Unity.Localization",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

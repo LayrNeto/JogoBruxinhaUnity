@@ -8187,6 +8187,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 851473326565982138, guid: c54938c1e0441b04c9080a5d9edb980e, type: 3}
+      propertyPath: m_text
+      value: Cora
+      objectReference: {fileID: 0}
+    - target: {fileID: 851473326565982138, guid: c54938c1e0441b04c9080a5d9edb980e, type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 851473326565982138, guid: c54938c1e0441b04c9080a5d9edb980e, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1227594470682913779, guid: c54938c1e0441b04c9080a5d9edb980e, type: 3}
       propertyPath: _clickSound
       value: 
@@ -8203,6 +8215,10 @@ PrefabInstance:
       propertyPath: _hoverSound
       value: 
       objectReference: {fileID: 11400000, guid: 42452e15c12b9b0459a78d90fce474b2, type: 2}
+    - target: {fileID: 4062458984221172667, guid: c54938c1e0441b04c9080a5d9edb980e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4370542090077337584, guid: c54938c1e0441b04c9080a5d9edb980e, type: 3}
       propertyPath: m_MatchWidthOrHeight
       value: 0.5
@@ -14646,47 +14662,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1487788077}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 27547347}
-        m_TargetAssemblyTypeName: JogoBruxinha.Gameplay.Environment.Interactable,
-          JogoBruxinha.Gameplay
-        m_MethodName: SetInteractionState
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3970844633221762778}
-        m_TargetAssemblyTypeName: JogoBruxinha.Gameplay.Environment.Interactable,
-          JogoBruxinha.Gameplay
-        m_MethodName: SetInteractionState
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3450240630100586466}
-        m_TargetAssemblyTypeName: JogoBruxinha.Gameplay.Environment.Interactable,
-          JogoBruxinha.Gameplay
-        m_MethodName: SetInteractionState
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
