@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Characters_Common Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Characters_Common
+  m_TableCollectionNameGuidString: 12944221ca5c98d45ad74a656dd32a71
+  m_Entries:
+  - m_Id: 5920210944
+    m_Key: speaker_player
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109313998848
+    m_Key: speaker_sister
+    m_Metadata:
+      m_Items: []
+  - m_Id: 220551135232
+    m_Key: speaker_patient_aldara
+    m_Metadata:
+      m_Items: []
+  - m_Id: 343674929152
+    m_Key: speaker_patient_horacio
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 1405564193471463517
+  references:
+    version: 2
+    RefIds:
+    - rid: 1405564193471463517
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1794190184704

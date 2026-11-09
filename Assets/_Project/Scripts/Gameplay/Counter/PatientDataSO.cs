@@ -1,21 +1,17 @@
 using System.Collections.Generic;
 using JogoBruxinha.Core.Audio;
+using JogoBruxinha.Gameplay.Dialogue;
 using JogoBruxinha.Gameplay.Inventory;
 using UnityEngine;
 using UnityEngine.Localization;
 
 namespace JogoBruxinha.Gameplay.Counter
 {
-    public enum SpeakerType
-    {
-        NPC,
-        Player
-    }
 
     [System.Serializable]
     public struct DialogueLine
     {
-        public SpeakerType speaker;
+        public SpeakerProfileSO speaker;
 
         public LocalizedString text;
         public bool requiresMagic;
@@ -40,7 +36,7 @@ namespace JogoBruxinha.Gameplay.Counter
     {
         [Header("Identification")]
         public string patientId;
-        public LocalizedString patientName;
+        public SpeakerProfileSO speakerProfile;
 
         [Header("Top-Down Data")]
         public float cursedMovementSpeed = 1f;
@@ -50,10 +46,6 @@ namespace JogoBruxinha.Gameplay.Counter
         [Header("Visuals")]
         public Sprite povCursedSprite;
         public Sprite povHealedSprite;
-        public Sprite dialogueBoxSprite;
-
-        [Header("Dialogue Audio")]
-        public SoundDataSO voiceSound;
 
         [Header("Recipe Scoring Requirements")]
         public int targetScore = 30;
@@ -91,10 +83,7 @@ namespace JogoBruxinha.Gameplay.Counter
 
         public string GetLocalizedPatientName()
         {
-            if (patientName == null || patientName.IsEmpty)
-                return patientId;
-
-            return patientName.GetLocalizedString();
+            return speakerProfile != null ? speakerProfile.GetLocalizedName() : string.Empty;
         }
     }
 }

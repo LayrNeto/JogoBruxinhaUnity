@@ -101,10 +101,10 @@ namespace JogoBruxinha.Gameplay.Counter
 
             if (DialogueManager.Instance != null)
             {
-                DialogueManager.Instance.PlayDialogue(patient.dialogueBoxSprite, introDialogue, () =>
+                DialogueManager.Instance.PlayDialogue(introDialogue, () =>
                 {
                     if (_potionButton != null) _potionButton.enabled = true;
-                }, patient.voiceSound);
+                });
             }
         }
 
@@ -185,7 +185,7 @@ namespace JogoBruxinha.Gameplay.Counter
 
             if (DialogueManager.Instance != null)
             {
-                DialogueManager.Instance.PlayDialogue(_currentPatient.dialogueBoxSprite, filteredDialogue, npcVoice: _currentPatient.voiceSound);
+                DialogueManager.Instance.PlayDialogue(filteredDialogue);
             }
 
             // Playtest Analytics ==================================
@@ -256,10 +256,10 @@ namespace JogoBruxinha.Gameplay.Counter
 
             if (DialogueManager.Instance != null && _currentPatient != null)
             {
-                DialogueManager.Instance.PlayDialogue(_currentPatient.dialogueBoxSprite, _currentPatient.introDialogue, () =>
+                DialogueManager.Instance.PlayDialogue(_currentPatient.introDialogue, () =>
                 {
                     if (_potionButton != null) _potionButton.enabled = true;
-                }, _currentPatient.voiceSound);
+                });
             }
 
             // Playtest Analytics ==================================

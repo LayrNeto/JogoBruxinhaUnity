@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 654ab036885d77346b04d70d57fcbe78, type: 3}
+  m_Name: Speaker_Horacio
+  m_EditorClassIdentifier: JogoBruxinha.Gameplay::JogoBruxinha.Gameplay.Dialogue.SpeakerProfileSO
+  speakerName:
+    m_TableReference:
+      m_TableCollectionName: GUID:12944221ca5c98d45ad74a656dd32a71
+    m_TableEntryReference:
+      m_KeyId: 343674929152
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  nameColor: {r: 0.47058827, g: 0.5411765, b: 0.57254905, a: 1}
+  voiceSound: {fileID: 11400000, guid: fcb228f0d35d40d086c52bd631e98877, type: 2}
+  customDialogueBox: {fileID: 0}
+  customDialogueTitle: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

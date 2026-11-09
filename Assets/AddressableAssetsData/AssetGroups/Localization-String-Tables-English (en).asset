@@ -27,7 +27,6 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
-    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: be18ac6b8aeaa04459ff918ce99a95d7
     m_Address: UI_Common_en
@@ -45,6 +44,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f418ac2be71b0044c8130ef1112edc5c
     m_Address: Gameplay_Tutorial_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f741472e6984bbf4aa9a7111431e3fc1
+    m_Address: Characters_Common_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

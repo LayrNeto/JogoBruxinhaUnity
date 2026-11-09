@@ -304,12 +304,11 @@ namespace JogoBruxinha.Gameplay.Tutorial
             DialogueSequence seq = _sessionData.tutorialData.GetDialogue(context);
             if (seq.lines == null || seq.lines.Count == 0) return;
 
-            Sprite agataBox = _sessionData.tutorialData.agataDialogueBox;
             Action onDialogueClosed = () => EvaluateTutorialAdvance(context);
 
             if (DialogueManager.Instance != null)
             {
-                DialogueManager.Instance.PlayDialogue(agataBox, seq.lines, onDialogueClosed, _sessionData.tutorialData.agataVoice);
+                DialogueManager.Instance.PlayDialogue(seq.lines, onDialogueClosed);
             }
         }
 

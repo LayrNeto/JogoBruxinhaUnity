@@ -37,8 +37,6 @@ namespace JogoBruxinha.Gameplay.Tutorial
 
         [Header("Agata Base Visuals")]
         public Sprite agataPovSprite;
-        public Sprite agataDialogueBox;
-        public SoundDataSO agataVoice;
 
         [Header("Quest Requirements")]
         [Tooltip("Quais plantas o jogador deve ter no inventário para passar do Step 1")]

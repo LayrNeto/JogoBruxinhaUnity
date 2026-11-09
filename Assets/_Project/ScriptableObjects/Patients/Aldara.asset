@@ -13,22 +13,12 @@ MonoBehaviour:
   m_Name: Aldara
   m_EditorClassIdentifier: Assembly-CSharp::PatientDataSO
   patientId: aldara
-  patientName:
-    m_TableReference:
-      m_TableCollectionName: Gameplay_Patients
-    m_TableEntryReference:
-      m_KeyId: 0
-      m_Key: patient_aldara_name
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
+  speakerProfile: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
   cursedMovementSpeed: 1
   healedMovementSpeed: 1
   animatorController: {fileID: 9100000, guid: a96ea54363dd8c345a7c52b4f8582c78, type: 2}
   povCursedSprite: {fileID: 21300000, guid: 1991bb6a089c31a409d4a9f90feb158d, type: 3}
   povHealedSprite: {fileID: 21300000, guid: 5b654330d12bf2b43b142a3b0f6e07a4, type: 3}
-  dialogueBoxSprite: {fileID: 21300000, guid: d61610b7b29a1ec40b11c9a418582c1a, type: 3}
-  voiceSound: {fileID: 11400000, guid: 52a60de93d4d4451b77b706e97081a86, type: 2}
   targetScore: 25
   symptomWeights:
   - symptom: 1
@@ -40,7 +30,7 @@ MonoBehaviour:
   - symptom: 4
     points: 10
   introDialogue:
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -51,7 +41,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -62,7 +52,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -73,7 +63,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -84,7 +74,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -95,7 +85,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -106,7 +96,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -117,7 +107,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -128,7 +118,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -139,7 +129,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -150,7 +140,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -161,7 +151,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -172,7 +162,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -183,7 +173,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -194,7 +184,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -205,7 +195,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -216,7 +206,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -227,7 +217,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -238,7 +228,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -249,7 +239,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -260,7 +250,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -271,7 +261,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -282,7 +272,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -293,7 +283,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -304,7 +294,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -315,7 +305,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -326,7 +316,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -337,7 +327,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -348,7 +338,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -359,7 +349,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -370,7 +360,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -383,7 +373,7 @@ MonoBehaviour:
     requiresMagic: 0
   waitingDialogues:
   - lines:
-    - speaker: 0
+    - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
       text:
         m_TableReference:
           m_TableCollectionName: GUID:9ec3a92cd5df712429c5a885d484e1b9
@@ -395,7 +385,7 @@ MonoBehaviour:
         m_LocalVariables: []
       requiresMagic: 0
   - lines:
-    - speaker: 0
+    - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
       text:
         m_TableReference:
           m_TableCollectionName: GUID:9ec3a92cd5df712429c5a885d484e1b9
@@ -407,7 +397,7 @@ MonoBehaviour:
         m_LocalVariables: []
       requiresMagic: 0
   successDialogue:
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -418,7 +408,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -429,7 +419,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 1
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -440,7 +430,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 1
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -451,7 +441,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -462,7 +452,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -473,7 +463,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -484,7 +474,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -495,7 +485,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -506,7 +496,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -517,7 +507,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -528,7 +518,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -540,7 +530,7 @@ MonoBehaviour:
       m_LocalVariables: []
     requiresMagic: 0
   failDialogue:
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -551,7 +541,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -562,7 +552,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -573,7 +563,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -584,7 +574,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -595,7 +585,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 1
+  - speaker: {fileID: 11400000, guid: 1e49b8097478c7047b707a0c220ffe7e, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
@@ -606,7 +596,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     requiresMagic: 0
-  - speaker: 0
+  - speaker: {fileID: 11400000, guid: f60bf28adb955ea4d8d462bddf7f39ed, type: 2}
     text:
       m_TableReference:
         m_TableCollectionName: Gameplay_Patients
