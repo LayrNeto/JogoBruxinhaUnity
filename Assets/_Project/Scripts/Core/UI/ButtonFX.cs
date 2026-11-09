@@ -18,8 +18,8 @@ namespace JogoBruxinha.Core.UI
         {
             _button = GetComponent<Button>();
             Debug.Assert(_button != null, $"Missing Button component on {name}", this);
-            Debug.Assert(_hoverSound != null, $"Missing hoverSound reference on {name}", this);
-            Debug.Assert(_clickSound != null, $"Missing clickSound reference on {name}", this);
+            // Debug.Assert(_hoverSound != null, $"Missing hoverSound reference on {name}", this);
+            // Debug.Assert(_clickSound != null, $"Missing clickSound reference on {name}", this);
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -27,7 +27,7 @@ namespace JogoBruxinha.Core.UI
             if (!_button.interactable) return;
 
             if (AudioManager.Instance != null && _hoverSound != null)
-                AudioManager.Instance.PlaySFX(_hoverSound);
+                AudioManager.Instance.PlayUI(_hoverSound);
         }
 
         public void OnPointerDown(PointerEventData eventData)
@@ -35,7 +35,7 @@ namespace JogoBruxinha.Core.UI
             if (!_button.interactable) return;
 
             if (AudioManager.Instance != null && _clickSound != null)
-                AudioManager.Instance.PlaySFX(_clickSound);
+                AudioManager.Instance.PlayUI(_clickSound);
         }
 
     }

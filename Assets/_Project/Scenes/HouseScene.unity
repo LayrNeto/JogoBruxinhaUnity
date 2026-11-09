@@ -8203,6 +8203,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 808372132041481743, guid: c54938c1e0441b04c9080a5d9edb980e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 808372132041481743, guid: c54938c1e0441b04c9080a5d9edb980e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 851473326565982138, guid: c54938c1e0441b04c9080a5d9edb980e, type: 3}
       propertyPath: m_text
       value: Cora

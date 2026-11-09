@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace JogoBruxinha.Gameplay.Dialogue
 {
-    // Prepare short, windowed syllables once, rather than cutting a WAV at every letter.
     public sealed class DialogueVoicePlayback : IDisposable
     {
         private sealed class PreparedVoice
@@ -18,7 +17,7 @@ namespace JogoBruxinha.Gameplay.Dialogue
         }
 
         private readonly AudioSource _source;
-        private readonly Dictionary<SoundDataSO, PreparedVoice> _cache = new();
+        private readonly Dictionary<SpeakerProfileSO, PreparedVoice> _cache = new();
         private double _nextBlipTime;
 
         public DialogueVoicePlayback(AudioSource source)
@@ -26,18 +25,26 @@ namespace JogoBruxinha.Gameplay.Dialogue
             _source = source;
         }
 
-        public void Prepare(SoundDataSO sound)
+        public void Prepare(SpeakerProfileSO speaker)
         {
-            if (sound == null || sound.Clip == null) return;
-            if (_cache.TryGetValue(sound, out var old) && old.Original == sound.Clip &&
-                old.Pitch == sound.Pitch && old.GainDb == sound.VoiceGainDb &&
-                old.Duration == sound.VoiceBlipDuration) return;
+            if (speaker == null || speaker.voiceSound == null || speaker.voiceSound.Clip == null) return;
 
-            // Inspector tuning must not destroy the syllable currently reaching the audio device.
+            SoundDataSO sound = speaker.voiceSound;
+
+            if (_cache.TryGetValue(speaker, out var old) &&
+                old.Original == sound.Clip &&
+                Mathf.Approximately(old.Pitch, sound.Pitch) &&
+                Mathf.Approximately(old.GainDb, speaker.voiceGainDb) &&
+                Mathf.Approximately(old.Duration, speaker.voiceBlipDuration))
+            {
+                return;
+            }
+
             if (old?.Blip != null && _source != null && _source.isPlaying && _source.clip == old.Blip) return;
 
             if (old?.Blip != null) UnityEngine.Object.Destroy(old.Blip);
-            _cache.Remove(sound);
+            _cache.Remove(speaker);
+
             AudioClip original = sound.Clip;
             if (original.loadType != AudioClipLoadType.DecompressOnLoad)
             {
@@ -48,16 +55,17 @@ namespace JogoBruxinha.Gameplay.Dialogue
             if (original.loadState != AudioDataLoadState.Loaded) return;
 
             float pitch = Mathf.Clamp(sound.Pitch, 0.1f, 3f);
-            float duration = Mathf.Clamp(sound.VoiceBlipDuration, 0.03f, 0.15f);
-            int frames = Mathf.Min(original.samples, Mathf.Max(2,
-                Mathf.RoundToInt(duration * pitch * original.frequency)));
+            float duration = Mathf.Clamp(speaker.voiceBlipDuration, 0.03f, 0.15f);
+            int frames = Mathf.Min(original.samples, Mathf.Max(2, Mathf.RoundToInt(duration * pitch * original.frequency)));
             if (frames < 2) return;
-            var samples = new float[frames * original.channels];
+
+            float[] samples = new float[frames * original.channels];
             if (!original.GetData(samples, 0)) return;
 
             int attack = Mathf.Clamp(Mathf.RoundToInt(0.005f * pitch * original.frequency), 1, frames / 2);
             int release = Mathf.Clamp(Mathf.RoundToInt(0.010f * pitch * original.frequency), 1, frames / 2);
             float peak = 0f;
+
             for (int frame = 0; frame < frames; frame++)
             {
                 float fadeIn = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01((float)frame / attack));
@@ -70,36 +78,46 @@ namespace JogoBruxinha.Gameplay.Dialogue
                 }
             }
 
-            float gain = Mathf.Pow(10f, sound.VoiceGainDb / 20f);
-            // Keep headroom by reducing the whole blip, never by clipping individual samples.
+            float gain = Mathf.Pow(10f, speaker.voiceGainDb / 20f);
             if (peak * gain > 0.98f)
             {
                 gain = 0.98f / peak;
-                Debug.LogWarning($"Voice {original.name}: requested gain exceeds headroom; gain was limited to avoid clipping.", sound);
+                Debug.LogWarning($"Voice {original.name}: gain limited to avoid clipping.", speaker);
             }
+
             for (int i = 0; i < samples.Length; i++) samples[i] *= gain;
 
-            var blip = AudioClip.Create(original.name + " (dialogue blip)", frames,
-                original.channels, original.frequency, false);
+            AudioClip blip = AudioClip.Create($"{original.name} ({speaker.name} blip)", frames, original.channels, original.frequency, false);
             blip.SetData(samples, 0);
-            _cache[sound] = new PreparedVoice
+
+            _cache[speaker] = new PreparedVoice
             {
-                Original = original, Blip = blip, Pitch = sound.Pitch,
-                GainDb = sound.VoiceGainDb, Duration = sound.VoiceBlipDuration
+                Original = original,
+                Blip = blip,
+                Pitch = sound.Pitch,
+                GainDb = speaker.voiceGainDb,
+                Duration = speaker.voiceBlipDuration
             };
         }
 
-        public bool TryPlay(SoundDataSO sound, float volume)
+        public bool TryPlay(SpeakerProfileSO speaker, float globalVoiceVolume)
         {
-            if (sound == null || sound.Clip == null || _source == null ||
-                _source.isPlaying || AudioSettings.dspTime < _nextBlipTime) return false;
-            Prepare(sound);
-            if (!_cache.TryGetValue(sound, out var voice)) return false;
+            if (speaker == null || speaker.voiceSound == null || speaker.voiceSound.Clip == null || _source == null)
+                return false;
+
+            if (_source.isPlaying || AudioSettings.dspTime < _nextBlipTime)
+                return false;
+
+            Prepare(speaker);
+            if (!_cache.TryGetValue(speaker, out var voice)) return false;
+
+            SoundDataSO sound = speaker.voiceSound;
             _source.clip = voice.Blip;
-            _source.volume = Mathf.Clamp01(volume * sound.Volume);
+            _source.volume = Mathf.Clamp01(globalVoiceVolume * sound.Volume);
             _source.pitch = Mathf.Clamp(sound.Pitch, 0.1f, 3f);
             _source.Play();
-            _nextBlipTime = AudioSettings.dspTime + voice.Blip.length / _source.pitch;
+
+            _nextBlipTime = AudioSettings.dspTime + (voice.Blip.length / _source.pitch);
             return true;
         }
 
@@ -107,7 +125,9 @@ namespace JogoBruxinha.Gameplay.Dialogue
         {
             if (_source != null) _source.Stop();
             foreach (var voice in _cache.Values)
+            {
                 if (voice.Blip != null) UnityEngine.Object.Destroy(voice.Blip);
+            }
             _cache.Clear();
         }
     }

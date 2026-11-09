@@ -12,6 +12,29 @@ using UnityEngine.UI;
 
 namespace JogoBruxinha.Gameplay.Dialogue
 {
+    [System.Serializable]
+    public struct DialogueLine
+    {
+        public SpeakerProfileSO speaker;
+
+        public LocalizedString text;
+        public bool requiresMagic;
+
+        public string GetLocalizedText()
+        {
+            if (text == null || text.IsEmpty)
+                return string.Empty;
+
+            return text.GetLocalizedString();
+        }
+    }
+
+    [System.Serializable]
+    public struct DialogueSequence
+    {
+        public List<DialogueLine> lines;
+    }
+    
     public sealed class DialogueManager : MonoBehaviour
     {
         public static DialogueManager Instance { get; private set; }
@@ -22,33 +45,23 @@ namespace JogoBruxinha.Gameplay.Dialogue
         [SerializeField] private GameObject _titleContainerRoot;
         [SerializeField] private Image _dialogueBackgroundImage;
         [SerializeField] private Image _titleBackgroundImage;
-        [SerializeField] private TextMeshProUGUI _dialogueText;
         [SerializeField] private TextMeshProUGUI _titleText;
+
+        [Header("Sub-Systems")]
+        [SerializeField] private DialogueTypewriter _typewriter;
 
         [Header("Default Visuals")]
         [SerializeField] private Sprite _defaultDialogueBox;
         [SerializeField] private Sprite _defaultDialogueTitle;
 
-        [Header("Typewriter & Audio")]
-        [SerializeField, Min(1f)] private float _charactersPerSecond = 32f;
-        [SerializeField, Min(0f)] private float _punctuationDelay = 0.12f;
-        [SerializeField, Range(0f, 1f)] private float _voiceVolume = 0.6f;
-
-        private AudioSource _voiceSource;
-        private DialogueVoicePlayback _voicePlayback;
-        private SoundDataSO _currentVoice;
-        private GameStateManager _inputOwner;
-        
-        private int _visibleCharacters;
-        private int _lastAdvanceFrame = -1;
-        private float _nextCharacterTime;
-        
         public bool IsPlaying { get; private set; }
-        public bool IsTyping { get; private set; }
+        public bool IsTyping => _typewriter != null && _typewriter.IsTyping;
 
+        private GameStateManager _inputOwner;
         private List<DialogueLine> _currentDialogueList;
         private int _currentLineIndex = -1;
         private int _maxLineIndex = 0;
+        private int _lastAdvanceFrame = -1;
         private Action _dynamicOnFinishCallback;
 
         private void Awake()
@@ -57,11 +70,9 @@ namespace JogoBruxinha.Gameplay.Dialogue
             {
                 Instance = this;
                 ValidateDependencies();
-                _voiceSource = gameObject.AddComponent<AudioSource>();
-                _voiceSource.playOnAwake = false;
-                _voiceSource.loop = false;
-                _voiceSource.spatialBlend = 0f;
-                _voicePlayback = new DialogueVoicePlayback(_voiceSource);
+                
+                AudioSource voiceSource = AudioManager.Instance != null ? AudioManager.Instance.VoiceSource : null;
+                _typewriter.Initialize(voiceSource);
             }
             else
             {
@@ -74,10 +85,10 @@ namespace JogoBruxinha.Gameplay.Dialogue
             Debug.Assert(_dialogueCanvasRoot != null, $"Missing _dialogueCanvasRoot on {name}", this);
             Debug.Assert(_nextButton != null, $"Missing _nextButton on {name}", this);
             Debug.Assert(_dialogueBackgroundImage != null, $"Missing _dialogueBackgroundImage on {name}", this);
-            Debug.Assert(_dialogueText != null, $"Missing _dialogueText on {name}", this);
             Debug.Assert(_titleContainerRoot != null, $"Missing _titleContainerRoot on {name}", this);
             Debug.Assert(_titleBackgroundImage != null, $"Missing _titleBackgroundImage on {name}", this);
             Debug.Assert(_titleText != null, $"Missing _titleText on {name}", this);
+            Debug.Assert(_typewriter != null, $"Missing _typewriter on {name}", this);
             Debug.Assert(_defaultDialogueBox != null, $"Missing _defaultDialogueBox on {name}", this);
             Debug.Assert(_defaultDialogueTitle != null, $"Missing _defaultDialogueTitle on {name}", this);
         }
@@ -93,7 +104,7 @@ namespace JogoBruxinha.Gameplay.Dialogue
         private void OnDisable()
         {
             LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
-            StopTyping();
+            _typewriter.Stop();
             IsPlaying = false;
             _currentDialogueList = null;
             _dynamicOnFinishCallback = null;
@@ -108,7 +119,6 @@ namespace JogoBruxinha.Gameplay.Dialogue
 
         private void OnDestroy()
         {
-            _voicePlayback?.Dispose();
             if (Instance == this) Instance = null;
         }
 
@@ -127,12 +137,7 @@ namespace JogoBruxinha.Gameplay.Dialogue
             if (!IsPlaying || _currentDialogueList == null || _currentLineIndex < 0 || _currentLineIndex >= _currentDialogueList.Count)
                 return;
 
-            StopTyping();
-            DialogueLine line = _currentDialogueList[_currentLineIndex];
-            ApplySpeakerPresentation(line.speaker);
-            _dialogueText.text = line.GetLocalizedText() ?? string.Empty;
-            _dialogueText.maxVisibleCharacters = int.MaxValue;
-            _dialogueText.ForceMeshUpdate();
+            DisplayCurrentLine(animate: false);
         }
 
         private void OnScroll(InputAction.CallbackContext ctx)
@@ -164,7 +169,7 @@ namespace JogoBruxinha.Gameplay.Dialogue
 
             IsPlaying = true;
             _lastAdvanceFrame = Time.frameCount;
-            DisplayCurrentLine(true);
+            DisplayCurrentLine(animate: true);
         }
 
         public void ShowNextLine()
@@ -174,8 +179,7 @@ namespace JogoBruxinha.Gameplay.Dialogue
 
             if (IsTyping)
             {
-                StopTyping();
-                _dialogueText.maxVisibleCharacters = int.MaxValue;
+                _typewriter.CompleteImmediately();
                 return;
             }
 
@@ -185,7 +189,7 @@ namespace JogoBruxinha.Gameplay.Dialogue
             {
                 bool unread = _currentLineIndex > _maxLineIndex;
                 _maxLineIndex = Mathf.Max(_maxLineIndex, _currentLineIndex);
-                DisplayCurrentLine(unread);
+                DisplayCurrentLine(animate: unread);
             }
             else
             {
@@ -201,39 +205,25 @@ namespace JogoBruxinha.Gameplay.Dialogue
             if (_currentLineIndex > 0)
             {
                 _currentLineIndex--;
-                DisplayCurrentLine(false);
+                DisplayCurrentLine(animate: false);
             }
         }
 
         private void DisplayCurrentLine(bool animate)
         {
-            StopTyping();
             DialogueLine line = _currentDialogueList[_currentLineIndex];
-
             ApplySpeakerPresentation(line.speaker);
-
-            _dialogueText.text = line.GetLocalizedText() ?? string.Empty;
-            _dialogueText.maxVisibleCharacters = int.MaxValue;
-            _dialogueText.ForceMeshUpdate();
-            
-            _visibleCharacters = 0;
-            IsTyping = animate && _dialogueText.textInfo.characterCount > 0;
-            _dialogueText.maxVisibleCharacters = IsTyping ? 0 : int.MaxValue;
-            _nextCharacterTime = Time.unscaledTime;
+            _typewriter.StartTyping(line.GetLocalizedText(), line.speaker, animate);
         }
 
         private void ApplySpeakerPresentation(SpeakerProfileSO speaker)
         {
             if (speaker == null)
             {
-                _currentVoice = null;
                 _dialogueBackgroundImage.sprite = _defaultDialogueBox;
                 _titleContainerRoot.SetActive(false);
                 return;
             }
-
-            _currentVoice = speaker.voiceSound;
-            _voicePlayback?.Prepare(_currentVoice);
 
             _dialogueBackgroundImage.sprite = speaker.customDialogueBox != null 
                 ? speaker.customDialogueBox 
@@ -252,35 +242,9 @@ namespace JogoBruxinha.Gameplay.Dialogue
                 _titleText.text = localizedName;
                 _titleText.color = speaker.nameColor;
                 
-                // Força o Content Size Fitter da aba de título a recalcular na hora
-                LayoutRebuilder.ForceRebuildLayoutImmediate(_titleContainerRoot.GetComponent<RectTransform>());
+                // LayoutRebuilder.ForceRebuildLayoutImmediate(_titleContainerRoot.GetComponent<RectTransform>());
             }
         }
-
-        private void Update()
-        {
-            if (!IsPlaying || !IsTyping) return;
-
-            int count = _dialogueText.textInfo.characterCount;
-            bool playVoice = false;
-            while (_visibleCharacters < count && Time.unscaledTime >= _nextCharacterTime)
-            {
-                char c = _dialogueText.textInfo.characterInfo[_visibleCharacters].character;
-                _visibleCharacters++;
-                if (char.IsWhiteSpace(c)) continue;
-                playVoice |= char.IsLetterOrDigit(c);
-                _nextCharacterTime += 1f / Mathf.Max(1f, _charactersPerSecond);
-                if (char.IsPunctuation(c) && (_visibleCharacters == count ||
-                    !char.IsPunctuation(_dialogueText.textInfo.characterInfo[_visibleCharacters].character)))
-                    _nextCharacterTime += _punctuationDelay;
-            }
-
-            _dialogueText.maxVisibleCharacters = _visibleCharacters;
-            if (playVoice) _voicePlayback?.TryPlay(_currentVoice, _voiceVolume);
-            if (_visibleCharacters >= count) IsTyping = false;
-        }
-
-        private void StopTyping() => IsTyping = false;
 
         private void FinishDialogue()
         {
@@ -291,7 +255,7 @@ namespace JogoBruxinha.Gameplay.Dialogue
 
         public void ForceCloseDialogue()
         {
-            StopTyping();
+            _typewriter.Stop();
             IsPlaying = false;
             _currentDialogueList = null;
             _dynamicOnFinishCallback = null;

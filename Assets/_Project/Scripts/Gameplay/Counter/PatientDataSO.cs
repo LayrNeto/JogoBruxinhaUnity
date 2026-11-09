@@ -7,30 +7,6 @@ using UnityEngine.Localization;
 
 namespace JogoBruxinha.Gameplay.Counter
 {
-
-    [System.Serializable]
-    public struct DialogueLine
-    {
-        public SpeakerProfileSO speaker;
-
-        public LocalizedString text;
-        public bool requiresMagic;
-
-        public string GetLocalizedText()
-        {
-            if (text == null || text.IsEmpty)
-                return string.Empty;
-
-            return text.GetLocalizedString();
-        }
-    }
-
-    [System.Serializable]
-    public struct DialogueSequence
-    {
-        public List<DialogueLine> lines;
-    }
-
     [CreateAssetMenu(fileName = "NewPatientData", menuName = "Scriptable Objects/Game Data/Patient Data")]
     public sealed class PatientDataSO : ScriptableObject
     {

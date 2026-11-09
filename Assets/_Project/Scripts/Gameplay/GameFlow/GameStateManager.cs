@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using JogoBruxinha.Core.Input;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -64,8 +65,9 @@ namespace JogoBruxinha.Gameplay.GameFlow
 
         public void PopState()
         {
-            if (_stateStack.Count > 1)
+            if (_stateStack.Count >= 1)
             {
+                Debug.Log($"Popping {_stateStack.Peek()} State");
                 _stateStack.Pop();
                 ApplyCurrentState();
             }
@@ -81,8 +83,15 @@ namespace JogoBruxinha.Gameplay.GameFlow
         {
             if (InputControls == null || _stateStack.Count == 0) return;
 
+            string m = "Topo: | ";
+            foreach(var i in _stateStack)
+            {
+                m += i + " |";
+            }
+            Debug.Log(m);
+
             GameState currentState = _stateStack.Peek();
-            Debug.Log($"Current State: {currentState}");
+            Debug.Log($"Current State: {currentState}, Stack Size: {_stateStack.Count}");
 
             switch (currentState)
             {

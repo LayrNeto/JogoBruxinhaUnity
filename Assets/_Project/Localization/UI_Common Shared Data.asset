@@ -63,6 +63,22 @@ MonoBehaviour:
     m_Key: label_pause
     m_Metadata:
       m_Items: []
+  - m_Id: 2095872827408384
+    m_Key: label_music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2095932030009344
+    m_Key: label_sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2111442138382336
+    m_Key: label_language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2188182005170176
+    m_Key: label_voices
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

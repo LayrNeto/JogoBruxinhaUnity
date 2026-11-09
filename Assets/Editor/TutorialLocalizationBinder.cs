@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Localization;
 using JogoBruxinha.Gameplay.Tutorial;
 using JogoBruxinha.Gameplay.Counter;
+using JogoBruxinha.Gameplay.Dialogue;
 
 public static class TutorialLocalizationBinder
 {

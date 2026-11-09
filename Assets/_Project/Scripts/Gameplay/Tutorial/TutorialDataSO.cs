@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using JogoBruxinha.Core.Audio;
 using JogoBruxinha.Gameplay.Counter;
+using JogoBruxinha.Gameplay.Dialogue;
 using JogoBruxinha.Gameplay.Inventory;
 using UnityEngine;
 

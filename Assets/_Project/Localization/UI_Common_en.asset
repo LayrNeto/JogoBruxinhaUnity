@@ -66,6 +66,22 @@ MonoBehaviour:
     m_Localized: Pause
     m_Metadata:
       m_Items: []
+  - m_Id: 2095872827408384
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2095932030009344
+    m_Localized: Sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2111442138382336
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2188182005170176
+    m_Localized: Voices
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

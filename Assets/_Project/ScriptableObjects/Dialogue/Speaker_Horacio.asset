@@ -23,6 +23,8 @@ MonoBehaviour:
     m_LocalVariables: []
   nameColor: {r: 0.47058827, g: 0.5411765, b: 0.57254905, a: 1}
   voiceSound: {fileID: 11400000, guid: fcb228f0d35d40d086c52bd631e98877, type: 2}
+  voiceGainDb: 12
+  voiceBlipDuration: 0.08
   customDialogueBox: {fileID: 0}
   customDialogueTitle: {fileID: 0}
   references:
