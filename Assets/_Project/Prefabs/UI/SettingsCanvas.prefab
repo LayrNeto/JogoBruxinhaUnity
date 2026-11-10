@@ -48,11 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc197aa99a1dd4449fbc9f024a85b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: JogoBruxinha.Gameplay::JogoBruxinha.Gameplay.UI.SettingsMenuManager
-  _audioMixer: {fileID: 24100000, guid: e58ab0ebe6793414cba3e70ba33d9c80, type: 2}
   _musicSlider: {fileID: 794198704806468701}
   _sfxSlider: {fileID: 7327944483346408022}
   _voicesSlider: {fileID: 2565319032636064687}
-  _exitButton: {fileID: 0}
+  _exitButton: {fileID: 1040040414482147630}
 --- !u!1 &997485011016015529
 GameObject:
   m_ObjectHideFlags: 0
@@ -2215,6 +2214,7 @@ GameObject:
   - component: {fileID: 7403430069861570598}
   - component: {fileID: 1040040414482147630}
   - component: {fileID: 3876354967123177657}
+  - component: {fileID: 8013997538360268276}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -2349,6 +2349,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: JogoBruxinha.Core::JogoBruxinha.Core.UI.ButtonFX
   _hoverSound: {fileID: 0}
   _clickSound: {fileID: 11400000, guid: 55ed2e95b56b93a429f2ff0c8ff85ab3, type: 2}
+--- !u!114 &8013997538360268276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8511440512301196942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b03bf79f7578341b2bb5790541c1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: JogoBruxinha.Core::JogoBruxinha.Core.UI.CursorHoverTrigger
 --- !u!1 &9162893892080606697
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,10 @@ namespace JogoBruxinha.Core.Audio
 {
     public sealed class AudioManager : MonoBehaviour
     {
+        private const string MUSIC_KEY = "vol_music";
+        private const string SFX_KEY = "vol_sfx";
+        private const string VOICES_KEY = "vol_voices";
+
         public static AudioManager Instance { get; private set; }
 
         [Header("Audio Mixer")]
@@ -156,19 +160,19 @@ namespace JogoBruxinha.Core.Audio
         public void SetMusicVolume(float linearValue)
         {
             ApplyVolume("MusicVolume", linearValue);
-            PlayerPrefs.SetFloat("vol_music", linearValue);
+            PlayerPrefs.SetFloat(MUSIC_KEY, linearValue);
         }
 
         public void SetSFXVolume(float linearValue)
         {
             ApplyVolume("SFXVolume", linearValue);
-            PlayerPrefs.SetFloat("vol_sfx", linearValue);
+            PlayerPrefs.SetFloat(SFX_KEY, linearValue);
         }
 
         public void SetVoicesVolume(float linearValue)
         {
             ApplyVolume("VoicesVolume", linearValue);
-            PlayerPrefs.SetFloat("vol_voices", linearValue);
+            PlayerPrefs.SetFloat(VOICES_KEY, linearValue);
         }
 
         private void ApplyVolume(string paramName, float linearValue)

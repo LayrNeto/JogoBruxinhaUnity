@@ -1248,6 +1248,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811127794}
   m_CullTransparentMesh: 1
+--- !u!114 &850313699 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1040040414482147630, guid: 97f889aea09cf1247ad8675b3be42a53, type: 3}
+  m_PrefabInstance: {fileID: 6323764024890991726}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!114 &1103815275 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3801124318557260912, guid: 6891b24e4fb43b243ba4346cb43e3d0e, type: 3}
@@ -3516,6 +3527,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6090341339467496474, guid: 97f889aea09cf1247ad8675b3be42a53, type: 3}
+      propertyPath: _exitButton
+      value: 
+      objectReference: {fileID: 850313699}
     - target: {fileID: 7132933384872732467, guid: 97f889aea09cf1247ad8675b3be42a53, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1

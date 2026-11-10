@@ -678,6 +678,7 @@ Transform:
   - {fileID: 7285910350542457171}
   - {fileID: 690783009202281253}
   - {fileID: 2206021043206768717}
+  - {fileID: 1789863971465055651}
   - {fileID: 4424829377575291422}
   - {fileID: 6541438342441500053}
   m_Father: {fileID: 0}
@@ -912,6 +913,54 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &8047897210037189523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1789863971465055651}
+  - component: {fileID: 5526063707148863595}
+  m_Layer: 0
+  m_Name: CursorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1789863971465055651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8047897210037189523}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7346817207191962127}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5526063707148863595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8047897210037189523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ee56036e47da14e84da8b62a486179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: JogoBruxinha.Core::JogoBruxinha.Core.UI.CursorManager
+  _cursorDefault: {fileID: 2800000, guid: f83f5e9f6d046344f981bd3c2a428eba, type: 3}
+  _cursorHover: {fileID: 2800000, guid: bffc4001eae41204991246e263115111, type: 3}
+  _cursorPressed: {fileID: 2800000, guid: c75095e2958464649a5bad62ae814414, type: 3}
+  _hotspot: {x: 11, y: 3}
 --- !u!1 &8048482043812569821
 GameObject:
   m_ObjectHideFlags: 0

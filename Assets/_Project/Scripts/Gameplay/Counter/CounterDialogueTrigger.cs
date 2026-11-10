@@ -81,8 +81,6 @@ namespace JogoBruxinha.Gameplay.Counter
                 int maxIndex = patient.waitingDialogues.Count - 1;
                 int safeIndex = Mathf.Min(waitingIndex, Mathf.Max(0, maxIndex));
 
-                Debug.Log(waitingIndex + " " + maxIndex + " " + safeIndex);
-
                 _patientDelivery.StartPatientEncounter(patient, patient.waitingDialogues[safeIndex].lines);
             }
 

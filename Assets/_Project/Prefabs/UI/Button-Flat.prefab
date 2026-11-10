@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 3801124318557260912}
   - component: {fileID: 8211809791256556287}
   - component: {fileID: 8389766204044704472}
+  - component: {fileID: 7481829049474804752}
   m_Layer: 5
   m_Name: Button-Flat
   m_TagString: Untagged
@@ -349,3 +350,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: JogoBruxinha.Core::JogoBruxinha.Core.UI.ButtonFX
   _hoverSound: {fileID: 11400000, guid: 42452e15c12b9b0459a78d90fce474b2, type: 2}
   _clickSound: {fileID: 11400000, guid: 55ed2e95b56b93a429f2ff0c8ff85ab3, type: 2}
+--- !u!114 &7481829049474804752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8420788107467274622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b03bf79f7578341b2bb5790541c1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: JogoBruxinha.Core::JogoBruxinha.Core.UI.CursorHoverTrigger
